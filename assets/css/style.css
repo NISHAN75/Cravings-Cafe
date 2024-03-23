@@ -328,7 +328,7 @@ input:focus::placeholder {
 
 /* offer off canvas menu */
 .offcanvas {
-  width: 35% !important;
+  width: 600px;
   color: var(--color-dark);
   background-color: var(--color-deep-white);
 }
@@ -497,17 +497,13 @@ input:focus::placeholder {
 
 
 /* header offcanvas */
-.offcanvas {
-  width: 20% !important;
-  z-index: 99999;
-}
+
 
 /* sub menu css */
 .header-area .sub-menu {
   position: absolute;
   top: 0;
   left: 100%;
-  min-height: 200px;
   min-width: 160px;
   opacity: 0;
   visibility: hidden;
