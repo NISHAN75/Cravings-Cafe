@@ -404,7 +404,7 @@ input:focus::placeholder {
   position: fixed;
   width: 150px;
   height: 150px;
-  z-index: 9999;
+  z-index: 99999;
   border-radius: 50%;
   right: 50px;
   bottom: 50px;
