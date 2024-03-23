@@ -223,13 +223,13 @@ a:hover {
 
 /* background color */
 .romance-bg {
-  background-color: var(--color-romance);
+  background-color: var(--color-romance) ;
 }
 .dark-bg {
   background-color: var(--color-dark);
 }
 .deep-white-bg {
-  background-color: var(--color-deep-white);
+  background-color: var(--color-deep-white) ;
 }
 /* text color */
 .dark-color {
@@ -346,13 +346,12 @@ input:focus::placeholder {
 .offcanvas-body {
   padding: 40px 20px;
 }
-.header-offcanvas .offcanvas-body{
-  padding: 0px 20px;
-}
+
 
 .offcanvas-header .btn-close {
   padding: 0;
 }
+
 .offer-percentage .small-button .btn-1 {
   height: 40px;
   width: 40px;
@@ -444,7 +443,7 @@ input:focus::placeholder {
 .header-area {
   position: fixed;
   width: 100%;
-  z-index: 99;
+  z-index: 999;
 }
 .left-navbar {
   flex-basis: 75%;
@@ -455,14 +454,12 @@ input:focus::placeholder {
 .nav-link {
   font-size: 20px;
   line-height: 1.4;
-  padding: 12px !important;
+  padding: 12px;
   transition: all 0.3s linear;
-  display: inline-block;
 }
 .right-navbar {
   padding-left: 17px;
 }
-
 .hamburger-button {
   height: 56px;
   width: 56px;
@@ -497,7 +494,16 @@ input:focus::placeholder {
   transform: translateY(3px) rotate(-45deg);
   transition: transform 0.5s ease;
 } */
-.sub-menu {
+
+
+/* header offcanvas */
+.offcanvas {
+  width: 20% !important;
+  z-index: 99999;
+}
+
+/* sub menu css */
+.header-area .sub-menu {
   position: absolute;
   top: 0;
   left: 100%;
@@ -507,29 +513,29 @@ input:focus::placeholder {
   visibility: hidden;
   transition: all 0.3s linear;
 }
-.navbar-nav .nav-item > .sub-menu {
+.header-area .navbar-nav .nav-item > .sub-menu {
   left: 0;
   top: 50px;
 }
-.navbar-nav li:hover > .sub-menu {
+.header-area .navbar-nav li:hover > .sub-menu {
   opacity: 1;
   visibility: visible;
 }
 
-.navbar-nav li {
+.header-area .navbar-nav li {
   position: relative;
 }
-.sub-menu-link {
+.header-area .sub-menu-link {
   line-height: 1.3em;
   padding: 8px 20px;
   border-bottom: 1px solid var(--color-bar);
   transition: all 0.3s linear;
 }
-.sub-menu-link:hover{
+.header-area .sub-menu-link:hover{
   background-color: var(--color-dark);
   color: var(--color-deep-white);
 }
-.sub-menu-link:last-child{
+.header-area .sub-menu-link:last-child{
   border-bottom: 0;
 }
 /* cart css  */
@@ -539,15 +545,43 @@ input:focus::placeholder {
 .cart-item span {
   font-size: 12px;
 }
-.cart-dropdown .dropdown-menu {
+.cart-dropdown-menu {
+  position: absolute;
   top: 100%;
+  background: var(--color-dark);
   left: 0;
-  margin-top: 6px;
-  border: 0;
-  border-radius: 0;
-  left: -17px;
-  background-color: var(--color-dark);
-  width: 324px;
+  width: 100%;
+  display: none;
+}
+.cart-product-info .price-info .current-price {
+  font-size: 14px;
+  color: var(--color-deep-white);
+}
+.cart-dropdown-menu{
+  padding: 16px;
+}
+
+/* responsive navbar */
+.responsive-navbar .nav-link {
+  font-size: 16px;
+  padding: 12px 20px;
+  display: block;
+  border-bottom: 1px solid var(--color-ebony);
+}
+.responsive-navbar .pluse-icon img{
+  height: 12px;
+  width: 12px;
+  transition: all 0.3s linear;
+}
+.responsive-navbar .pluse-icon.rotate-icon img{
+  rotate: 45deg;
+}
+.responsive-navbar .sub-menu {
+  display: none;
+}
+.responsive-navbar .sub-menu {
+  padding: 20px 35px;
+  border-radius: 0px 0px 24px 24px;
 }
 
 
@@ -678,7 +712,7 @@ max-width: 657px;
 .short-service-wrapper:hover .icon-btn {
   background-color: var(--color-dark) !important;
 }
-.short-service-wrapper:hover .icon-btn img {
+.short-service-wrapper:hover .icon-btn img , .cart-delet-btn img {
   filter: brightness(0) invert(1);
 }
 /* =================Short-service section end==================  */
@@ -919,9 +953,7 @@ max-width: 657px;
 /* =================Why people choose us section end==================  */
 
 /* =================our sponsors section start==================  */
-.our-sponsor-section {
-  padding: 60px 0;
-}
+
 /* =================our sponsors section end==================  */
 /* =================blog section start==================  */
 
@@ -1003,9 +1035,7 @@ max-width: 657px;
 .map-bg {
   background-image: url(../images/find-us/map.jpg);
 }
-.call-info {
-  font-size: 14px;
-}
+
 .location-wrapper {
   padding: 0 30px;
 }

@@ -1,12 +1,18 @@
 (function ($) {
     $(document).ready(function () {
+        // cart dropdown  up slide
+        $(".cart-dropdown-btn").click(function(){
+            $(".cart-dropdown-menu").slideToggle();
+          });
 
-        // hamburger-button
-        // $(".hamburger-button").click(function () {
-        //     $(".bar-1").toggleClass("open");
-        //     $(".bar-2").toggleClass("open");
-        //     $(".bar-3").toggleClass("open");
-        // });
+        //   rotate pluse icon click on
+        $(".responsive-navbar .nav-item").click(function(){
+            $(".pluse-icon").toggleClass("rotate-icon")
+        });
+        //   rotate pluse icon click on
+        $(".responsive-navbar").click(function(){
+            $(".sub-menu").slideToggle();
+        });
         //btn mouse hover base on mouse pointer
         $(".btn-1 , .icon-btn").mousemove(function (event) {
             var innerText = $(this).find(".inner-text");
@@ -154,7 +160,7 @@
         });
 
         // magnific Popup
-        $(".popup-video").magnificPopup({
+        $(".trigger-popup").magnificPopup({
             type: "iframe",
             iframe: {
                 markup: '<div class="mfp-iframe-scaler">' + '<div class="mfp-close"></div>' + '<iframe class="mfp-iframe" frameborder="0" allow="autoplay"></iframe>' + "</div>",
