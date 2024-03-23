@@ -542,7 +542,7 @@ input:focus::placeholder {
   border-bottom: 1px solid var(--color-bar);
   transition: all 0.3s linear;
 }
-.header-area .sub-menu-link:hover{
+.header-area li:hover > .sub-menu-link{
   background-color: var(--color-dark);
   color: var(--color-deep-white);
 }
