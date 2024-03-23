@@ -346,6 +346,10 @@ input:focus::placeholder {
 .offcanvas-body {
   padding: 40px 20px;
 }
+.header-offcanvas .offcanvas-body{
+  padding: 0px 20px;
+}
+
 .offcanvas-header .btn-close {
   padding: 0;
 }
@@ -398,13 +402,21 @@ input:focus::placeholder {
 /* =================rotate text section css start==================  */
 .rotate-text-wrapper {
   position: fixed;
-  width: 200px;
-  height: 200px;
-  z-index: 999;
+  width: 150px;
+  height: 150px;
+  z-index: 9999;
   border-radius: 50%;
-  right: 0;
-  bottom: 0;
+  right: 50px;
+  bottom: 50px;
   cursor: pointer;
+  mix-blend-mode: difference;
+  filter: brightness(0) invert(1);
+  transform: scale(1);
+  transition: all 0.3s linear;
+
+}
+.rotate-text-wrapper:hover{
+  transform: scale(1.2);
 }
 .center-img {
   left: 50%;
@@ -519,6 +531,23 @@ input:focus::placeholder {
 }
 .sub-menu-link:last-child{
   border-bottom: 0;
+}
+/* cart css  */
+.cart-title {
+  font-size: 14px;
+}
+.cart-item span {
+  font-size: 12px;
+}
+.cart-dropdown .dropdown-menu {
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 0;
+  left: -17px;
+  background-color: var(--color-dark);
+  width: 324px;
 }
 
 
@@ -1001,6 +1030,9 @@ max-width: 657px;
 /* ================= CTA section end==================  */
 
 /* ================= footer section start==================  */
+.footer-section{
+  z-index: 9999;
+}
 .footer-section a {
   color: var(--color-deep-white);
   transition: all 0.3s linear;

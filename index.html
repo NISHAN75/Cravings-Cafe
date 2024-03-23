@@ -320,7 +320,7 @@
         <!-- offer section end -->
         <!-- rotate text area start -->
         <a class="d-block rotate-text-wrapper">
-            <div class="rotate-text-inner position-relative romance-bg rounded-circle">
+            <div class="rotate-text-inner  rounded-circle">
                 <img src="assets/images/text/rotate-text-2.png" alt="rotate-text" class="rotate-text" />
                 <img src="assets/images/text/tea-time.png" alt="tea-time" class="center-img position-absolute" />
             </div>
@@ -335,25 +335,56 @@
             <div class="offcanvas-body">
                 <!-- responsive navbar start -->
                 <div class="responsive-navbar">
-                    <nav>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="index.html" class="nav-item">Home</a>
+                    <nav class="navbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link fw-medium text-capitalize dark-color" href="#">Home</a>
                             </li>
-                            <li>
-                                <a href="index.html" class="nav-item">About Us <img src="assets/images/icons/plus.png" alt="plus-png" class="plus-icon" />
-                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link fw-medium text-capitalize dark-color" href="#">About Us</a>
+                                <ul class="list-unstyled romance-bg sub-menu">
+                                    <li>
+                                        <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 1</a>
+                                        <ul class="list-unstyled romance-bg sub-menu">
+                                            <li>
+                                                <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 1</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                                <a href="index.html" class="nav-item">blog <img src="assets/images/icons/plus.png" alt="plus-png" class="plus-icon" />
-                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link fw-medium text-capitalize dark-color" href="#">Blog</a>
                             </li>
-                            <li>
-                                <a href="index.html" class="nav-item">Open Menu <img src="assets/images/icons/plus.png" alt="plus-png" class="plus-icon" />
-                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link fw-medium text-capitalize dark-color" href="#">Open Menu</a>
                             </li>
-                            <li>
-                                <a href="index.html" class="nav-item">Reservation</a>
+                            <li class="nav-item">
+                                <a class="nav-link fw-medium text-capitalize dark-color" href="#">Reservation </a>
                             </li>
                         </ul>
                     </nav>
@@ -479,10 +510,10 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
-                                        <a class="nav-link fw-medium text-capitalize text-white" href="#">Home</a>
+                                        <a class="nav-link fw-medium text-capitalize deep-white-color" href="#">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fw-medium text-capitalize text-white" href="#">About Us</a>
+                                        <a class="nav-link fw-medium text-capitalize deep-white-color" href="#">About Us</a>
                                         <ul class="list-unstyled romance-bg sub-menu">
                                             <li>
                                                 <a href="#" class="d-block sub-menu-link dark-color fw-medium text-capitalize">sub menu 1</a>
@@ -519,23 +550,33 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fw-medium text-capitalize text-white" href="#">Blog</a>
+                                        <a class="nav-link fw-medium text-capitalize deep-white-color" href="#">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fw-medium text-capitalize text-white" href="#">Open Menu</a>
+                                        <a class="nav-link fw-medium text-capitalize deep-white-color" href="#">Open Menu</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fw-medium text-capitalize text-white" href="#">Reservation </a>
+                                        <a class="nav-link fw-medium text-capitalize deep-white-color" href="#">Reservation </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="right-navbar deep-white-bg d-flex align-items-center justify-content-between">
-                        <div class="cart-dropdown dropdown">
-                            <button class="border-0 deep-white-bg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="cart-dropdown dropdown d-flex align-items-center gap-3">
+                            <button class="border-0 p-0 deep-white-bg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="assets/images/icons/shopping-cart.png" alt="shopping-cart">
                             </button>
+                            <div class="cart-btn-info d-flex align-items-center justify-content-between gap-3">
+                                <div class="cart-item text-center">
+                                    <h6 class="cart-title mb-0">items</h6>
+                                    <span class="count-number">100000000</span>
+                                </div>
+                                <div class="cart-item total-price text-center">
+                                    <h6 class="cart-title mb-0">Total</h6>
+                                    <span class="count-number">$10000000</span>
+                                </div>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="#">Action</a>
@@ -3354,125 +3395,126 @@
                 </div>
             </section>
             <!-- CTA section end -->
-            <!-- footer section start -->
-            <footer class="footer-section pb-0 dark-bg section-padding position-relative z-1">
-                <div class="vertical-bars position-absolute w-100 h-100 top-0">
-                    <div class="container d-flex justify-content-between h-100">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="top-header">
-                        <div class="footer-logo mb-4 pb-3">
-                            <a href="index.html" class="roboto-slab title-sm fw-medium p-0 m-0">CRAVINGS CAFE.</a>
-                        </div>
-                        <div class="row g-0">
-                            <div class="col-lg-6">
-                                <div class="about-footer-info mb-p">
-                                    <h5 class="title-sm deep-white-color mb-4">About Us</h5>
-                                    <p> Proudly serving New York for half a decade, our restaurant stands as a beacon of taste and compassion. We believe in nourishing not just appetites but also souls. With our health-conscious menu and complimentary meals for the less fortunate, we ensure everyone has access to nutritious food. Fifty percent of our earnings are dedicated to aiding the underprivileged, and through partnerships with 26 orphanages, we provide daily sustenance to those in need. At our heart, we're not just a restaurant; we're a community committed to making a difference, one meal at a time. </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="quicky-link">
-                                    <h5 class="title-sm deep-white-color mb-4">Quickys Links</h5>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="blog.html" class="footer-link d-inline-block text-capitalize fw-medium">News</a>
-                                        </li>
-                                        <li>
-                                            <a href="menu.html" class="footer-link d-inline-block text-capitalize fw-medium">menu</a>
-                                        </li>
-                                        <li>
-                                            <a href="reservation.html" class="footer-link d-inline-block text-capitalize fw-medium">reservation</a>
-                                        </li>
-                                        <li>
-                                            <a href="openHours.html" class="footer-link d-inline-block text-capitalize fw-medium">Open Hours</a>
-                                        </li>
-                                        <li>
-                                            <a href="reservation.html" class="footer-link d-inline-block text-capitalize fw-medium">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="quicky-link">
-                                    <h5 class="title-sm deep-white-color mb-4 text-capitalize"> Follow Us </h5>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#" class="footer-link d-flex align-items-center">
-                                                <span class="footer-link-info social-link d-block icon-btn position-relative d-flex align-items-center justify-content-center">
-                                                    <span class="inner-text">
-                                                        <img src="assets/images/icons/facebook.png" alt="facebook-icon" />
-                                                    </span>
-                                                </span>
-                                                <span class="ms-2 social-name text-capitalize d-block fw-medium">facebook</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="footer-link d-flex align-items-center">
-                                                <span class="footer-link-info social-link d-block icon-btn position-relative d-flex align-items-center justify-content-center">
-                                                    <span class="inner-text">
-                                                        <img src="assets/images/icons/twitter.png" alt="twitter-icon" />
-                                                    </span>
-                                                </span>
-                                                <span class="ms-2 social-name text-capitalize d-block fw-medium">twitter</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="footer-link d-flex align-items-center">
-                                                <span class="footer-link-info social-link d-block icon-btn position-relative d-flex align-items-center justify-content-center">
-                                                    <span class="inner-text">
-                                                        <img src="assets/images/icons/instagram.png" alt="instagram-icon" />
-                                                    </span>
-                                                </span>
-                                                <span class="ms-2 social-name text-capitalize d-block fw-medium">instagram</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-0 justify-content-center section-padding-md">
-                            <div class="col-lg-6">
-                                <div class="subscribe-info w-100 position-relative z-1 mt-4">
-                                    <input class="emial-input title-xs" type="email" name="email" id="email" placeholder="Enter Your Email" />
-                                    <button class="submit-btn" type="submit">
-                                        <span class="inner-text"> subscribe </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="copy-right-area pb-2">
-                        <div class="row g-0 align-items-center">
-                            <div class="col-lg-6">
-                                <div class="copy-right-info mb-p">
-                                    <p> Copyright &copy; 2024 <a href="index.html" class="text-uppercase">CRAVINGS CAFe</a>. All Rights Reserved. </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="other-link-info">
-                                    <ul class="list-unstyled d-flex align-items-center justify-content-end">
-                                        <li>
-                                            <a href="#" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="other-link d-inline-block ms-4 text-decoration-underline">Terms and Conditions</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- footer section end -->
+            
         </main>
+        <!-- footer section start -->
+        <footer class="footer-section pb-0 dark-bg section-padding position-relative">
+            <div class="vertical-bars position-absolute w-100 h-100 top-0">
+                <div class="container d-flex justify-content-between h-100">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="top-header">
+                    <div class="footer-logo mb-4 pb-3">
+                        <a href="index.html" class="roboto-slab title-sm fw-medium p-0 m-0">CRAVINGS CAFE.</a>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="about-footer-info mb-p">
+                                <h5 class="title-sm deep-white-color mb-4">About Us</h5>
+                                <p> Proudly serving New York for half a decade, our restaurant stands as a beacon of taste and compassion. We believe in nourishing not just appetites but also souls. With our health-conscious menu and complimentary meals for the less fortunate, we ensure everyone has access to nutritious food. Fifty percent of our earnings are dedicated to aiding the underprivileged, and through partnerships with 26 orphanages, we provide daily sustenance to those in need. At our heart, we're not just a restaurant; we're a community committed to making a difference, one meal at a time. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="quicky-link">
+                                <h5 class="title-sm deep-white-color mb-4">Quickys Links</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="blog.html" class="footer-link d-inline-block text-capitalize fw-medium">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="menu.html" class="footer-link d-inline-block text-capitalize fw-medium">menu</a>
+                                    </li>
+                                    <li>
+                                        <a href="reservation.html" class="footer-link d-inline-block text-capitalize fw-medium">reservation</a>
+                                    </li>
+                                    <li>
+                                        <a href="openHours.html" class="footer-link d-inline-block text-capitalize fw-medium">Open Hours</a>
+                                    </li>
+                                    <li>
+                                        <a href="reservation.html" class="footer-link d-inline-block text-capitalize fw-medium">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="quicky-link">
+                                <h5 class="title-sm deep-white-color mb-4 text-capitalize"> Follow Us </h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="footer-link d-flex align-items-center">
+                                            <span class="footer-link-info social-link d-block icon-btn position-relative d-flex align-items-center justify-content-center">
+                                                <span class="inner-text">
+                                                    <img src="assets/images/icons/facebook.png" alt="facebook-icon" />
+                                                </span>
+                                            </span>
+                                            <span class="ms-2 social-name text-capitalize d-block fw-medium">facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer-link d-flex align-items-center">
+                                            <span class="footer-link-info social-link d-block icon-btn position-relative d-flex align-items-center justify-content-center">
+                                                <span class="inner-text">
+                                                    <img src="assets/images/icons/twitter.png" alt="twitter-icon" />
+                                                </span>
+                                            </span>
+                                            <span class="ms-2 social-name text-capitalize d-block fw-medium">twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer-link d-flex align-items-center">
+                                            <span class="footer-link-info social-link d-block icon-btn position-relative d-flex align-items-center justify-content-center">
+                                                <span class="inner-text">
+                                                    <img src="assets/images/icons/instagram.png" alt="instagram-icon" />
+                                                </span>
+                                            </span>
+                                            <span class="ms-2 social-name text-capitalize d-block fw-medium">instagram</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0 justify-content-center section-padding-md">
+                        <div class="col-lg-6">
+                            <div class="subscribe-info w-100 position-relative z-1 mt-4">
+                                <input class="emial-input title-xs" type="email" name="email" id="email" placeholder="Enter Your Email" />
+                                <button class="submit-btn" type="submit">
+                                    <span class="inner-text"> subscribe </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right-area pb-2">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="copy-right-info mb-p">
+                                <p> Copyright &copy; 2024 <a href="index.html" class="text-uppercase">CRAVINGS CAFe</a>. All Rights Reserved. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="other-link-info">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-end">
+                                    <li>
+                                        <a href="#" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="other-link d-inline-block ms-4 text-decoration-underline">Terms and Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer section end -->
         <!-- jquery min js -->
         <script src="assets/js/jquery.min.js"></script>
         <!-- swiper js -->
