@@ -374,12 +374,12 @@ input:focus::placeholder {
   top: -20px;
   right: -20px;
 }
-.offer-product-item {
+.offer-product-item , .cart-product-iteam {
   padding-bottom: 20px;
   margin-bottom: 40px;
   border-bottom: 1px solid var(--color-bar);
 }
-.offer-product-item:last-child {
+.offer-product-item:last-child , .cart-product-iteam:last-child {
   padding: 0;
   margin-bottom: 0;
   border-bottom: 0;
@@ -407,7 +407,7 @@ input:focus::placeholder {
   font-size: 12px;
   color: var(--color-deep-white);
 }
-.off-canvas-offer  .btn-1.v2:hover {
+.off-canvas-offer  .btn-1.v2:hover , .cart-dropdown-menu .btn-1.v2:hover {
   background:  var(--color-deep-white);
   color: var(--color-dark);
 }
