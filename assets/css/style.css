@@ -323,41 +323,51 @@ input:focus::placeholder {
   max-width: 518px;
 }
 
+/* margin bottom */
+.mb-40{
+  margin-bottom: 40px;
+}
+
 /* =================default css end==================  */
 /* =================offer section css start==================  */
 
 /* offer off canvas menu */
 .offcanvas {
-  width: 600px;
-  color: var(--color-dark);
-  background-color: var(--color-deep-white);
+  --bs-offcanvas-width: 600px;
+  --bs-btn-close-color: var(--color-deep-white);
+  background-color: var(--color-dark);
+  z-index: 9999;
+}
+.offcanvas-header {
+  padding: 20px 30px 0 30px;
 }
 .btn-close,
 .btn-close:hover {
-  color: var(--color-dark);
+  color: var(--color-deep-white);
   opacity: 1;
 }
 .btn-close:focus {
   box-shadow: none;
 }
-.offcanvas-header {
-  padding: 15px 20px;
-}
 .offcanvas-body {
-  padding: 40px 20px;
+  padding: 40px 30px;
 }
-
-
 .offcanvas-header .btn-close {
   padding: 0;
 }
+.btn-close {
+  filter: brightness(0) invert(1);
 
+}
+.off-canvas-offer .current-price {
+  color: var(--color-deep-white);
+}
 .offer-percentage .small-button .btn-1 {
   height: 40px;
   width: 40px;
   line-height: 1;
-  background-color: var(--color-dark);
-  color: var(--color-deep-white);
+  background-color: var(--color-deep-white);
+  color: var(--color-dark);
   border: 0;
 }
 .offer-percentage .small-button {
@@ -395,6 +405,11 @@ input:focus::placeholder {
 }
 .off-canvas-offer .price-info del {
   font-size: 12px;
+  color: var(--color-deep-white);
+}
+.off-canvas-offer  .btn-1.v2:hover {
+  background:  var(--color-deep-white);
+  color: var(--color-dark);
 }
 
 /* =================offer section css end==================  */
@@ -435,7 +450,7 @@ input:focus::placeholder {
   }
 }
 .rotate-text {
-  animation: rotateText 5s linear infinite;
+  animation: rotateText 3s linear infinite;
 }
 /* =================rotate text section css end==================  */
 
