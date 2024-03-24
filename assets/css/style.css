@@ -8,25 +8,26 @@
 
 /* CSS Index
 -----------------------------------
-1.offer section css
 1.default css
-2.Header section css 
-3.Banner section css 
-4.Short-service css
-5.About us section css
-6.Special section css
-7.slide-text section css
-8.Our Chef secion css
-9.Most Popular item section css
-10.FAT section css
-11.Why people choose us section css
-12.Faq section css
-13.our sponsors section css
-14.blog section css
-15.application section css
-16.CTA Section
-17.How to find us section css
-10. footer section css
+2.rotate text section css
+3.offer section css
+4.Header section css 
+5.Banner section css 
+6.Short-service css
+7.About us section css
+8.Special section css
+9.slide-text section css
+10.Our Chef secion css
+11.Most Popular item section css
+12.FAT section css
+13.Why people choose us section css
+14.Faq section css
+14.our sponsors section css
+16.blog section css
+17.application section css
+18.CTA Section
+19.How to find us section css
+20. footer section css
 */
 
 /* =================default css sart==================  */
@@ -332,7 +333,11 @@ input:focus::placeholder {
 .mb-40{
   margin-bottom: 40px;
 }
-
+/* svg  color change */
+.white-svg svg path {
+  stroke: var(--color-deep-white) !important;
+  fill: var(--color-deep-white) !important;
+}
 /* =================default css end==================  */
 /* =================offer section css start==================  */
 
@@ -465,8 +470,11 @@ input:focus::placeholder {
 .nav-link {
   font-size: 20px;
   line-height: 1.4;
-  padding: 12px;
+  padding: 12px 14px;
   transition: all 0.3s linear;
+}
+.nav-link:focus, .nav-link:hover {
+  color: var(--color-deep-white);
 }
 .right-navbar {
   padding-left: 17px;
@@ -564,32 +572,7 @@ input:focus::placeholder {
   padding: 16px;
 }
 
-/* responsive navbar */
-.responsive-navbar .nav-link {
-  font-size: 16px;
-  padding: 12px 20px;
-  display: block;
-  border-bottom: 1px solid var(--color-ebony);
-}
-.responsive-navbar .pluse-icon img{
-  height: 12px;
-  width: 12px;
-  transition: all 0.3s linear;
-}
-.responsive-navbar .pluse-icon.rotate-icon img{
-  rotate: 45deg;
-}
-.responsive-navbar .sub-menu {
-  display: none;
-}
-.responsive-navbar .sub-menu {
-  padding: 20px 35px;
-  border-radius: 0px 0px 24px 24px;
-}
-.white-svg svg path {
-  stroke: var(--color-deep-white) !important;
-  fill: var(--color-deep-white) !important;
-}
+
 
 
 /* =================Header area end==================  */
@@ -713,7 +696,7 @@ max-width: 657px;
 .short-service-wrapper:hover .hover-overlay,
 .nav-link:hover .hover-overlay,
 .product-list-wrapper:hover .hover-overlay,
-.our-chef-wrapper:hover .hover-overlay {
+.cw-card-wrapper:hover .hover-overlay {
   height: 650px;
   width: 650px;
 }
@@ -825,19 +808,19 @@ max-width: 657px;
   transition: all 0.3s linear;
 }
 .product-list-wrapper:hover .icon-btn.cart-btn,
-.our-chef-wrapper:hover .icon-btn.cart-btn {
+.cw-card-wrapper:hover .icon-btn.cart-btn {
   transform: rotate3d(1, 1, 0, 0deg);
   visibility: visible;
   opacity: 1;
 }
 .product-content,
-.our-chef-content {
+.cw-card-content {
   padding: 30px 20px;
   border-left: 1px solid var(--color-bar);
   background: var(--color-deep-white);
 }
 .product-list-info,
-.our-chef-content-info {
+.cw-card-content-info {
   min-height: 80px;
 }
 /* =================Special section end==================  */
@@ -891,7 +874,7 @@ max-width: 657px;
   background: var(--color-dark);
 }
 
-.our-chef-content-info p {
+.cw-card-content-info p {
   text-transform: capitalize;
   font-weight: 500;
 }

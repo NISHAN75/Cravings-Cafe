@@ -1,9 +1,41 @@
 
+/* CSS Index
+-----------------------------------
+2.rotate text section css
+3.offer section css
+4.Header section css 
+5.Banner section css 
+6.Short-service css
+7.About us section css
+8.Special section css
+9.slide-text section css
+10.Our Chef secion css
+11.Most Popular item section css
+12.FAT section css
+13.Why people choose us section css
+14.Faq section css
+14.our sponsors section css
+16.blog section css
+17.application section css
+18.CTA Section
+19.How to find us section css
+20. footer section css
+*/
+:root {
+	--color-romance: #eeede8;
+	--color-dark:#090b19;
+	--color-deep-white: #fafbff;
+	--color-storm-grey: #6e7488;
+	--color-bar: rgba(195 195 195 / 15%);
+	--color-ebony: rgba(9, 11, 25, 0.35);
+	--color-ebony2: rgba(9, 11, 25, 0.8);
+  }
 @media (min-width: 1430px) {
 	
 }
 
 @media (max-width: 1199.98px) and (min-width: 992px) {
+
 
 }
 
@@ -25,10 +57,8 @@
 @media (max-width: 991.98px) {
 
 
-
-
-
-	
+/* =================Header area start==================  */
+	/* title */
 	.title-xl {
 		font-size: 52px;
 	}
@@ -39,7 +69,33 @@
 	.title-md{
 		font-size: 36px;
 	}
+	/* header */
+	/* responsive navbar */
+	.responsive-navbar .nav-link {
+		font-size: 24px;
+		padding: 5px 14px;
+		background-color: var(--color-dark);
+		border-bottom: 1px solid var(--color-ebony);
+	}
+	.responsive-navbar .pluse-icon svg{
+		height: 35px;
+		width: 35px;
+		transition: all 0.3s linear;
+	}
+	.responsive-navbar .pluse-icon.rotate-icon svg{
+		rotate: 45deg;
+	}
+	.responsive-navbar .sub-menu {
+		display: none;
+		padding: 40px 20px;
+	}
 
+	.responsive-navbar  .sub-menu-link {
+		font-size: 20px;
+	
+	  }
+	
+/* =================Header area start==================  */
 	
 }
 
