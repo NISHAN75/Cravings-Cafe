@@ -14,7 +14,7 @@
             $(".sub-menu").slideToggle();
         });
         //btn mouse hover base on mouse pointer
-        $(".btn-1 , .icon-btn").mousemove(function (event) {
+        $(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
             var innerText = $(this).find(".inner-text");
             var btnOffset = $(this).offset();
             var btnWidth = $(this).outerWidth();
@@ -28,7 +28,7 @@
             innerText.css("transform", transformValue);
         });
 
-        $(".btn-1 , .icon-btn").mouseleave(function () {
+        $(".btn-1 , .icon-btn , .rotate-text-inner").mouseleave(function () {
             $(this).find(".inner-text").css("transform", "none");
         });
         // video mouse hover base on mouse pointer

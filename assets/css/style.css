@@ -33,7 +33,7 @@
 /* Variables */
 :root {
   --color-romance: #eeede8;
-  --color-dark: #090b19;
+  --color-dark:#090b19;
   --color-deep-white: #fafbff;
   --color-storm-grey: #6e7488;
   --color-bar: rgba(195 195 195 / 15%);
@@ -427,17 +427,11 @@ input:focus::placeholder {
   cursor: pointer;
   mix-blend-mode: difference;
   filter: brightness(0) invert(1);
-  transform: scale(1);
   transition: all 0.3s linear;
 
 }
-.rotate-text-wrapper:hover{
-  transform: scale(1.2);
-}
-.center-img {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+
+.rotate-text-inner .inner-text {
   height: 35px;
   width: 35px;
   cursor: pointer;
@@ -596,6 +590,10 @@ input:focus::placeholder {
   padding: 20px 35px;
   border-radius: 0px 0px 24px 24px;
 }
+.white-svg svg path {
+  stroke: var(--color-deep-white) !important;
+  fill: var(--color-deep-white) !important;
+}
 
 
 /* =================Header area end==================  */
@@ -622,6 +620,7 @@ max-width: 657px;
 
 .main-title {
   font-size: 88px;
+  line-height: 0.9;
 }
 .main-caption-wrapper {
   max-width: 657px;
@@ -691,14 +690,14 @@ max-width: 657px;
   background: var(--color-deep-white);
 }
 .short-service-wrapper:hover svg path , .short-service-wrapper:hover svg path , .short-service-wrapper:hover svg g path {
-  stroke: #fafbff !important;
-  fill: #fafbff !important;
-  background-color: #eeede8;
+  stroke: var(--color-deep-white) !important;
+  fill: var(--color-deep-white) !important;
 }
 .short-service-wrapper p {
   color: var(--color-dark);
   font-weight: 500;
 }
+
 .hover-overlay {
   top: 0;
   left: 0;
@@ -762,8 +761,8 @@ max-width: 657px;
   width: 30px;
 }
 .social-link svg {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
 }
 .about-us-video {
   background-image: url("../images/about/about-us.jpg");
@@ -891,8 +890,8 @@ max-width: 657px;
   font-weight: 500;
 }
 .social-link.icon-btn {
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   background: var(--color-dark);
 }
 
@@ -1060,7 +1059,7 @@ max-width: 657px;
   font-size: 20px;
   line-height: 1;
 }
-.call-info svg , .address-wrapper svg , .open-hours-icon svg {
+.call-info svg , .address-wrapper svg , .open-hours-icon svg , .email-info svg {
   height: 16px;
   width: 16px;
 }
@@ -1085,7 +1084,7 @@ max-width: 657px;
   z-index: 9999;
 }
 .footer-section a {
-  color: var(--color-deep-white);
+  color: var(--color-storm-grey);
   transition: all 0.3s linear;
 }
 .footer-section a:hover {
@@ -1102,7 +1101,7 @@ max-width: 657px;
 }
 .footer-section .footer-link:hover,
 .footer-section .footer-link:hover .social-name {
-  color: var(--color-storm-grey);
+  color: var(--color-deep-white);
 }
 .footer-link-info.social-link.icon-btn {
   border: 1px solid var(--color-deep-white);
