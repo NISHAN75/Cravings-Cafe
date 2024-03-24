@@ -44,13 +44,7 @@
 }
 
 @media (max-width: 1199.98px) {
-	.title-xl {
-		font-size: 55px;
-	}
-
-	.title-lg {
-		font-size: 47px;
-	}
+	
 	/* =================Header area start==================  */
 	/* =================Header area end==================  */  
 	/* offcanvs  responsive navbar */
@@ -97,48 +91,94 @@
 
 	/* =================Header area end==================  */  
 
+	/* =================Banner section css start==================  */
+	.hot-deal-caption {
+		height: 150px;
+	}
+	.hot-deal-slider{
+		height: 150px;
+	}
+	/* =================Banner section css end==================  */  
+
 }
 
 @media (max-width: 991.98px) {
-
-
-/* =================Header area start==================  */
-	/* title */
+	/* title css*/
 	.title-xl {
-		font-size: 52px;
+		font-size: 40px;
+	}
+	.title-lg {
+		font-size: 32px;
+	}
+	.title-md {
+		font-size: 24px;
+	}
+	.title-sm {
+		font-size: 20px;
+	}
+	.title-xs {
+		font-size: 16px;
 	}
 
-	.title-lg {
-		font-size: 46px;
+/* =================Banner section css  start==================  */
+	.main-title {
+		font-size: 65px;
+		line-height: 0.9;
 	}
-	.title-md{
-		font-size: 36px;
+	.hot-deal {
+		width: 75%;
 	}
-	/* header */
+	.hot-food-info .title-sm{
+		font-size: 18px;
+	}
+	.price-info p br{
+		display: none;
+	  }
+	.price-info del {
+		font-size: 12px;
+	}
+	.current-price {
+		font-size: 14px;
+		margin-left: 10px;
+	}
+/* =================Banner section css  end==================  */
+
+/* =================short service wrapper section css  end==================  */
+	.short-service-wrapper{
+		border-bottom: 1px solid rgb(195 195 195 / 15%);
+	}
+	.hover-overlay {
+		height: 250px;
+		width: 250px;
+		transform: translate(-250px, -250px);
+	}
+	.short-service-wrapper:hover .hover-overlay, .nav-link:hover .hover-overlay, .product-list-wrapper:hover .hover-overlay, .cw-card-wrapper:hover .hover-overlay {
+		height: 1000px;
+		width: 1000px;
+	}
+/* =================short service wrapper section css  end==================  */
+
+/* =================about section css start==================  */  
+	.popup-video {
+		top: 0;
+		left: 50%;
+	}
+	.section-title {
+		margin-bottom: 20px;
+	}
+	.about-content {
+		padding: 60px 30px;
+	}
+	.about-us-video {
+		min-height: 300px;
+	}
 	
-	
-	
-/* =================Header area end==================  */
+/* =================about section css end==================  */  
 	
 }
 
 @media (max-width: 767.98px) {
 
-
-	.title-xl {
-		font-size: 50px;
-	}
-
-	.title-lg {
-		font-size: 45px;
-	}
-	.title-md{
-		font-size: 32px;
-	}
-
-	.title-sm {
-		font-size: 30px;
-	}
 	/* =================Header area start==================  */
 	.left-navbar {
 		flex-basis: 30%;
@@ -150,53 +190,94 @@
 		display: none !important;
 	}
 	/* =================Header area end==================  */  
+	/* =================Banner section css start==================  */
+	.hot-deal-caption {
+		height: 125px;
+	}
+	.hot-deal-slider{
+		height: 125px;
+	}
+	/* =================Banner section css end==================  */  
 
+
+   /* =================spcial section css end==================  */  
+	.product-content, .cw-card-content {
+		padding: 25px 15px;
+	}
+	.product-list-info, .cw-card-content-info {
+		min-height: auto;
+	}
+	.cw-card-content-info{
+		margin-bottom: 15px;
+	}
+	/* =================spcial section css end==================  */  
+	
 
 	
 }
 
 @media (max-width: 575.98px) {
 	
-	.title-xl {
-		font-size: 50px;
-	}
+	/* =================Banner section css  start==================  */
+		.main-title {
+			font-size: 50px;
+			line-height: 0.9;
+		}
+		.hot-deal {
+			width: 100%;
+		}
+		.hot-deal-caption {
+			display: none !important;
+		}
+/* =================Banner section css  end==================  */
 
-	.title-lg {
-		font-size: 43px;
-	}
-
-	.title-sm {
-		font-size: 28px;
-	}
+/* =================about section css start==================  */  
+		.popup-video {
+			top: 0;
+			left: 50%;
+		}
+/* =================about section css end==================  */  
 
 	
 }
 
 @media (max-width: 479.98px) {
-	
 
-	.title-xl {
-		font-size: 47px;
-	}
+		/* title css*/
+		.title-md {
+			font-size: 20px;
+		}
+		.title-sm {
+			font-size: 18px;
+		}
+		.title-xs {
+			font-size: 14px;
+		}
 
-	.title-lg {
-		font-size: 42px;
+	/* =================Banner section css start==================  */
+	.hot-deal-slider{
+		height: 115px;
 	}
+	/* =================Banner section css end==================  */  
 
-	.title-sm {
-		font-size: 25px;
-	}
 	
 	
 }
 
 @media (max-width: 383.98px) {
-	.title-xl {
-		font-size: 45px;
-	}
 
-	.title-lg {
-		font-size: 40px;
-	}
+		/* =================Banner section css start==================  */
+		.hot-deal-slider{
+			height: 96px;
+		}
+		/* =================Banner section css end==================  */  
+		/* =================about section css start==================  */  
+		
+		.about-us-video {
+			min-height: 200px;
+		}
+		
+		/* =================about section css end==================  */  
+	
 
 }

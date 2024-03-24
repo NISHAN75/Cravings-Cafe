@@ -612,7 +612,7 @@ max-width: 657px;
   width: 50%;
 }
 .hot-deal-slider {
-  height: 250px;
+  height: 180px;
 }
 .hot-deal-slider .swiper-scrollbar-drag {
   background: var(--color-dark);
@@ -631,9 +631,6 @@ max-width: 657px;
 }
 .current-price {
   font-size: 18px;
-}
-.current-price {
-  font-size: 18px;
   color: var(--color-dark);
   font-weight: 500;
 }
@@ -641,13 +638,12 @@ max-width: 657px;
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 250px;
+  height: 180px;
   z-index: 9;
 }
 .inner {
   white-space: nowrap;
 }
-
 .rotate {
   transform: rotate(-90deg);
 }
