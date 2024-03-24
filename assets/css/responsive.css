@@ -1,4 +1,4 @@
-
+/* 1400, 1199, 991, 767, 575, 480, 360, 320 */
 /* CSS Index
 -----------------------------------
 2.rotate text section css
@@ -51,26 +51,12 @@
 	.title-lg {
 		font-size: 47px;
 	}
-
-}
-
-@media (max-width: 991.98px) {
-
-
-/* =================Header area start==================  */
-	/* title */
-	.title-xl {
-		font-size: 52px;
-	}
-
-	.title-lg {
-		font-size: 46px;
-	}
-	.title-md{
-		font-size: 36px;
-	}
-	/* header */
-	/* responsive navbar */
+	/* =================Header area start==================  */
+	/* =================Header area end==================  */  
+	/* offcanvs  responsive navbar */
+	.responsive-navbar{
+		display: block;
+	  }
 	.responsive-navbar .nav-link {
 		position: relative;
 		font-size: 16px;
@@ -98,8 +84,41 @@
 		display: flex;
 		align-items: center;
 	}
-	
+	/* header design */
+	  .left-navbar {
+		flex-basis: 50%;
+	  }
+	  .right-navbar {
+		flex-basis: 50%;
+	  }
+	  .main-menu-wrapper{
+		display: none;
+	  }
+
+	/* =================Header area end==================  */  
+
+}
+
+@media (max-width: 991.98px) {
+
+
 /* =================Header area start==================  */
+	/* title */
+	.title-xl {
+		font-size: 52px;
+	}
+
+	.title-lg {
+		font-size: 46px;
+	}
+	.title-md{
+		font-size: 36px;
+	}
+	/* header */
+	
+	
+	
+/* =================Header area end==================  */
 	
 }
 
@@ -120,6 +139,17 @@
 	.title-sm {
 		font-size: 30px;
 	}
+	/* =================Header area start==================  */
+	.left-navbar {
+		flex-basis: 30%;
+	  }
+	  .cart-btn-info{
+		display: none !important;
+	}
+	.rotate-text-wrapper {
+		display: none !important;
+	}
+	/* =================Header area end==================  */  
 
 
 	
