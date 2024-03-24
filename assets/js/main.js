@@ -10,9 +10,7 @@
             $(".pluse-icon").toggleClass("rotate-icon")
         });
         //   rotate pluse icon click on
-        $(".responsive-navbar").click(function(){
-            $(".sub-menu").slideToggle();
-        });
+    
         //btn mouse hover base on mouse pointer
         $(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
             var innerText = $(this).find(".inner-text");

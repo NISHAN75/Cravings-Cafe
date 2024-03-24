@@ -72,28 +72,32 @@
 	/* header */
 	/* responsive navbar */
 	.responsive-navbar .nav-link {
-		font-size: 24px;
-		padding: 5px 14px;
+		position: relative;
+		font-size: 16px;
+		padding: 12px 0px;
 		background-color: var(--color-dark);
-		border-bottom: 1px solid var(--color-ebony);
+		border-bottom: 1px solid  var(--color-bar);
 	}
 	.responsive-navbar .pluse-icon svg{
-		height: 35px;
-		width: 35px;
+		height: 20px;
+		width: 20px;
 		transition: all 0.3s linear;
 	}
 	.responsive-navbar .pluse-icon.rotate-icon svg{
 		rotate: 45deg;
 	}
-	.responsive-navbar .sub-menu {
+	.responsive-navbar .sub-menu{
 		display: none;
-		padding: 40px 20px;
+		padding: 10px 20px;
 	}
-
-	.responsive-navbar  .sub-menu-link {
-		font-size: 20px;
-	
-	  }
+	.pluse-icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
 	
 /* =================Header area start==================  */
 	
