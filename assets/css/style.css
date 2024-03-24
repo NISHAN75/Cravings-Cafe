@@ -346,11 +346,11 @@ input:focus::placeholder {
 .offcanvas-header {
   padding: 20px 30px 0 30px;
 }
-.btn-close,
-.btn-close:hover {
-  color: var(--color-deep-white);
-  opacity: 1;
+.btn-close {
+  --bs-btn-close-color: var(--color-deep-white);
+  --bs-btn-close-bg: none;
 }
+
 .btn-close:focus {
   box-shadow: none;
 }
