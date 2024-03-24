@@ -446,7 +446,7 @@ input:focus::placeholder {
   }
 }
 .rotate-text {
-  animation: rotateText 3s linear infinite;
+  animation: rotateText 12s linear infinite;
 }
 /* =================rotate text section css end==================  */
 
@@ -488,24 +488,20 @@ input:focus::placeholder {
 .bar {
   display: block;
   width: 22px;
-  height: 3px;
+  height: 2px;
+  margin-bottom: 4px;
   background-color: var(--color-dark);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s linear;
 }
-
-/* bar animation */
-/* .bar-1.open {
-  transform: translateY(-11px) rotate(45deg);
-  transition: transform 0.5s ease;
+.bar-1 {
+  width: 16px;
 }
-.bar-2.open {
-  opacity: 0;
+.bar-2 {
+  width: 10px;
 }
-.bar-3.open {
-  transform: translateY(3px) rotate(-45deg);
-  transition: transform 0.5s ease;
-} */
-
+.hamburger-button:hover .bar-1 , .hamburger-button:hover .bar-2{
+  width: 22px;
+}
 
 /* header offcanvas */
 
@@ -756,11 +752,11 @@ max-width: 657px;
   padding-left: 8px;
 }
 /* svg */
-.inner-text svg , .cart-dropdown-btn svg{
+.inner-text svg , .cart-dropdown-btn svg {
   height: 30px;
   width: 30px;
 }
-.social-link svg {
+.social-link svg  , .cart-delete-btn svg{
   height: 18px;
   width: 18px;
 }

@@ -80,7 +80,7 @@
             freeMode: true,
             loop: true,
             allowTouchMove: false,
-            speed: 7000,
+            speed: 10000,
             autoplay: {
                 delay: 0,
             },
@@ -221,18 +221,6 @@
             duplicated: true,
             startVisible: true,
         });
-        $(".marquee-logo").marquee({
-            //duration in milliseconds of the marquee
-            duration: 50000,
-            //gap in pixels between the tickers
-            gap: 100,
-            //time in milliseconds before the marquee will start animating
-            delayBeforeStart: 0,
-            //'left' or 'right'
-            direction: "left",
-            //true or false - should the marquee be duplicated to show an effect of continues flow
-            duplicated: true,
-            startVisible: true,
-        });
+        
     });
 })(jQuery);
