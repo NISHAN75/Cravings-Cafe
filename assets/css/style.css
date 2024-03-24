@@ -154,6 +154,11 @@ input {
 a:hover {
   color: var(--color-dark);
 }
+
+svg{
+  width: 100%;
+  height: auto;
+}
 /* sub-title */
 .sub-title {
   display: inline-block;
@@ -355,10 +360,7 @@ input:focus::placeholder {
 .offcanvas-header .btn-close {
   padding: 0;
 }
-.btn-close {
-  filter: brightness(0) invert(1);
 
-}
 .off-canvas-offer .current-price {
   color: var(--color-deep-white);
 }
@@ -688,10 +690,10 @@ max-width: 657px;
   transition: all 0.3s linear;
   background: var(--color-deep-white);
 }
-.icon-btn img {
-  height: 25px;
-  width: 25px;
-  transition: all 0.3s linear;
+.short-service-wrapper:hover svg path , .short-service-wrapper:hover svg path , .short-service-wrapper:hover svg g path {
+  stroke: #fafbff !important;
+  fill: #fafbff !important;
+  background-color: #eeede8;
 }
 .short-service-wrapper p {
   color: var(--color-dark);
@@ -723,9 +725,7 @@ max-width: 657px;
 .short-service-wrapper:hover .icon-btn {
   background-color: var(--color-dark) !important;
 }
-.short-service-wrapper:hover .icon-btn img , .cart-delet-btn img {
-  filter: brightness(0) invert(1);
-}
+
 /* =================Short-service section end==================  */
 
 /* =================About us section start==================  */
@@ -756,6 +756,15 @@ max-width: 657px;
 .play-icon .inner-text {
   padding-left: 8px;
 }
+/* svg */
+.inner-text svg , .cart-dropdown-btn svg{
+  height: 30px;
+  width: 30px;
+}
+.social-link svg {
+  height: 20px;
+  width: 20px;
+}
 .about-us-video {
   background-image: url("../images/about/about-us.jpg");
 }
@@ -781,10 +790,9 @@ max-width: 657px;
   text-transform: capitalize;
   color: var(--color-dark);
 }
-.special-section .right-arrow-icon,
-.offer-btn .right-arrow-icon {
-  height: 20px;
-  width: 20px;
+.special-section .right-arrow-icon, .offer-btn .right-arrow-icon {
+  height: 35px;
+  width: 35px;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s linear;
@@ -883,15 +891,11 @@ max-width: 657px;
   font-weight: 500;
 }
 .social-link.icon-btn {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   background: var(--color-dark);
 }
-.social-link.icon-btn .inner-text img {
-  filter: brightness(0) invert(1);
-  height: 16px;
-  width: 16px;
-}
+
 .our-chef-content-info p {
   text-transform: capitalize;
   font-weight: 500;
@@ -921,9 +925,7 @@ max-width: 657px;
 /* =================FAT section end==================  */
 
 /* =================Why people choose us section start==================  */
-.quote-info.text-center img {
-  filter: brightness(0) invert(1);
-}
+
 .customer-testimonial-slider .swiper-button-prev,
 .customer-testimonial-slider .swiper-button-next {
   height: 50%;
@@ -960,6 +962,10 @@ max-width: 657px;
 .date p {
   font-size: 14px;
   color: var(--color-storm-grey);
+}
+.quote-info svg {
+  height: 150px;
+  width: 150px;
 }
 /* =================Why people choose us section end==================  */
 
@@ -1053,6 +1059,10 @@ max-width: 657px;
 .location-title {
   font-size: 20px;
   line-height: 1;
+}
+.call-info svg , .address-wrapper svg , .open-hours-icon svg {
+  height: 16px;
+  width: 16px;
 }
 /* ================= How to find us section end==================  */
 
