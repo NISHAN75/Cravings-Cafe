@@ -216,12 +216,72 @@
             //true or false - should the marquee be duplicated to show an effect of continues flow
             duplicated: true,
             startVisible: true,
-        });
+        });  
 
-    
-        
-        
-        
-        
+        // gsap scroll smoother is active
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+            let smoother = ScrollSmoother.create({
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                smooth: 1.35,
+                effects: true,
+                smoothTouch: false,
+                normalizeScroll: false,
+                ignoreMobileResize: true,
+            });
+
+
+
     });
+
 })(jQuery);
+
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    // Split text into spans
+    let typeSplit = new SplitType("[text-split]", {
+      types: "words, chars",
+      tagName: "span"
+    });
+  
+    // Link timelines to scroll position
+    function createScrollTrigger(triggerElement, timeline) {
+      // Reset tl when scroll out of view past bottom of screen
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top bottom",
+        onLeaveBack: () => {
+          timeline.progress(0);
+          timeline.pause();
+        }
+      });
+      // Play tl when scrolled into view (60% from top of screen)
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top 70%",
+        onEnter: () => timeline.play()
+      });
+    }
+    $("[letters-slide-down]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "linear", stagger: { amount: 0.7 } });
+      createScrollTrigger($(this), tl);
+    });
+    $("[scrub-each-word]").each(function (index) {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: $(this),
+          start: "top 90%",
+          end: "top center",
+          scrub: true
+        }
+      });
+      tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "linear", stagger: { each: 0.4 } }); 
+    });
+  
+    // Avoid flash of unstyled content
+    gsap.set("[text-split]", { opacity: 1 });
+  });
+
+
+

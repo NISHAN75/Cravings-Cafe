@@ -85,6 +85,9 @@
 	.footer-section .submit-btn {
 		width: 30%;
    }
+   .about-footer-info {
+    max-width: 440px;
+	}
    /* ================= footer section end================== */
 }
 @media (max-width: 991.98px) {

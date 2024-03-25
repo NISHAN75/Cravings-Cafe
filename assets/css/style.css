@@ -336,6 +336,20 @@ input:focus::placeholder {
   stroke: var(--color-deep-white) !important;
   fill: var(--color-deep-white) !important;
 }
+
+/* animation text */
+[text-split] {opacity: 0;}
+html [text-split] {opacity: 1;}
+
+.word {
+	overflow: hidden;
+  padding-bottom: 0em;
+  margin-bottom: -0.1em;
+  transform-origin: bottom;
+}
+.word .char:first-child{
+  text-transform: uppercase;
+}
 /* =================default css end==================  */
 /* =================offer section css start==================  */
 
@@ -601,7 +615,7 @@ max-width: 657px;
 
 .main-title {
   font-size: 88px;
-  line-height: 0.9;
+  line-height: 1.1;
 }
 .main-caption-wrapper {
   max-width: 657px;
@@ -763,7 +777,6 @@ max-width: 657px;
   border-right: 1px solid var(--color-bar);
   text-align: left;
   font-size: 18px;
-  text-transform: capitalize;
   color: var(--color-dark);
 }
 .special-section .right-arrow-icon, .offer-btn .right-arrow-icon {
