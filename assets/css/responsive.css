@@ -40,13 +40,20 @@
 }
 
 @media (max-width: 1399.98px) {
-	
+		/* =================Banner section css start==================  */
+		.hot-deal-caption{
+			display: none !important;
+		}
+		.hot-deal-slider-caption{
+			display: block !important;
+		}
+		/* =================Banner section css end==================  */  
 }
 
 @media (max-width: 1199.98px) {
 	
 	/* =================Header area start==================  */
-	/* =================Header area end==================  */  
+
 	/* offcanvs  responsive navbar */
 	.responsive-navbar{
 		display: block;
@@ -89,6 +96,8 @@
 		display: none;
 	  }
 
+	  
+
 	/* =================Header area end==================  */  
 
 	/* =================Banner section css start==================  */
@@ -97,6 +106,9 @@
 	}
 	.hot-deal-slider{
 		height: 150px;
+	}
+	.hot-deal-caption .rotate {
+		transform: rotate(0deg);
 	}
 	/* =================Banner section css end==================  */  
 
@@ -326,7 +338,17 @@
 }
 
 @media (max-width: 575.98px) {
-	
+
+	/* =================Header area start==================  */
+	/* cart menu */
+	.cart-dropdown-menu {
+		left: auto;
+		right: 0;
+		width: 400px;
+		max-width: calc(100vw - 24px);
+	}
+	/* =================Header area start==================  */
+
 	/* =================Banner section css  start==================  */
 		.main-title {
 			font-size: 50px;

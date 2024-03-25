@@ -564,7 +564,9 @@ input:focus::placeholder {
   left: 0;
   width: 100%;
   display: none;
+
 }
+
 .cart-product-info .price-info .current-price {
   font-size: 14px;
   color: var(--color-deep-white);
