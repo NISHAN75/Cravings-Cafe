@@ -257,7 +257,6 @@ svg{
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 /* accordion css */
 .accordion-item:first-of-type,
 .accordion-item:last-of-type {
@@ -825,9 +824,6 @@ max-width: 657px;
 /* =================Special section end==================  */
 
 /* =================slide-text section start==================  */
-.slide-text-section {
-  padding: 60px 0;
-}
 .slider-text-wrapper {
   font-size: 70px;
   font-weight: 700;

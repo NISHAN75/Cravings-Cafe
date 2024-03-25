@@ -29,6 +29,17 @@
         $(".btn-1 , .icon-btn , .rotate-text-inner").mouseleave(function () {
             $(this).find(".inner-text").css("transform", "none");
         });
+        function desktopWorking(){
+            if(window.innerWidth > 991){
+                $('.about-us-video ').addClass("animation-add")
+            
+            }else{
+                $('.about-us-video').remove('animation-add')
+            }
+            
+        }
+        desktopWorking();
+        
         // video mouse hover base on mouse pointer
         function moveBtn(wrapper, event) {
             var videoBtn = $(wrapper).find(".popup-video");
@@ -44,16 +55,26 @@
                 transform: transformedValue,
             });
         }
-        $(".about-us-video").mousemove(function (event) {
-            setInterval(moveBtn(this, event), 100);
-        });
-        $(".about-us-video").mouseleave(function () {
-            $(this).find(".popup-video").css({
-                transform: "translateX(-50%) translateY(-50%)",
-                left: "0",
-                top: "50%",
-            });
-        });
+        function playMove(){
+            const windowWidth = $(window).width();
+            if(windowWidth > 991){
+                $(".about-us-video").mousemove(function (event) {
+                    setInterval(moveBtn(this, event), 100);
+                });
+                $(".about-us-video").mouseleave(function () {
+                    $(this).find(".popup-video").css({
+                        transform: "translateX(-50%) translateY(-50%)",
+                        left: "0",
+                        top: "50%",
+                    });
+                });
+            }
+        }
+        playMove();
+        // $(window).on("resize", function(){
+        //     playMove();
+        // });
+        
         // swiper active
         // hot-deal-slider
         const hot_deal_slider = new Swiper(".hot-deal-slider", {
@@ -167,25 +188,6 @@
                 },
             },
         });
-
-        // Sub menu Drop down
-        // $(".offcanvas-nav li a").click(function (e) {
-        // 	e.preventDefault();
-        // 	var subMenu = $(this).next("ul");
-        // 	if (subMenu.length > 0) {
-        // 		if (subMenu.is(":visible")) {
-        // 			subMenu.slideUp("fast");
-        // 			subMenu.parent().removeClass("active");
-        // 		} else {
-        // 			$(this).parent().siblings().find("ul").slideUp("fast");
-        // 			$(this).parent().siblings().find("ul").parent().removeClass("active");
-        // 			subMenu.slideDown("fast");
-        // 			subMenu.parent().addClass("active");
-        // 		}
-        // 		e.stopPropagation();
-        // 	}
-        // });
-
         // Wow JS
         new WOW().init();
 
@@ -215,6 +217,11 @@
             duplicated: true,
             startVisible: true,
         });
+
+    
+        
+        
+        
         
     });
 })(jQuery);

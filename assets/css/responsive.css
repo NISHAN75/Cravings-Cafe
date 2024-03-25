@@ -1,26 +1,5 @@
 /* 1400, 1199, 991, 767, 575, 480, 360, 320 */
-/* CSS Index
------------------------------------
-2.rotate text section css
-3.offer section css
-4.Header section css 
-5.Banner section css 
-6.Short-service css
-7.About us section css
-8.Special section css
-9.slide-text section css
-10.Our Chef secion css
-11.Most Popular item section css
-12.FAT section css
-13.Why people choose us section css
-14.Faq section css
-14.our sponsors section css
-16.blog section css
-17.application section css
-18.CTA Section
-19.How to find us section css
-20. footer section css
-*/
+/* CSS Index ----------------------------------- 2.rotate text section css 3.offer section css 4.Header section css 5.Banner section css 6.Short-service css 7.About us section css 8.Special section css 9.slide-text section css 10.Our Chef secion css 11.Most Popular item section css 12.FAT section css 13.Why people choose us section css 14.Faq section css 14.our sponsors section css 16.blog section css 17.application section css 18.CTA Section 19.How to find us section css 20. footer section css */
 :root {
 	--color-romance: #eeede8;
 	--color-dark:#090b19;
@@ -29,54 +8,46 @@
 	--color-bar: rgba(195 195 195 / 15%);
 	--color-ebony: rgba(9, 11, 25, 0.35);
 	--color-ebony2: rgba(9, 11, 25, 0.8);
-  }
+}
 @media (min-width: 1430px) {
-	
 }
-
 @media (max-width: 1199.98px) and (min-width: 992px) {
-
-
 }
-
 @media (max-width: 1399.98px) {
-		/* =================Banner section css start==================  */
-		.hot-deal-caption{
-			display: none !important;
-		}
-		.hot-deal-slider-caption{
-			display: block !important;
-		}
-		/* =================Banner section css end==================  */  
+   /* =================Banner section css start================== */
+	.hot-deal-caption{
+		display: none !important;
+   }
+	.hot-deal-slider-caption{
+		display: block !important;
+   }
+   /* =================Banner section css end================== */
 }
-
 @media (max-width: 1199.98px) {
-	
-	/* =================Header area start==================  */
-
-	/* offcanvs  responsive navbar */
+   /* =================Header area start================== */
+   /* offcanvs responsive navbar */
 	.responsive-navbar{
 		display: block;
-	  }
+   }
 	.responsive-navbar .nav-link {
 		position: relative;
 		font-size: 16px;
 		padding: 12px 0px;
 		background-color: var(--color-dark);
-		border-bottom: 1px solid  var(--color-bar);
-	}
+		border-bottom: 1px solid var(--color-bar);
+   }
 	.responsive-navbar .pluse-icon svg{
 		height: 20px;
 		width: 20px;
 		transition: all 0.3s linear;
-	}
+   }
 	.responsive-navbar .pluse-icon.rotate-icon svg{
 		rotate: 45deg;
-	}
+   }
 	.responsive-navbar .sub-menu{
 		display: none;
 		padding: 10px 20px;
-	}
+   }
 	.pluse-icon {
 		position: absolute;
 		right: 0;
@@ -84,355 +55,293 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
-	}
-	/* header design */
-	  .left-navbar {
+   }
+   /* header design */
+	.left-navbar {
 		flex-basis: 50%;
-	  }
-	  .right-navbar {
+   }
+	.right-navbar {
 		flex-basis: 50%;
-	  }
-	  .main-menu-wrapper{
+   }
+	.main-menu-wrapper{
 		display: none;
-	  }
-
-	  
-
-	/* =================Header area end==================  */  
-
-	/* =================Banner section css start==================  */
+   }
+   /* =================Header area end================== */
+   /* =================Banner section css start================== */
 	.hot-deal-caption {
 		height: 150px;
-	}
+   }
 	.hot-deal-slider{
 		height: 150px;
-	}
+   }
 	.hot-deal-caption .rotate {
 		transform: rotate(0deg);
-	}
-	/* =================Banner section css end==================  */  
-
-	/* ================= footer section start==================  */
+   }
+   /* =================Banner section css end================== */
+   /* ================= footer section start================== */
 	.footer-section input {
 		width: 70%;
-	}
+   }
 	.footer-section .submit-btn {
 		width: 30%;
-	}
-	/* ================= footer section end==================  */
-
+   }
+   /* ================= footer section end================== */
 }
-
 @media (max-width: 991.98px) {
-	/* title css*/
+   /* title css*/
 	.title-xl {
 		font-size: 40px;
-	}
+   }
 	.title-lg {
 		font-size: 32px;
-	}
+   }
 	.title-md {
 		font-size: 24px;
-	}
+   }
 	.title-sm {
 		font-size: 20px;
-	}
+   }
 	.title-xs {
 		font-size: 16px;
-	}
-
-	/* section-padding */
+   }
+   /* section-padding */
 	.section-padding{
 		padding: 60px 0;
-	}
-
-/* =================Banner section css  start==================  */
+   }
+   /* =================Banner section css start================== */
 	.main-title {
 		font-size: 65px;
-	}
+   }
 	.sub-title {
 		margin-bottom: 0px !important;
-	}
+   }
 	.hot-deal {
 		width: 75%;
-	}
+   }
 	.hot-food-info .title-sm{
 		font-size: 18px;
-	}
+   }
 	.price-info p br{
 		display: none;
-	  }
+   }
 	.price-info del {
 		font-size: 12px;
-	}
+   }
 	.current-price {
 		font-size: 14px;
 		margin-left: 10px;
-	}
-/* =================Banner section css  end==================  */
-
-/* =================short service wrapper section css  end==================  */
+   }
+   /* =================Banner section css end================== */
+   /* =================short service wrapper section css end================== */
 	.short-service-wrapper{
 		border-bottom: 1px solid rgb(195 195 195 / 15%);
-	}
+   }
 	.hover-overlay {
 		height: 250px;
 		width: 250px;
 		transform: translate(-250px, -250px);
-	}
+   }
 	.short-service-wrapper:hover .hover-overlay, .nav-link:hover .hover-overlay, .product-list-wrapper:hover .hover-overlay, .cw-card-wrapper:hover .hover-overlay {
 		height: 1000px;
 		width: 1000px;
-	}
-/* =================short service wrapper section css  end==================  */
-
-/* =================about section css start==================  */  
+   }
+   /* =================short service wrapper section css end================== */
+   /* =================about section css start================== */
 	.popup-video {
-		top: 0;
+		top: 50%;
 		left: 50%;
-	}
+   }
 	.section-title {
 		flex-basis: 100%;
 		margin-bottom: 20px;
-	}
+   }
 	.about-content {
 		padding: 60px 30px;
-	}
+   }
 	.about-us-video {
 		min-height: 300px;
-	}
-	
-/* =================about section css end==================  */  
-
-/* =================slide text  section css start==================  */  
-		.slide-text-section {
-			padding: 30px 0;
-		}
-		.slider-text-wrapper {
-			font-size: 40px;
-		}
-		/* =================slide text section css end==================  */  
-
-		/* =================FAT section css start==================  */  
-		.counter, .counter-wrapper .counter-info .icon {
-			font-size: 40px;
-		}
-		/* =================FAT section css end==================  */  
-
-		/* =================Why people choose us section start==================  */
-		.customer-testimonial-slider{
-			padding-top: 50px;
-		}
-		.customer-info {
-			padding: 20px 30px 0 30px;
-		}
-		.customer-review {
-			padding: 0 30px;
-		}
-		.customer-testimonial-slider .swiper-button-prev, .customer-testimonial-slider .swiper-button-next {
-			height: 50px;
-			width: 50%;
-			left: 0;
-			right: auto;
-			bottom: auto;
-			top: 0;
-			margin: 0;
-			border: 1px solid var(--color-bar);
-			background-color: var(--color-dark);
-		
-		}
+   }
+   /* =================about section css end================== */
+   /* =================slide text section css start================== */
+	.slide-text-section {
+		padding: 30px 0;
+   }
+	.slider-text-wrapper {
+		font-size: 40px;
+   }
+   /* =================slide text section css end================== */
+   /* =================FAT section css start================== */
+	.counter, .counter-wrapper .counter-info .icon {
+		font-size: 40px;
+   }
+   /* =================FAT section css end================== */
+   /* =================Why people choose us section start================== */
+	.customer-testimonial-slider{
+		padding-top: 50px;
+   }
+	.customer-info {
+		padding: 20px 30px 0 30px;
+   }
+	.customer-review {
+		padding: 0 30px;
+   }
+	.customer-testimonial-slider .swiper-button-prev, .customer-testimonial-slider .swiper-button-next {
+		height: 50px;
+		width: 50%;
+		left: 0;
+		right: auto;
+		bottom: auto;
+		top: 0;
+		margin: 0;
+		border: 1px solid var(--color-bar);
+		background-color: var(--color-dark);
+   }
 	.customer-testimonial-slider .swiper-button-next {
 		left: auto;
 		right: 0;
-
-	
-	}
-
+   }
 	.customer-testimonial-slider .button-inner-text {
 		rotate: 0deg;
-	}
-
-/* =================Why people choose us section end==================  */
-/* ================= How to find us section start==================  */
-
-		.how-to-find-us-wrapper {
-			padding: 44px 0;
-		}
-/* ================= How to find us section end==================  */
-
-/* ================= footer section start==================  */
-.copy-right-info {
-    text-align: center;
+   }
+   /* =================Why people choose us section end================== */
+   /* ================= How to find us section start================== */
+	.how-to-find-us-wrapper {
+		padding: 44px 0;
+   }
+   /* ================= How to find us section end================== */
+   /* ================= footer section start================== */
+	.copy-right-info {
+		text-align: center;
+   }
+	.list-unstyled {
+		justify-content: center !important;
+		margin-top: 10px;
+   }
+   /* ================= footer section end================== */
 }
-.list-unstyled {
-	justify-content: center !important;
-	margin-top: 10px;
-}
-/* ================= footer section end==================  */
-	
-}
-
 @media (max-width: 767.98px) {
-
-	/* =================Header area start==================  */
+   /* =================Header area start================== */
 	.left-navbar {
 		flex-basis: 30%;
-	  }
-	  .cart-btn-info{
+   }
+	.cart-btn-info{
 		display: none !important;
-	}
+   }
 	.rotate-text-wrapper {
 		display: none !important;
-	}
-	/* =================Header area end==================  */  
-	/* =================Banner section css start==================  */
+   }
+   /* =================Header area end================== */
+   /* =================Banner section css start================== */
 	.hot-deal-caption {
 		height: 125px;
-	}
+   }
 	.hot-deal-slider{
 		height: 125px;
-	}
-	/* =================Banner section css end==================  */  
-
-
-   /* =================spcial section css end==================  */  
+   }
+   /* =================Banner section css end================== */
+   /* =================spcial section css end================== */
 	.product-content, .cw-card-content {
 		padding: 25px 15px;
-	}
+   }
 	.product-list-info, .cw-card-content-info {
 		min-height: auto;
-	}
+   }
 	.cw-card-content-info{
 		margin-bottom: 15px;
-	}
+   }
 	.special-section .nav-tabs{
 		flex-direction: unset !important;
-	}
+   }
 	.special-section .nav-tabs .nav-link {
-		border-bottom: 0; 
-		border-left: 0; 
-		border-right: 0; 
-	}
-	/* =================spcial section css end==================  */  
-
-	/* =================blog section start==================  */
+		border-bottom: 0;
+		border-left: 0;
+		border-right: 0;
+   }
+   /* =================spcial section css end================== */
+   /* =================blog section start================== */
 	.blog-content-info {
 		min-height: auto;
-	}
-	/* =================blog section end==================  */
-	
-		/* =================application section start==================  */
-		.application-section, .cta-section {
-			min-height: 400px;
-		}
-		/* =================application section start==================  */
-        /* =================Faq section start==================  */
-		.accordion {
-			padding: 30px;
-		}
-		/* =================Faq section end==================  */
-
-	
-
-	
+   }
+   /* =================blog section end================== */
+   /* =================application section start================== */
+	.application-section, .cta-section {
+		min-height: 400px;
+   }
+   /* =================application section start================== */
+   /* =================Faq section start================== */
+	.accordion {
+		padding: 30px;
+   }
+   /* =================Faq section end================== */
 }
-
 @media (max-width: 575.98px) {
-
-	/* =================Header area start==================  */
-	/* cart menu */
+   /* =================Header area start================== */
+   /* cart menu */
 	.cart-dropdown-menu {
 		left: auto;
 		right: 0;
 		width: 400px;
 		max-width: calc(100vw - 24px);
-	}
-	/* =================Header area start==================  */
-
-	/* =================Banner section css  start==================  */
-		.main-title {
-			font-size: 50px;
-			line-height: 0.9;
-		}
-		.hot-deal {
-			width: 100%;
-		}
-		.hot-deal-caption {
-			display: none !important;
-		}
-/* =================Banner section css  end==================  */
-
-/* =================about section css start==================  */  
-		.popup-video {
-			top: 0;
-			left: 50%;
-		}
-/* =================about section css end==================  */  
-
-	
+   }
+   /* =================Header area start================== */
+   /* =================Banner section css start================== */
+	.main-title {
+		font-size: 50px;
+		line-height: 0.9;
+   }
+	.hot-deal {
+		width: 100%;
+   }
+	.hot-deal-caption {
+		display: none !important;
+   }
+   /* =================Banner section css end================== */
 }
-
 @media (max-width: 479.98px) {
-
-		/* title css*/
-		.title-md {
-			font-size: 20px;
-		}
-		.title-sm {
-			font-size: 18px;
-		}
-		
-
-	/* =================Banner section css start==================  */
+   /* title css*/
+	.title-md {
+		font-size: 20px;
+   }
+	.title-sm {
+		font-size: 18px;
+   }
+   /* =================Banner section css start================== */
 	.hot-deal-slider{
 		height: 115px;
-	}
-	/* =================Banner section css end==================  */  
-
-	
-	
+   }
+   /* =================Banner section css end================== */
 }
-
 @media (max-width: 383.98px) {
-
-		/* =================Banner section css start==================  */
-		.hot-deal-slider{
-			height: 96px;
-		}
-		/* =================Banner section css end==================  */  
-		/* =================about section css start==================  */  
-		
-		.about-us-video {
-			min-height: 200px;
-		}
-		
-		/* =================about section css end==================  */  
-		/* =================Why people choose us section start==================  */
-		.customer-info {
-			padding: 10px 20px;
-		}
-		.customer-review {
-			padding: 0 20px;
-		}
-
-		/* =================Why people choose us section end==================  */
-
-		/* =================application section start==================  */
-
-		.application-button .btn-1 {
-			margin-left: 0 !important;
-		}
-		/* =================Faq section start==================  */
-		.accordion {
-			padding: 15px;
-		}
-		/* =================Faq section end==================  */
-		
-		/* ================= footer section start==================  */
-		.submit-btn {
-			font-size: 12px;
-		}
-/* ================= footer section end==================  */
-	
-
+   /* =================Banner section css start================== */
+	.hot-deal-slider{
+		height: 96px;
+   }
+   /* =================Banner section css end================== */
+   /* =================about section css start================== */
+	.about-us-video {
+		min-height: 200px;
+   }
+   /* =================about section css end================== */
+   /* =================Why people choose us section start================== */
+	.customer-info {
+		padding: 10px 20px;
+   }
+	.customer-review {
+		padding: 0 20px;
+   }
+   /* =================Why people choose us section end================== */
+   /* =================application section start================== */
+	.application-button .btn-1 {
+		margin-left: 0 !important;
+   }
+   /* =================Faq section start================== */
+	.accordion {
+		padding: 15px;
+   }
+   /* =================Faq section end================== */
+   /* ================= footer section start================== */
+	.submit-btn {
+		font-size: 12px;
+   }
+   /* ================= footer section end================== */
 }
