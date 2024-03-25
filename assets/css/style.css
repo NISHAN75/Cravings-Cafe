@@ -297,7 +297,6 @@ input {
   border: 0;
   background-color: var(--color-dark);
   border: 1px solid var(--color-deep-white);
-  width: 80%;
   font-size: 18px;
   color: var(--color-deep-white);
   display: inline-block;
@@ -1066,6 +1065,9 @@ max-width: 657px;
 }
 .footer-section a:hover {
   color: var(--color-deep-white);
+}
+.footer-section input {
+  width: 80%;
 }
 
 .footer-link {

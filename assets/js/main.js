@@ -98,10 +98,6 @@
         var customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
             slidesPerView: 1,
             spaceBetween: 0,
-            pagination: {
-                el: ".swiper-pagination",
-                type: "fraction",
-            },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",

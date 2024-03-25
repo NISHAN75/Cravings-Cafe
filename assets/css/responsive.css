@@ -100,6 +100,15 @@
 	}
 	/* =================Banner section css end==================  */  
 
+	/* ================= footer section start==================  */
+	.footer-section input {
+		width: 70%;
+	}
+	.footer-section .submit-btn {
+		width: 30%;
+	}
+	/* ================= footer section end==================  */
+
 }
 
 @media (max-width: 991.98px) {
@@ -120,10 +129,17 @@
 		font-size: 16px;
 	}
 
+	/* section-padding */
+	.section-padding{
+		padding: 60px 0;
+	}
+
 /* =================Banner section css  start==================  */
 	.main-title {
 		font-size: 65px;
-		line-height: 0.9;
+	}
+	.sub-title {
+		margin-bottom: 0px !important;
 	}
 	.hot-deal {
 		width: 75%;
@@ -164,6 +180,7 @@
 		left: 50%;
 	}
 	.section-title {
+		flex-basis: 100%;
 		margin-bottom: 20px;
 	}
 	.about-content {
@@ -174,6 +191,72 @@
 	}
 	
 /* =================about section css end==================  */  
+
+/* =================slide text  section css start==================  */  
+		.slide-text-section {
+			padding: 30px 0;
+		}
+		.slider-text-wrapper {
+			font-size: 40px;
+		}
+		/* =================slide text section css end==================  */  
+
+		/* =================FAT section css start==================  */  
+		.counter, .counter-wrapper .counter-info .icon {
+			font-size: 40px;
+		}
+		/* =================FAT section css end==================  */  
+
+		/* =================Why people choose us section start==================  */
+		.customer-testimonial-slider{
+			padding-top: 50px;
+		}
+		.customer-info {
+			padding: 20px 30px 0 30px;
+		}
+		.customer-review {
+			padding: 0 30px;
+		}
+		.customer-testimonial-slider .swiper-button-prev, .customer-testimonial-slider .swiper-button-next {
+			height: 50px;
+			width: 50%;
+			left: 0;
+			right: auto;
+			bottom: auto;
+			top: 0;
+			margin: 0;
+			border: 1px solid var(--color-bar);
+			background-color: var(--color-dark);
+		
+		}
+	.customer-testimonial-slider .swiper-button-next {
+		left: auto;
+		right: 0;
+
+	
+	}
+
+	.customer-testimonial-slider .button-inner-text {
+		rotate: 0deg;
+	}
+
+/* =================Why people choose us section end==================  */
+/* ================= How to find us section start==================  */
+
+		.how-to-find-us-wrapper {
+			padding: 44px 0;
+		}
+/* ================= How to find us section end==================  */
+
+/* ================= footer section start==================  */
+.copy-right-info {
+    text-align: center;
+}
+.list-unstyled {
+	justify-content: center !important;
+	margin-top: 10px;
+}
+/* ================= footer section end==================  */
 	
 }
 
@@ -210,7 +293,33 @@
 	.cw-card-content-info{
 		margin-bottom: 15px;
 	}
+	.special-section .nav-tabs{
+		flex-direction: unset !important;
+	}
+	.special-section .nav-tabs .nav-link {
+		border-bottom: 0; 
+		border-left: 0; 
+		border-right: 0; 
+	}
 	/* =================spcial section css end==================  */  
+
+	/* =================blog section start==================  */
+	.blog-content-info {
+		min-height: auto;
+	}
+	/* =================blog section end==================  */
+	
+		/* =================application section start==================  */
+		.application-section, .cta-section {
+			min-height: 400px;
+		}
+		/* =================application section start==================  */
+        /* =================Faq section start==================  */
+		.accordion {
+			padding: 30px;
+		}
+		/* =================Faq section end==================  */
+
 	
 
 	
@@ -250,9 +359,7 @@
 		.title-sm {
 			font-size: 18px;
 		}
-		.title-xs {
-			font-size: 14px;
-		}
+		
 
 	/* =================Banner section css start==================  */
 	.hot-deal-slider{
@@ -278,6 +385,32 @@
 		}
 		
 		/* =================about section css end==================  */  
+		/* =================Why people choose us section start==================  */
+		.customer-info {
+			padding: 10px 20px;
+		}
+		.customer-review {
+			padding: 0 20px;
+		}
+
+		/* =================Why people choose us section end==================  */
+
+		/* =================application section start==================  */
+
+		.application-button .btn-1 {
+			margin-left: 0 !important;
+		}
+		/* =================Faq section start==================  */
+		.accordion {
+			padding: 15px;
+		}
+		/* =================Faq section end==================  */
+		
+		/* ================= footer section start==================  */
+		.submit-btn {
+			font-size: 12px;
+		}
+/* ================= footer section end==================  */
 	
 
 }
