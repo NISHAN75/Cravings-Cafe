@@ -9,6 +9,7 @@
         $(".responsive-navbar .nav-item").click(function(){
             $(".pluse-icon").toggleClass("rotate-icon")
         });
+        
         //   rotate pluse icon click on
     
         //btn mouse hover base on mouse pointer
@@ -29,16 +30,7 @@
         $(".btn-1 , .icon-btn , .rotate-text-inner").mouseleave(function () {
             $(this).find(".inner-text").css("transform", "none");
         });
-        function desktopWorking(){
-            if(window.innerWidth > 991){
-                $('.about-us-video ').addClass("animation-add")
-            
-            }else{
-                $('.about-us-video').remove('animation-add')
-            }
-            
-        }
-        desktopWorking();
+       
         
         // video mouse hover base on mouse pointer
         function moveBtn(wrapper, event) {
@@ -76,6 +68,26 @@
         // });
         
         // swiper active
+        // our-history-slider
+        const our_history = new Swiper(".our-history-slider", {
+            direction: "vertical",
+            slidesPerView: 1,
+            spaceBetween: 30,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                renderCustom: function (swiper, current, total) {
+                    // Get the active slide
+                    const activeSlide = swiper.slides[current];
+        
+                    // Get the data-year attribute of the active slide
+                    const year = activeSlide.getAttribute('data-year');
+        
+                    // Set the custom content of the scrollbar
+                    return year;
+                },
+            },
+            mousewheel: true,
+        });     
         // hot-deal-slider
         const hot_deal_slider = new Swiper(".hot-deal-slider", {
             // Optional parameters
@@ -132,7 +144,7 @@
                 delay: 1000,
             },
         });
-
+        
         // counter up active
         var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
 
@@ -152,6 +164,7 @@
                 offset: "bottom-in-view",
             });
         });
+        
 
         //
         function setCaptionWidth() {
@@ -188,6 +201,14 @@
                 },
             },
         });
+        // time line js active
+        $('#example').horizontalTimeline();
+
+
+
+
+
+
         // Wow JS
         new WOW().init();
 
@@ -216,19 +237,87 @@
             //true or false - should the marquee be duplicated to show an effect of continues flow
             duplicated: true,
             startVisible: true,
-        });  
+        }); 
+        var mySwiper = new Swiper(".swiper", {
+            speed: 500,
+            direction: "horizontal",
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              type: "progressbar"
+            },
+            loop: false,
+            effect: "slide",
+            spaceBetween: 30,
+            on: {
+              init: function () {
+                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+              },
+              slideChangeTransitionStart: function () {
+                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
+              }
+            }
+        });
+        
+        $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
+          mySwiper.slideTo($(this).index());
+          $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+          $(this).addClass("active");
+        });
+        
+        var mySwiper = new Swiper(".swiper", {
+            slidesPerView: 1,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false
+            },
+            speed: 500,
+            direction: "horizontal",
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              type: "progressbar"
+            },
+            loop: false,
+            effect: "slide",
+            spaceBetween: 30,
+            on: {
+              init: function () {
+                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+              },
+              slideChangeTransitionStart: function () {
+                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
+              }
+            }
+          });
+          $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
+            mySwiper.slideTo($(this).index());
+            $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+            $(this).addClass("active");
+          });    
+         
 
-        // gsap scroll smoother is active
-        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-            let smoother = ScrollSmoother.create({
-                wrapper: "#smooth-wrapper",
-                content: "#smooth-content",
-                smooth: 1.35,
-                effects: true,
-                smoothTouch: false,
-                normalizeScroll: false,
-                ignoreMobileResize: true,
-            });
+        // // gsap scroll smoother is active
+        // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+        //     let smoother = ScrollSmoother.create({
+        //         wrapper: "#smooth-wrapper",
+        //         content: "#smooth-content",
+        //         smooth: 1.35,
+        //         effects: true,
+        //         smoothTouch: false,
+        //         normalizeScroll: false,
+        //         ignoreMobileResize: true,
+        //     });
 
 
 
@@ -237,51 +326,51 @@
 })(jQuery);
 
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    // Split text into spans
-    let typeSplit = new SplitType("[text-split]", {
-      types: "words, chars",
-      tagName: "span"
-    });
+// window.addEventListener("DOMContentLoaded", (event) => {
+//     // Split text into spans
+//     let typeSplit = new SplitType("[text-split]", {
+//       types: "words, chars",
+//       tagName: "span"
+//     });
   
-    // Link timelines to scroll position
-    function createScrollTrigger(triggerElement, timeline) {
-      // Reset tl when scroll out of view past bottom of screen
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: "top bottom",
-        onLeaveBack: () => {
-          timeline.progress(0);
-          timeline.pause();
-        }
-      });
-      // Play tl when scrolled into view (60% from top of screen)
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: "top 70%",
-        onEnter: () => timeline.play()
-      });
-    }
-    $("[letters-slide-down]").each(function (index) {
-      let tl = gsap.timeline({ paused: true });
-      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "linear", stagger: { amount: 0.7 } });
-      createScrollTrigger($(this), tl);
-    });
-    $("[scrub-each-word]").each(function (index) {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: $(this),
-          start: "top 90%",
-          end: "top center",
-          scrub: true
-        }
-      });
-      tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "linear", stagger: { each: 0.4 } }); 
-    });
+//     // Link timelines to scroll position
+//     function createScrollTrigger(triggerElement, timeline) {
+//       // Reset tl when scroll out of view past bottom of screen
+//       ScrollTrigger.create({
+//         trigger: triggerElement,
+//         start: "top bottom",
+//         onLeaveBack: () => {
+//           timeline.progress(0);
+//           timeline.pause();
+//         }
+//       });
+//       // Play tl when scrolled into view (60% from top of screen)
+//       ScrollTrigger.create({
+//         trigger: triggerElement,
+//         start: "top 70%",
+//         onEnter: () => timeline.play()
+//       });
+//     }
+//     $("[letters-slide-down]").each(function (index) {
+//       let tl = gsap.timeline({ paused: true });
+//       tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "linear", stagger: { amount: 0.7 } });
+//       createScrollTrigger($(this), tl);
+//     });
+//     $("[scrub-each-word]").each(function (index) {
+//       let tl = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: $(this),
+//           start: "top 90%",
+//           end: "top center",
+//           scrub: true
+//         }
+//       });
+//       tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "linear", stagger: { each: 0.4 } }); 
+//     });
   
-    // Avoid flash of unstyled content
-    gsap.set("[text-split]", { opacity: 1 });
-  });
+//     // Avoid flash of unstyled content
+//     gsap.set("[text-split]", { opacity: 1 });
+//   });
 
 
 

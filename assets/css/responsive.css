@@ -212,6 +212,12 @@
 		padding: 44px 0;
    }
    /* ================= How to find us section end================== */
+
+   /* ================= our history section end================== */
+   .our-history-slider {
+    height: 1000px;
+}
+   /* ================= our history section end================== */
    /* ================= footer section start================== */
 	.copy-right-info {
 		text-align: center;
