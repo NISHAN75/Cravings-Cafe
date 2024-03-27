@@ -1,376 +1,309 @@
 (function ($) {
-    $(document).ready(function () {
-        // cart dropdown  up slide
-        $(".cart-dropdown-btn").click(function(){
-            $(".cart-dropdown-menu").slideToggle();
-          });
+   $(document).ready(function () {
+      // cart dropdown  up slide
+      $(".cart-dropdown-btn").click(function () {
+         $(".cart-dropdown-menu").slideToggle();
+      });
 
-        //   rotate pluse icon click on
-        $(".responsive-navbar .nav-item").click(function(){
-            $(".pluse-icon").toggleClass("rotate-icon")
-        });
-        
-        //   rotate pluse icon click on
-    
-        //btn mouse hover base on mouse pointer
-        $(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
-            var innerText = $(this).find(".inner-text");
-            var btnOffset = $(this).offset();
-            var btnWidth = $(this).outerWidth();
-            var btnHeight = $(this).outerHeight();
-            var centerX = btnOffset.left + btnWidth / 2;
-            var centerY = btnOffset.top + btnHeight / 2;
-            var offsetX = (event.pageX - centerX) * 0.15; // Adjust as needed
-            var offsetY = (event.pageY - centerY) * 0.2; // Adjust as needed
+      //   rotate pluse icon click on
+      $(".responsive-navbar .nav-item").click(function () {
+         $(".pluse-icon").toggleClass("rotate-icon")
+      });
 
-            var transformValue = "translate3d(" + offsetX + "px, " + offsetY + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
-            innerText.css("transform", transformValue);
-        });
+      //   rotate pluse icon click on
 
-        $(".btn-1 , .icon-btn , .rotate-text-inner").mouseleave(function () {
-            $(this).find(".inner-text").css("transform", "none");
-        });
-       
-        
-        // video mouse hover base on mouse pointer
-        function moveBtn(wrapper, event) {
-            var videoBtn = $(wrapper).find(".popup-video");
-            const pointerPageX = event.pageX;
-            const pointerPageY = event.pageY;
-            const sectionOffsetLeft = $(wrapper).offset().left;
-            const sectionOffsetTop = $(wrapper).offset().top;
-            const leftPixel = pointerPageX - sectionOffsetLeft - videoBtn.width() / 2;
-            const topPixel = pointerPageY - (sectionOffsetTop + $(wrapper).height() / 2) - videoBtn.height() / 2;
+      //btn mouse hover base on mouse pointer
+      $(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
+         var innerText = $(this).find(".inner-text");
+         var btnOffset = $(this).offset();
+         var btnWidth = $(this).outerWidth();
+         var btnHeight = $(this).outerHeight();
+         var centerX = btnOffset.left + btnWidth / 2;
+         var centerY = btnOffset.top + btnHeight / 2;
+         var offsetX = (event.pageX - centerX) * 0.15; // Adjust as needed
+         var offsetY = (event.pageY - centerY) * 0.2; // Adjust as needed
 
-            var transformedValue = "translate3d(" + leftPixel + "px, " + topPixel + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
-            videoBtn.css({
-                transform: transformedValue,
+         var transformValue = "translate3d(" + offsetX + "px, " + offsetY + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+         innerText.css("transform", transformValue);
+      });
+
+      $(".btn-1 , .icon-btn , .rotate-text-inner").mouseleave(function () {
+         $(this).find(".inner-text").css("transform", "none");
+      });
+
+
+      // video mouse hover base on mouse pointer
+      function moveBtn(wrapper, event) {
+         var videoBtn = $(wrapper).find(".popup-video");
+         const pointerPageX = event.pageX;
+         const pointerPageY = event.pageY;
+         const sectionOffsetLeft = $(wrapper).offset().left;
+         const sectionOffsetTop = $(wrapper).offset().top;
+         const leftPixel = pointerPageX - sectionOffsetLeft - videoBtn.width() / 2;
+         const topPixel = pointerPageY - (sectionOffsetTop + $(wrapper).height() / 2) - videoBtn.height() / 2;
+
+         var transformedValue = "translate3d(" + leftPixel + "px, " + topPixel + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+         videoBtn.css({
+            transform: transformedValue,
+         });
+      }
+
+      function playMove() {
+         const windowWidth = $(window).width();
+         if (windowWidth > 991) {
+            $(".about-us-video").mousemove(function (event) {
+               setInterval(moveBtn(this, event), 100);
             });
-        }
-        function playMove(){
-            const windowWidth = $(window).width();
-            if(windowWidth > 991){
-                $(".about-us-video").mousemove(function (event) {
-                    setInterval(moveBtn(this, event), 100);
-                });
-                $(".about-us-video").mouseleave(function () {
-                    $(this).find(".popup-video").css({
-                        transform: "translateX(-50%) translateY(-50%)",
-                        left: "0",
-                        top: "50%",
-                    });
-                });
-            }
-        }
-        playMove();
-        // $(window).on("resize", function(){
-        //     playMove();
-        // });
-        
-        // swiper active
-        // our-history-slider
-        const our_history = new Swiper(".our-history-slider", {
-            direction: "vertical",
-            slidesPerView: 1,
-            spaceBetween: 30,
-            scrollbar: {
-                el: ".swiper-scrollbar",
-                renderCustom: function (swiper, current, total) {
-                    // Get the active slide
-                    const activeSlide = swiper.slides[current];
-        
-                    // Get the data-year attribute of the active slide
-                    const year = activeSlide.getAttribute('data-year');
-        
-                    // Set the custom content of the scrollbar
-                    return year;
-                },
-            },
-            mousewheel: true,
-        });     
-        // hot-deal-slider
-        const hot_deal_slider = new Swiper(".hot-deal-slider", {
-            // Optional parameters
-            direction: "vertical",
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 3000, // Autoplay delay in milliseconds
-                disableOnInteraction: false, // Prevent autoplay from stopping on user interaction
-            },
-            // And if we need scrollbar
-            scrollbar: {
-                el: ".swiper-scrollbar",
-            },
-        });
-        // most-popular-item-slider
-        var most_popular_item_slider = new Swiper(".most-popular-item-slider", {
-            slidesPerView: "auto",
-            spaceBetween: 0,
-            freeMode: true,
-            loop: true,
-            allowTouchMove: false,
-            speed: 10000,
-            autoplay: {
-                delay: 0,
-            },
-        });
-        // our-sponsor-slider
-        var our_sponsor_slider = new Swiper(".our-sponsor-slider", {
-            slidesPerView: 6,
-            freeMode: true,
-            loop: true,
-            allowTouchMove: false,
-            speed: 10000,
-            autoplay: {
-                delay: 0,
-            },
-        });
-        // customer-testimonial-slider
-        var customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        // header-offcanvas-inner-slider
-        var customer_testimonial_slider = new Swiper(".header-offcanvas-inner-slider", {
-            slidesPerView: 3,
-            spaceBetween: 15,
-            autoplay: {
-                delay: 1000,
-            },
-        });
-        
-        // counter up active
-        var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
-
-        var $counters = $(".counter");
-
-        /* Start counting, do this on DOM ready or with Waypoints. */
-        $counters.each(function (ignore, counter) {
-            var waypoint = new Waypoint({
-                element: $(this),
-                handler: function () {
-                    counterUp(counter, {
-                        duration: 3000,
-                        delay: 5,
-                    });
-                    this.destroy();
-                },
-                offset: "bottom-in-view",
+            $(".about-us-video").mouseleave(function () {
+               $(this).find(".popup-video").css({
+                  transform: "translateX(-50%) translateY(-50%)",
+                  left: "0",
+                  top: "50%",
+               });
             });
-        });
-        
+         }
+      }
+      playMove();
+      // $(window).on("resize", function(){
+      //     playMove();
+      // });
 
-        //
-        function setCaptionWidth() {
-            var windowWidth = $(window).width();
-            var bannerContainer = $(".banner-section .container");
-            var containerWidth = bannerContainer.outerWidth();
+      // swiper active
+      // our-history-slider
+      const our_history = new Swiper(".our-history-slider", {
+         direction: "vertical",
+         slidesPerView: 1,
+         spaceBetween: 30,
+         scrollbar: {
+            el: ".swiper-scrollbar",
+            renderCustom: function (swiper, current, total) {
+               // Get the active slide
+               const activeSlide = swiper.slides[current];
 
-            var rightOffsetWidth = $(window).width() - bannerContainer.offset().left - containerWidth;
-            var additionalWidth = 12; // Additional fixed width
-            var captionWidth = windowWidth - containerWidth - rightOffsetWidth + additionalWidth;
+               // Get the data-year attribute of the active slide
+               const year = activeSlide.getAttribute('data-year');
 
-            $(".hot-deal-caption").css("width", captionWidth + "px");
-        }
-
-        // Call the function initially
-        setCaptionWidth();
-
-        // Call the function when the window is resized
-        $(window).resize(function () {
-            setCaptionWidth();
-        });
-
-        // magnific Popup
-        $(".trigger-popup").magnificPopup({
-            type: "iframe",
-            iframe: {
-                markup: '<div class="mfp-iframe-scaler">' + '<div class="mfp-close"></div>' + '<iframe class="mfp-iframe" frameborder="0" allow="autoplay"></iframe>' + "</div>",
-                patterns: {
-                    youtube: {
-                        index: "youtube.com/",
-                        id: "v=",
-                        src: "https://www.youtube.com/embed/%id%?autoplay=1",
-                    },
-                },
+               // Set the custom content of the scrollbar
+               return year;
             },
-        });
-        // time line js active
-        $('#example').horizontalTimeline();
+         },
+         mousewheel: true,
+      });
+      // hot-deal-slider
+      const hot_deal_slider = new Swiper(".hot-deal-slider", {
+         // Optional parameters
+         direction: "vertical",
+         slidesPerView: 1,
+         spaceBetween: 30,
+         loop: true,
+         autoplay: {
+            delay: 3000, // Autoplay delay in milliseconds
+            disableOnInteraction: false, // Prevent autoplay from stopping on user interaction
+         },
+         // And if we need scrollbar
+         scrollbar: {
+            el: ".swiper-scrollbar",
+         },
+      });
+      // most-popular-item-slider
+      var most_popular_item_slider = new Swiper(".most-popular-item-slider", {
+         slidesPerView: "auto",
+         spaceBetween: 0,
+         freeMode: true,
+         loop: true,
+         allowTouchMove: false,
+         speed: 10000,
+         autoplay: {
+            delay: 0,
+         },
+      });
+      // our-sponsor-slider
+      var our_sponsor_slider = new Swiper(".our-sponsor-slider", {
+         slidesPerView: 6,
+         freeMode: true,
+         loop: true,
+         allowTouchMove: false,
+         speed: 10000,
+         autoplay: {
+            delay: 0,
+         },
+      });
+      // customer-testimonial-slider
+      var customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
+         slidesPerView: 1,
+         spaceBetween: 0,
+         navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+         },
+      });
+      // header-offcanvas-inner-slider
+      var customer_testimonial_slider = new Swiper(".header-offcanvas-inner-slider", {
+         slidesPerView: 3,
+         spaceBetween: 15,
+         autoplay: {
+            delay: 1000,
+         },
+      });
+
+      // counter up active
+      var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
+
+      var $counters = $(".counter");
+
+      /* Start counting, do this on DOM ready or with Waypoints. */
+      $counters.each(function (ignore, counter) {
+         var waypoint = new Waypoint({
+            element: $(this),
+            handler: function () {
+               counterUp(counter, {
+                  duration: 3000,
+                  delay: 5,
+               });
+               this.destroy();
+            },
+            offset: "bottom-in-view",
+         });
+      });
 
 
+      //
+      function setCaptionWidth() {
+         var windowWidth = $(window).width();
+         var bannerContainer = $(".banner-section .container");
+         var containerWidth = bannerContainer.outerWidth();
+
+         var rightOffsetWidth = $(window).width() - bannerContainer.offset().left - containerWidth;
+         var additionalWidth = 12; // Additional fixed width
+         var captionWidth = windowWidth - containerWidth - rightOffsetWidth + additionalWidth;
+
+         $(".hot-deal-caption").css("width", captionWidth + "px");
+      }
+
+      // Call the function initially
+      setCaptionWidth();
+
+      // Call the function when the window is resized
+      $(window).resize(function () {
+         setCaptionWidth();
+      });
+
+      // magnific Popup
+      $(".trigger-popup").magnificPopup({
+         type: "iframe",
+         iframe: {
+            markup: '<div class="mfp-iframe-scaler">' + '<div class="mfp-close"></div>' + '<iframe class="mfp-iframe" frameborder="0" allow="autoplay"></iframe>' + "</div>",
+            patterns: {
+               youtube: {
+                  index: "youtube.com/",
+                  id: "v=",
+                  src: "https://www.youtube.com/embed/%id%?autoplay=1",
+               },
+            },
+         },
+      });
+      // time line js active
+      $('#example').horizontalTimeline();
 
 
+      // Wow JS
+      new WOW().init();
 
+      var textContainer = $(".slider-text-wrapper span");
+      var words = textContainer.text().split(" ");
+      textContainer.empty();
 
-        // Wow JS
-        new WOW().init();
-
-        var textContainer = $(".slider-text-wrapper span");
-        var words = textContainer.text().split(" ");
-        textContainer.empty();
-
-        $.each(words, function (index, word) {
-            var span = $("<span>").text(word + " ");
-            if (index % 2 === 0) {
-                span.addClass("stroked");
-            } else {
-                span.addClass("non-stroked");
+      $.each(words, function (index, word) {
+         var span = $("<span>").text(word + " ");
+         if (index % 2 === 0) {
+            span.addClass("stroked");
+         } else {
+            span.addClass("non-stroked");
+         }
+         textContainer.append(span);
+      });
+      $(".marquee").marquee({
+         //duration in milliseconds of the marquee
+         duration: 50000,
+         //gap in pixels between the tickers
+         gap: 100,
+         //time in milliseconds before the marquee will start animating
+         delayBeforeStart: 0,
+         //'left' or 'right'
+         direction: "left",
+         //true or false - should the marquee be duplicated to show an effect of continues flow
+         duplicated: true,
+         startVisible: true,
+      });
+      var mySwiper = new Swiper(".swiper", {
+         speed: 500,
+         direction: "horizontal",
+         navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+         },
+         pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar"
+         },
+         loop: false,
+         effect: "slide",
+         spaceBetween: 30,
+         on: {
+            init: function () {
+               $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+               $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+            },
+            slideChangeTransitionStart: function () {
+               $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+               $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
             }
-            textContainer.append(span);
-        });
-        $(".marquee").marquee({
-            //duration in milliseconds of the marquee
-            duration: 50000,
-            //gap in pixels between the tickers
-            gap: 100,
-            //time in milliseconds before the marquee will start animating
-            delayBeforeStart: 0,
-            //'left' or 'right'
-            direction: "left",
-            //true or false - should the marquee be duplicated to show an effect of continues flow
-            duplicated: true,
-            startVisible: true,
-        }); 
-        var mySwiper = new Swiper(".swiper-container--timeline", {
-            speed: 500,
-            direction: "horizontal",
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev"
+         }
+      });
+
+      $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
+         mySwiper.slideTo($(this).index());
+         $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+         $(this).addClass("active");
+      });
+
+      var mySwiper = new Swiper(".swiper", {
+         slidesPerView: 1,
+         autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+         },
+         speed: 500,
+         direction: "horizontal",
+         navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+         },
+         pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar"
+         },
+         loop: false,
+         effect: "slide",
+         spaceBetween: 30,
+         on: {
+            init: function () {
+               $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+               $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
             },
-            pagination: {
-              el: ".swiper-pagination",
-              type: "progressbar"
-            },
-            loop: false,
-            effect: "slide",
-            spaceBetween: 30,
-            on: {
-              init: function () {
-                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-                $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
-              },
-              slideChangeTransitionStart: function () {
-                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-                $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
-              }
+            slideChangeTransitionStart: function () {
+               $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+               $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
             }
-        });
-        
-        $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
-          mySwiper.slideTo($(this).index());
-          $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-          $(this).addClass("active");
-        });
-        
-        var mySwiper = new Swiper(".swiper-container--timeline", {
-            slidesPerView: 1,
-            autoplay: {
-              delay: 5000,
-              disableOnInteraction: false
-            },
-            speed: 500,
-            direction: "horizontal",
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev"
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              type: "progressbar"
-            },
-            loop: false,
-            effect: "slide",
-            spaceBetween: 30,
-            on: {
-              init: function () {
-                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-                $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
-              },
-              slideChangeTransitionStart: function () {
-                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-                $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
-              }
-            }
-          });
-          $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
-            mySwiper.slideTo($(this).index());
-            $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-            $(this).addClass("active");
-          });    
-         
-
-        // // gsap scroll smoother is active
-        // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-        //     let smoother = ScrollSmoother.create({
-        //         wrapper: "#smooth-wrapper",
-        //         content: "#smooth-content",
-        //         smooth: 1.35,
-        //         effects: true,
-        //         smoothTouch: false,
-        //         normalizeScroll: false,
-        //         ignoreMobileResize: true,
-        //     });
+         }
+      });
+      $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
+         mySwiper.slideTo($(this).index());
+         $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+         $(this).addClass("active");
+      });
 
 
-
-    });
+   });
 
 })(jQuery);
-
-
-// window.addEventListener("DOMContentLoaded", (event) => {
-//     // Split text into spans
-//     let typeSplit = new SplitType("[text-split]", {
-//       types: "words, chars",
-//       tagName: "span"
-//     });
-  
-//     // Link timelines to scroll position
-//     function createScrollTrigger(triggerElement, timeline) {
-//       // Reset tl when scroll out of view past bottom of screen
-//       ScrollTrigger.create({
-//         trigger: triggerElement,
-//         start: "top bottom",
-//         onLeaveBack: () => {
-//           timeline.progress(0);
-//           timeline.pause();
-//         }
-//       });
-//       // Play tl when scrolled into view (60% from top of screen)
-//       ScrollTrigger.create({
-//         trigger: triggerElement,
-//         start: "top 70%",
-//         onEnter: () => timeline.play()
-//       });
-//     }
-//     $("[letters-slide-down]").each(function (index) {
-//       let tl = gsap.timeline({ paused: true });
-//       tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "linear", stagger: { amount: 0.7 } });
-//       createScrollTrigger($(this), tl);
-//     });
-//     $("[scrub-each-word]").each(function (index) {
-//       let tl = gsap.timeline({
-//         scrollTrigger: {
-//           trigger: $(this),
-//           start: "top 90%",
-//           end: "top center",
-//           scrub: true
-//         }
-//       });
-//       tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "linear", stagger: { each: 0.4 } }); 
-//     });
-  
-//     // Avoid flash of unstyled content
-//     gsap.set("[text-split]", { opacity: 1 });
-//   });
-
-
-
