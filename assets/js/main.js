@@ -238,7 +238,7 @@
             duplicated: true,
             startVisible: true,
         }); 
-        var mySwiper = new Swiper(".swiper", {
+        var mySwiper = new Swiper(".swiper-container--timeline", {
             speed: 500,
             direction: "horizontal",
             navigation: {
@@ -270,7 +270,7 @@
           $(this).addClass("active");
         });
         
-        var mySwiper = new Swiper(".swiper", {
+        var mySwiper = new Swiper(".swiper-container--timeline", {
             slidesPerView: 1,
             autoplay: {
               delay: 5000,
