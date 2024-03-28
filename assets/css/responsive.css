@@ -173,6 +173,14 @@
 		font-size: 40px;
    }
    /* =================slide text section css end================== */
+   /* =================special section css start================== */
+	.right-arrow-icon{
+		right: 10px !important; 
+	}
+	.left-arrow-icon{
+		left: 10px !important;
+	}
+	/* =================special section css end================== */
    /* =================FAT section css start================== */
 	.counter, .counter-wrapper .counter-info .icon {
 		font-size: 40px;
