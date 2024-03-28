@@ -1038,7 +1038,22 @@ max-width: 657px;
   font-size: 14px;
   color: var(--color-storm-grey);
 }
-
+.blog-video-popup{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , 50%);
+}
+.blog-video-wrapper::before{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-dark);
+  opacity: 70%;
+  content: "";
+  mix-blend-mode: multiply;
+}
 /* =================blog section end==================  */
 
 /* =================application section start==================  */
