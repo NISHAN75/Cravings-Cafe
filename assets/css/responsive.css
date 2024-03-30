@@ -231,13 +231,15 @@
     height: 1000px;
 }
    /* ================= our history section end================== */
+   /* ================= blog section start================== */
+	
+	.right-blog-slidebar-wrapper {
+		padding: 0;
+	}
+   /* ================= blog history section end================== */
    /* ================= footer section start================== */
 	.copy-right-info {
 		text-align: center;
-   }
-	.list-unstyled {
-		justify-content: center !important;
-		margin-top: 10px;
    }
    /* ================= footer section end================== */
 }
@@ -284,6 +286,8 @@
 	.blog-content-info {
 		min-height: auto;
    }
+
+   
    /* =================blog section end================== */
    /* =================application section start================== */
 	.application-section, .cta-section {

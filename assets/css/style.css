@@ -375,6 +375,10 @@ input:focus::placeholder {
   stroke: var(--color-deep-white) !important;
   fill: var(--color-deep-white) !important;
 }
+.black-svg svg path {
+  stroke: var(--color-dark) !important;
+  fill: var(--color-dark) !important;
+}
 
 /* nice select css */
 .nice-select:active, .nice-select.open, .nice-select:focus {
@@ -413,6 +417,10 @@ input:focus::placeholder {
   background-color: var(--color-dark);
   z-index: 9999;
 }
+.blog-canvas{
+  background-color: var(--color-deep-white);
+}
+
 .offcanvas-header {
   padding: 20px 30px 0 30px;
 }
@@ -456,7 +464,7 @@ input:focus::placeholder {
   margin-bottom: 0;
   border-bottom: 0;
 }
-.offer-btn {
+.offer-btn , .blog-filter-btn  {
   transition: all 0.3s linear;
   padding: 20px 30px;
 }
@@ -905,7 +913,6 @@ max-width: 657px;
 .cw-card-content {
   padding: 30px 20px;
   border-left: 1px solid var(--color-bar);
-  background: var(--color-deep-white);
 }
 .product-list-info,
 .cw-card-content-info {
@@ -1093,8 +1100,6 @@ max-width: 657px;
   padding: 40px;
 }
 .right-blog-slidebar-wrapper {
-  border-right: 1px solid var(--color-bar);
-  border-left: 1px solid var(--color-bar);
   padding: 30px;
 }
 .side-content-wrapper{
