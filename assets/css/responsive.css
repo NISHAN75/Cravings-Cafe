@@ -78,6 +78,11 @@
 		transform: rotate(0deg);
    }
    /* =================Banner section css end================== */
+   /* =================blog section css start================== */
+   .post-img {
+    width: 100%;
+	}
+   /* =================blog section css end================== */
    /* ================= footer section start================== */
 	.footer-section input {
 		width: 70%;

@@ -13,16 +13,16 @@
    
        //btn mouse hover base on mouse pointer
        $(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
-           var innerText = $(this).find(".inner-text");
-           var btnOffset = $(this).offset();
-           var btnWidth = $(this).outerWidth();
-           var btnHeight = $(this).outerHeight();
-           var centerX = btnOffset.left + btnWidth / 2;
-           var centerY = btnOffset.top + btnHeight / 2;
-           var offsetX = (event.pageX - centerX) * 0.15; // Adjust as needed
-           var offsetY = (event.pageY - centerY) * 0.2; // Adjust as needed
+           let innerText = $(this).find(".inner-text");
+           let btnOffset = $(this).offset();
+           let btnWidth = $(this).outerWidth();
+           let btnHeight = $(this).outerHeight();
+           let centerX = btnOffset.left + btnWidth / 2;
+           let centerY = btnOffset.top + btnHeight / 2;
+           let offsetX = (event.pageX - centerX) * 0.15; // Adjust as needed
+           let offsetY = (event.pageY - centerY) * 0.2; // Adjust as needed
 
-           var transformValue = "translate3d(" + offsetX + "px, " + offsetY + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+           let transformValue = "translate3d(" + offsetX + "px, " + offsetY + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
            innerText.css("transform", transformValue);
        });
 
@@ -42,7 +42,7 @@
        
        // video mouse hover base on mouse pointer
        function moveBtn(wrapper, event) {
-           var videoBtn = $(wrapper).find(".popup-video");
+           let videoBtn = $(wrapper).find(".popup-video");
            const pointerPageX = event.pageX;
            const pointerPageY = event.pageY;
            const sectionOffsetLeft = $(wrapper).offset().left;
@@ -50,7 +50,7 @@
            const leftPixel = pointerPageX - sectionOffsetLeft - videoBtn.width() / 2;
            const topPixel = pointerPageY - (sectionOffsetTop + $(wrapper).height() / 2) - videoBtn.height() / 2;
 
-           var transformedValue = "translate3d(" + leftPixel + "px, " + topPixel + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
+           let transformedValue = "translate3d(" + leftPixel + "px, " + topPixel + "px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)";
            videoBtn.css({
                transform: transformedValue,
            });
@@ -93,7 +93,7 @@
            },
        });
        // most-popular-item-slider
-       var most_popular_item_slider = new Swiper(".most-popular-item-slider", {
+       let most_popular_item_slider = new Swiper(".most-popular-item-slider", {
            slidesPerView: "auto",
            spaceBetween: 0,
            freeMode: true,
@@ -105,7 +105,7 @@
            },
        });
        // our-sponsor-slider
-       var our_sponsor_slider = new Swiper(".our-sponsor-slider", {
+       let our_sponsor_slider = new Swiper(".our-sponsor-slider", {
            slidesPerView: 6,
            freeMode: true,
            loop: true,
@@ -116,7 +116,7 @@
            },
        });
        // customer-testimonial-slider
-       var customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
+       let customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
            slidesPerView: 1,
            spaceBetween: 0,
            navigation: {
@@ -125,14 +125,14 @@
            },
        });
        // header-offcanvas-inner-slider
-       var customer_testimonial_slider = new Swiper(".header-offcanvas-inner-slider", {
+       let header_offcanvas = new Swiper(".header-offcanvas-inner-slider", {
            slidesPerView: 3,
            spaceBetween: 15,
            autoplay: {
                delay: 1000,
            },
        });
-       var blog_img_slider = new Swiper(".blog-img-slider", {
+       let blog_img_slider = new Swiper(".blog-img-slider", {
            slidesPerView: 1,
            spaceBetween: 0,
            autoplay: {
@@ -144,13 +144,13 @@
        });
 
        // counter up active
-       var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
+       let counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
 
-       var $counters = $(".counter");
+       let $counters = $(".counter");
 
        /* Start counting, do this on DOM ready or with Waypoints. */
        $counters.each(function (ignore, counter) {
-           var waypoint = new Waypoint({
+           let waypoint = new Waypoint({
                element: $(this),
                handler: function () {
                    counterUp(counter, {
@@ -165,13 +165,13 @@
 
        //
        function setCaptionWidth() {
-           var windowWidth = $(window).width();
-           var bannerContainer = $(".banner-section .container");
-           var containerWidth = bannerContainer.outerWidth();
+           let windowWidth = $(window).width();
+           let bannerContainer = $(".banner-section .container");
+           let containerWidth = bannerContainer.outerWidth();
 
-           var rightOffsetWidth = $(window).width() - bannerContainer.offset().left - containerWidth;
-           var additionalWidth = 12; // Additional fixed width
-           var captionWidth = windowWidth - containerWidth - rightOffsetWidth + additionalWidth;
+           let rightOffsetWidth = $(window).width() - bannerContainer.offset().left - containerWidth;
+           let additionalWidth = 12; // Additional fixed width
+           let captionWidth = windowWidth - containerWidth - rightOffsetWidth + additionalWidth;
 
            $(".hot-deal-caption").css("width", captionWidth + "px");
        }
@@ -211,15 +211,88 @@
                },
            },
        });
+       //gallery
+       $('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+			}
+		}
+	   });
+      // justified Gallery active
+      $("#blog-gallary").justifiedGallery({
+        rowHeight : 70,
+        lastRow : 'justify',
+        margins : 5,
+        captions: false    
+      });
+      $("#blog-gallary2").justifiedGallery({
+        rowHeight : 70,
+        lastRow : 'justify',
+        margins : 5,
+        captions: false    
+      });
+      //   nice select
+      $('select').niceSelect();
+
+      // price filter
+        let lowerSlider = $('#lower');
+        let upperSlider = $('#upper');
+
+        $('#two').val(upperSlider.val());
+        $('#one').val(lowerSlider.val());
+
+        let lowerVal = parseInt(lowerSlider.val());
+        let upperVal = parseInt(upperSlider.val());
+
+        upperSlider.on('input', function() {
+            lowerVal = parseInt(lowerSlider.val());
+            upperVal = parseInt(upperSlider.val());
+
+            if (upperVal < lowerVal + 4) {
+                lowerSlider.val(upperVal - 4);
+                if (lowerVal == lowerSlider.attr('min')) {
+                    upperSlider.val(4);
+                }
+            }
+            $('#two').val($(this).val());
+        });
+
+        lowerSlider.on('input', function() {
+            lowerVal = parseInt(lowerSlider.val());
+            upperVal = parseInt(upperSlider.val());
+            if (lowerVal > upperVal - 4) {
+                upperSlider.val(lowerVal + 4);
+                if (upperVal == upperSlider.attr('max')) {
+                    lowerSlider.val(parseInt(upperSlider.attr('max')) - 4);
+                }
+            }
+            $('#one').val($(this).val());
+        });   
+
+
+
+
+
        // Wow JS
        new WOW().init();
 
-       var textContainer = $(".slider-text-wrapper span");
-       var words = textContainer.text().split(" ");
+       let textContainer = $(".slider-text-wrapper span");
+       let words = textContainer.text().split(" ");
        textContainer.empty();
 
        $.each(words, function (index, word) {
-           var span = $("<span>").text(word + " ");
+           let span = $("<span>").text(word + " ");
            if (index % 2 === 0) {
                span.addClass("stroked");
            } else {
