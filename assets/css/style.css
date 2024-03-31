@@ -401,11 +401,41 @@ input:focus::placeholder {
 .nice-select:after {
   border-bottom: 2px solid var(--color-dark);
   border-right: 2px solid var(--color-dark);
-  height: 10px;
-  margin-top: -9px;
-  right: 17px;
-  width: 10px;
+
 }
+
+/* noUiSlider css */
+.noUi-horizontal {
+  height: 10px;
+}
+.noUi-connect {
+  background: var(--color-dark);
+}
+.noUi-handle:after, .noUi-handle:before {
+  background: var(--color-romance);
+}
+.noUi-handle {
+  border: 1px solid var(--color-bar);
+  border-radius: 100%;
+  background: var(--color-romance);
+  box-shadow: inset 0 0 1px var(--color-romance),inset 0 1px 7px var(--color-romance),0 3px 6px -3px var(--color-romance);
+}
+.noUi-horizontal .noUi-handle {
+  width: 20px;
+  height: 20px;
+}
+.noUi-tooltip {
+  border: 1px solid var(--color-bar);
+  border-radius: 5px;
+  background: var(--color-romance);
+  color: var(--color-dark);
+}
+.input-label{
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
 
 /* =================1.default css end==================  */
 /* =================offer section css start==================  */
@@ -1100,7 +1130,7 @@ max-width: 657px;
   padding: 40px;
 }
 .right-blog-slidebar-wrapper {
-  padding: 30px;
+  padding: 60px 30px;
 }
 .side-content-wrapper{
   border-bottom: 1px solid var(--color-bar);
@@ -1113,6 +1143,7 @@ max-width: 657px;
 .side-content-wrapper:last-child{
   border-bottom: 0;
 }
+
 .post-img {
   width: 100px;
 }
@@ -1258,7 +1289,11 @@ max-width: 657px;
   background: var(--color-dark);
   padding:10px;
 }
-
+.short-price input[type="number"] {
+  width: 25%;
+  padding: 5px 10px;
+  color: var(--color-romance);
+}
 .price-container {
       display: flex;
     border: 1px solid var(--color-bar);

@@ -278,8 +278,12 @@
                 }
             }
             $('#one').val($(this).val());
-        });   
+        });
 
+        // noui slider active
+        
+
+      
 
 
 
@@ -313,7 +317,50 @@
            duplicated: true,
            startVisible: true,
        });
+       //    noUiSlider active
+        var slider = $('#slider');
+        noUiSlider.create(slider[0], {
+            start: [5, 35], // Initial values
+            connect: true,   // Connect the handles with a line
+            range: {
+                'min': 0,
+                'max': 100
+            },
+            tooltips: true, 
+            format: {
+                to: function (value) {
+                    return Math.round(value); // Round the value to the nearest integer
+                },
+                from: function (value) {
+                    return Math.round(value); // Round the value to the nearest integer
+                }
+            }
+        
+        });
+        // Link slider to input elements
+        var inputMin = $('#inputMin');
+        var inputMax = $('#inputMax');
+    
+        slider[0].noUiSlider.on('update', function (values, handle) {
+            var value = values[handle];
+            if (handle) {
+                inputMax.val(value);
+            } else {
+                inputMin.val(value);
+            }
+        });
+    
+        // Update slider when input values change
+        inputMin.on('change', function () {
+            slider[0].noUiSlider.set([this.value, null]);
+        });
+    
+        inputMax.on('change', function () {
+            slider[0].noUiSlider.set([null, this.value]);
+        });
 
+
+ 
    
        
        
@@ -321,3 +368,4 @@
        
    });
 })(jQuery);
+
