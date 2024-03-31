@@ -19,6 +19,8 @@
 8.Special section css
 9.slide-text section css
 10.Our Chef secion css
+--- single chef ----
+1.signle chef secton
 11.Most Popular item section css
 12.FAT section css
 13.Why people choose us section css
@@ -33,7 +35,7 @@
 ----about us page----
 20.our history section css
 21.charity-event-section
-----Main Menu page----
+----main Menu page----
 20.our history section css
 21.charity-event-section
 20. footer section css
@@ -166,10 +168,6 @@ a:hover {
   color: var(--color-dark);
 }
 
-svg{
-  width: 100%;
-  height: auto;
-}
 /* border */
 .b-top{
   border-top: 1px solid var(--color-bar);
@@ -332,7 +330,7 @@ button{
 /* swiper slider  end */
 
 /* input css */
-input[type="text"],input[type="email"],input[type="tel"],input[type="number"], select , textarea {
+input[type="text"],input[type="email"],input[type="tel"],input[type="number"],input[type="submit"] , input[type="search"] , select , textarea {
   border: 0;
   background-color: transparent;
   border: 1px solid var(--color-dark);
@@ -346,10 +344,11 @@ input[type="text"],input[type="email"],input[type="tel"],input[type="number"], s
   background-color: transparent;
 }
 
+
 input:focus::placeholder {
   opacity: 0;
 } 
-.add-review-input-group .form-group label {
+.form-check-label , label {
   font-size: 18px;
   font-weight: 500;
   color: var(--color-dark);
@@ -375,6 +374,7 @@ input:focus::placeholder {
   background-color: var(--color-deep-white);
   border: var(--bs-border-width) solid var(--color-bar);
 }
+
 .form-check-input:checked {
   background-color: var(--color-dark);
   border-color: var(--color-bar);
@@ -382,6 +382,7 @@ input:focus::placeholder {
 .form-check-input[type=checkbox] {
   border-radius: 0;
   box-shadow: none;
+  border-color: var(--color-dark) !important;
 }
 .email-input {
   max-width: 518px;
@@ -390,6 +391,7 @@ input:focus::placeholder {
   border-color: var(--color-bar);
   outline: 0;
 }
+
 
 /* margin bottom */
 .mb-40{
@@ -426,8 +428,11 @@ input:focus::placeholder {
 .nice-select:after {
   border-bottom: 2px solid var(--color-dark);
   border-right: 2px solid var(--color-dark);
-
+  height: 10px;
+  right: 17px;
+  width: 10px;
 }
+
 
 /* noUiSlider css */
 .noUi-horizontal {
@@ -437,13 +442,17 @@ input:focus::placeholder {
   background: var(--color-dark);
 }
 .noUi-handle:after, .noUi-handle:before {
-  background: var(--color-romance);
+  background: var(--color-deep-white);
 }
 .noUi-handle {
   border: 1px solid var(--color-bar);
   border-radius: 100%;
-  background: var(--color-romance);
+  background: var(--color-deep-white);
   box-shadow: inset 0 0 1px var(--color-romance),inset 0 1px 7px var(--color-romance),0 3px 6px -3px var(--color-romance);
+}
+.noUi-touch-area {
+  background: var(--color-deep-white);
+  border-radius: 100px;
 }
 .noUi-horizontal .noUi-handle {
   width: 20px;
@@ -452,7 +461,7 @@ input:focus::placeholder {
 .noUi-tooltip {
   border: 1px solid var(--color-bar);
   border-radius: 5px;
-  background: var(--color-romance);
+  background: var(--color-deep-white);
   color: var(--color-dark);
 }
 .input-label{
@@ -460,7 +469,10 @@ input:focus::placeholder {
   font-weight: 500;
   color: var(--color-dark);
 }
-
+svg{
+  height: 24px;
+  width: 24px;
+}
 
 /* =================1.default css end==================  */
 /* =================offer section css start==================  */
@@ -1027,6 +1039,9 @@ max-width: 657px;
 }
 
 /* =================Our Chef section end==================  */
+/* =================single Chef section start==================  */
+
+/* =================single Chef section end==================  */
 
 /* =================Most Popular item section start==================  */
 .most-popular-item-slider .swiper-wrapper,
@@ -1107,6 +1122,9 @@ max-width: 657px;
 
 .blog-content {
   padding: 30px 20px;
+}
+.signle-blog-content {
+  padding: 30px 0;
 }
 .blog-content .title-md {
   min-height: 63px;
@@ -1195,6 +1213,14 @@ max-width: 657px;
 }
 
 /* =================blog section end==================  */
+/* =================single blog section start==================  */
+.comment-author-img {
+  height: 80px;
+  width: 80px;
+}
+
+
+/* =================single blog section end==================  */
 
 
 
@@ -1298,7 +1324,7 @@ max-width: 657px;
 /* ================= charity events section end==================  */
 
 
-/* ================= Main Menu  section start==================  */
+/* ================= main Menu  section start==================  */
 
 
 .short-price input[type="number"] {
@@ -1307,7 +1333,7 @@ max-width: 657px;
   text-align: center;
 }
 
-/* ================= Main Menu  section end==================  */
+/* ================= main Menu  section end==================  */
 /* =================single  product section start==================  */
 .additional-tabs .nav-item{
   flex-basis: 25%;
@@ -1357,6 +1383,11 @@ max-width: 657px;
 }
 .about-footer-info {
   max-width: 567px;
+}
+.subscribe-info input{
+  border: 1px solid var(--color-bar);
+  color: var(--color-deep-white);
+  background-color: var(--color-dark);
 }
 .copy-right-area {
   border-top: 1px solid var(--color-bar);

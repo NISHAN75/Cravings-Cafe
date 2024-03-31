@@ -324,7 +324,7 @@
             connect: true,   // Connect the handles with a line
             range: {
                 'min': 0,
-                'max': 100
+                'max': 300
             },
             tooltips: true, 
             format: {

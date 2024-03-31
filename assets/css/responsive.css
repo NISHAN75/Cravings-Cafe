@@ -83,6 +83,7 @@
     width: 100%;
 	}
    /* =================blog section css end================== */
+  
    /* ================= footer section start================== */
 	.footer-section input {
 		width: 70%;
@@ -241,7 +242,12 @@
 	.right-blog-slidebar-wrapper {
 		padding: 0;
 	}
-   /* ================= blog history section end================== */
+   /* ================= blog  section end================== */
+    /* =================single blog section css start================== */
+	.share svg {
+		margin-top: 10px;
+	}
+   /* =================single blog section css end================== */
    /* ================= footer section start================== */
 	.copy-right-info {
 		text-align: center;
