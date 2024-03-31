@@ -469,10 +469,7 @@ input:focus::placeholder {
   font-weight: 500;
   color: var(--color-dark);
 }
-svg{
-  height: 24px;
-  width: 24px;
-}
+
 
 /* =================1.default css end==================  */
 /* =================offer section css start==================  */
@@ -503,7 +500,7 @@ svg{
   padding: 40px 30px;
 }
 .offcanvas-header .btn-close {
-  padding: 0;
+  padding: 5px;
 }
 
 .off-canvas-offer .current-price {
@@ -1218,6 +1215,21 @@ max-width: 657px;
   height: 80px;
   width: 80px;
 }
+a.share svg {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+.comment-author-wrapper {
+  max-width: 557px;
+}
+.reaply-box > .comment-inner-wrapper{
+  padding: 0;
+}
+.reaply-box .comment-inner-wrapper {
+  padding-left: 40px;
+}
+
 
 
 /* =================single blog section end==================  */

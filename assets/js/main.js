@@ -318,25 +318,28 @@
            startVisible: true,
        });
        //    noUiSlider active
-        var slider = $('#slider');
-        noUiSlider.create(slider[0], {
-            start: [5, 35], // Initial values
-            connect: true,   // Connect the handles with a line
-            range: {
-                'min': 0,
-                'max': 300
-            },
-            tooltips: true, 
-            format: {
-                to: function (value) {
-                    return Math.round(value); // Round the value to the nearest integer
+        var slider = $('.price-filter');
+        $(slider).each(function(index, item){
+            noUiSlider.create(item, {
+                start: [5, 35], // Initial values
+                connect: true,   // Connect the handles with a line
+                range: {
+                    'min': 0,
+                    'max': 300
                 },
-                from: function (value) {
-                    return Math.round(value); // Round the value to the nearest integer
+                tooltips: true, 
+                format: {
+                    to: function (value) {
+                        return Math.round(value); // Round the value to the nearest integer
+                    },
+                    from: function (value) {
+                        return Math.round(value); // Round the value to the nearest integer
+                    }
                 }
-            }
-        
+            
+            });
         });
+        
         // Link slider to input elements
         var inputMin = $('#inputMin');
         var inputMax = $('#inputMax');

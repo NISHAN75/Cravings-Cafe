@@ -243,11 +243,7 @@
 		padding: 0;
 	}
    /* ================= blog  section end================== */
-    /* =================single blog section css start================== */
-	.share svg {
-		margin-top: 10px;
-	}
-   /* =================single blog section css end================== */
+    
    /* ================= footer section start================== */
 	.copy-right-info {
 		text-align: center;
@@ -300,6 +296,11 @@
 
    
    /* =================blog section end================== */
+   /* =================single blog section css start================== */
+	.comment-author-wrapper {
+		max-width: 400px;
+	  }
+   /* =================single blog section css end================== */
    /* =================application section start================== */
 	.application-section, .cta-section {
 		min-height: 400px;
