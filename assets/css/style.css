@@ -25,6 +25,8 @@
 14.Faq section css
 14.our sponsors section css
 16.blog section css
+--- single blog ----
+1.additional information section css
 17.application section css
 18.CTA Section
 19.How to find us section css
@@ -330,23 +332,30 @@ button{
 /* swiper slider  end */
 
 /* input css */
-input {
+input[type="text"],input[type="email"],input[type="tel"],input[type="number"], select , textarea {
   border: 0;
-  background-color: var(--color-dark);
-  border: 1px solid var(--color-deep-white);
+  background-color: transparent;
+  border: 1px solid var(--color-dark);
   font-size: 18px;
-  color: var(--color-deep-white);
+  color: var(--color-dark);
   display: inline-block;
   font-weight: 500;
-  padding: 10px 5px 10px 5px;
-  width: 100%;
+  padding: 10px 15px;
 }
-input:focus {
-  background-color: var(--color-dark);
+input[type="text"],input[type="email"],input[type="tel"],input[type="number"], select , textarea:focus {
+  background-color: transparent;
 }
 
 input:focus::placeholder {
   opacity: 0;
+} 
+.add-review-input-group .form-group label {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+.add-review-input-group .form-group input[type="text"],input[type="email"]{
+  width: 80%;
 }
 .submit-btn {
   margin: 0;
@@ -361,9 +370,25 @@ input:focus::placeholder {
   font-weight: 700;
   text-transform: uppercase;
 }
-
-.emial-input {
+.form-check-input {
+  --bs-form-check-bg: var(--bs-body-bg);
+  background-color: var(--color-deep-white);
+  border: var(--bs-border-width) solid var(--color-bar);
+}
+.form-check-input:checked {
+  background-color: var(--color-dark);
+  border-color: var(--color-bar);
+}
+.form-check-input[type=checkbox] {
+  border-radius: 0;
+  box-shadow: none;
+}
+.email-input {
   max-width: 518px;
+}
+.form-check-input:focus {
+  border-color: var(--color-bar);
+  outline: 0;
 }
 
 /* margin bottom */
@@ -868,15 +893,15 @@ max-width: 657px;
 }
 
 /* =================Special section start==================  */
-.special-section .nav-tabs {
+.nav-tabs {
   border-bottom: 0;
 }
-.special-section .nav-tabs .nav-link.active {
+.nav-tabs .nav-link.active {
   color: var(--color-dark);
   background-color: var(--color-deep-white);
   border-color: var(--color-bar);
 }
-.special-section .nav-tabs .nav-link {
+.nav-tabs .nav-link {
   border-radius: 0;
   border: 0;
   margin: 0;
@@ -904,12 +929,12 @@ max-width: 657px;
   top: 50%;
   transform: translate(100%, -50%);
 }
-.special-section .nav-link:focus,
-.special-section .nav-link:hover {
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
   color: var(--color-dark);
 }
-.special-section .nav-link:hover .right-arrow-icon,
-.special-section .nav-tabs .nav-link.active .right-arrow-icon,
+.nav-tabs .nav-link:hover .right-arrow-icon,
+.nav-tabs .nav-link.active .right-arrow-icon,
 .offer-btn:hover .right-arrow-icon , .pagination-btn:hover .right-arrow-icon , .pagination-btn:hover .left-arrow-icon{
   transform: translate(0%, -50%);
   visibility: visible;
@@ -1171,6 +1196,8 @@ max-width: 657px;
 
 /* =================blog section end==================  */
 
+
+
 /* =================application section start==================  */
 .application-section,
 .cta-section {
@@ -1273,222 +1300,28 @@ max-width: 657px;
 
 /* ================= Main Menu  section start==================  */
 
-.filter-price {
-  width: 100%;
-  border: 0;
-  padding: 0;
-  margin: 0; 
-}
 
-.price-title {
-  position: relative;
-  color: var(--color-deep-white);
-  font-size: 14px;
-  line-height: 1.2em;
-  font-weight: 400;
-  background: var(--color-dark);
-  padding:10px;
-}
 .short-price input[type="number"] {
   width: 25%;
   padding: 5px 10px;
-  color: var(--color-romance);
-}
-.price-container {
-      display: flex;
-    border: 1px solid var(--color-bar);
-    padding: 5px;
-    margin-left: 57px;
-  width:100px;
-}
-
-.price-field {
-  position: relative;
-  width: 100%;
-  height: 36px;
-  box-sizing: border-box;
-  padding-top: 15px;
-  padding-left: 0px;
-}
-
-.price-field input[type=range] {
-    position: absolute;
-}
-
-/* Reset style for input range */
-
-.price-field input[type=range] {
-  width: 100%;
-  -webkit-appearance: none;
-  padding: 12px;
-}
-
-.price-field input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-}
-
-.price-field input[type=range]:active,
-.price-field input[type=range]:focus {
-  outline: 0;
-}
-
-.price-field input[type=range]::-ms-track {
-  width: 188px;
-  height: 2px; 
-  border: 0;
-  outline: 0;
-  box-sizing: border-box;
-  border-radius: 5px;
-  pointer-events: none;
-  background: transparent;
-  border-color: transparent;
-  color: red;
-  border-radius: 5px;
-}
-
-/* Style toddler input range */
-
-.price-field input[type=range]::-webkit-slider-thumb { 
-  /* WebKit/Blink */
-    position: relative;
-    -webkit-appearance: none;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    border-radius: 50%;
-    height: 10px;
-    width: 10px;
-    margin-top: -4px;
-    background-color: var(--color-deep-white);
-    cursor: pointer;
-    cursor: pointer;
-    pointer-events: all;
-    z-index: 100;
-}
-
-.price-field input[type=range]::-moz-range-thumb { 
-  /* Firefox */
-  position: relative;
-  appearance: none;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  margin-top: -5px;
-  background-color: var(--color-deep-white);
-  cursor: pointer;
-  cursor: pointer;
-  pointer-events: all;
-  z-index: 100;
-}
-
-.price-field input[type=range]::-ms-thumb  { 
-  /* IE */
-  position: relative;
-  appearance: none;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  margin-top: -5px;
-  background-color: #242424;
-  cursor: pointer;
-  cursor: pointer;
-  pointer-events: all;
-  z-index: 100;
-}
-
-/* Style track input range */
-
-.price-field input[type=range]::-webkit-slider-runnable-track { 
-  /* WebKit/Blink */
-  width: 188px;
-  height: 2px;
-  cursor: pointer;
-  background: #555;
-  border-radius: 5px;
-}
-
-.price-field input[type=range]::-moz-range-track { 
-  /* Firefox */
-  width: 188px;
-  height: 2px;
-  cursor: pointer;
-  background: #242424;
-  border-radius: 5px;
-}
-
-.price-wrap {
-    display: flex;
-    color: var(--color-dark);
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Style for input value block */
-
-.price-wrap {
-  display: flex;
-  color: var(--color-dark);
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.price-wrap-1, 
-.price-wrap-2 {
-  display: flex;
-  margin-left: 0px;
-}
-
-.price-title {
-  margin-right: 5px;
-}
-
-.price-wrap_line {
-    margin: 6px 0px 5px 5px;
-}
-
-.price-wrap #one, 
-.price-wrap #two {
-  width: 30px;
-  text-align: right;
-  margin: 0;
-  padding: 0;
-  margin-right: 2px;
-  background:  0;
-  border: 0;
-  outline: 0;
-  color: #242424;
-  font-family: 'Karla', 'Arial', sans-serif;
-  font-size: 14px;
-  line-height: 1.2em;
-  font-weight: 400;
-}
-
-.price-wrap label {
-    text-align: right;
-    margin-top: 6px;
-    padding-left: 5px;
-}
-
-/* Style for active state input */
-    
-.price-field input[type=range]:hover::-webkit-slider-thumb {
-  box-shadow: 0 0 0 0.5px #242424;
-  transition-duration: 0.3s;
-}
-
-.price-field input[type=range]:active::-webkit-slider-thumb {
-  box-shadow: 0 0 0 0.5px #242424;
-  transition-duration: 0.3s;
+  text-align: center;
 }
 
 /* ================= Main Menu  section end==================  */
-
+/* =================single  product section start==================  */
+.additional-tabs .nav-item{
+  flex-basis: 25%;
+}
+.additional-tabs .nav-item .nav-link{
+  width: 100%;
+}
+.add-to-card input {
+  text-align: center;
+  border-radius: 100px;
+  width: 120px;
+  padding: 14px 5px;
+}
+/* =================single product section end==================  */
 
 
 

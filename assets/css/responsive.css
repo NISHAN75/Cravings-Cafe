@@ -231,6 +231,11 @@
     height: 1000px;
 }
    /* ================= our history section end================== */
+   /* =================single  product section start==================  */
+	.additional-tabs .nav-item{
+		flex-basis: 50%;
+	}
+  /* =================single product section end==================  */
    /* ================= blog section start================== */
 	
 	.right-blog-slidebar-wrapper {
@@ -336,6 +341,17 @@
 		height: 115px;
    }
    /* =================Banner section css end================== */
+   /* =================single  product section start==================  */
+	.additional-tabs .nav-item{
+		flex-basis: 100%;
+	}
+	.add-to-card input {
+		margin-bottom: 10px;
+	}
+	.add-to-card.btn-1.button-2{
+		margin-left: 0px !important;
+	}
+  /* =================single product section end==================  */
 }
 @media (max-width: 383.98px) {
    /* =================Banner section css start================== */
