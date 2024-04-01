@@ -83,6 +83,24 @@
     width: 100%;
 	}
    /* =================blog section css end================== */
+   /* =================single blog section css start================== */
+	.author-card-wrapper {
+		padding: 15px 40px;
+	}
+	.author-card-wrapper .social-link-wrapper h5 {
+		margin-bottom: 0px !important;
+	}
+	.author-card-wrapper .social-link-wrapper {
+		margin-top: 10px;
+	}
+	.author-card-wrapper p{
+		margin-bottom: 0;
+	}
+	.author-card-img {
+		text-align: center;
+	}
+	
+   /* =================single blog section css end================== */
   
    /* ================= footer section start================== */
 	.footer-section input {
@@ -243,6 +261,22 @@
 		padding: 0;
 	}
    /* ================= blog  section end================== */
+    /* =================single blog section css start================== */
+	.author-card{
+		padding: 40px;
+	}
+
+	.author-card-wrapper{
+		padding: 0px;
+		padding-top: 15px;
+		text-align: center;
+	}
+	.author-card-wrapper .social-link-wrapper ul {
+		justify-content: center;
+		margin-top: 15px;
+	}
+	
+   /* =================single blog section css end================== */
     
    /* ================= footer section start================== */
 	.copy-right-info {
@@ -334,6 +368,14 @@
 		display: none !important;
    }
    /* =================Banner section css end================== */
+   /* =================single blog section css start================== */
+	.author-card{
+		padding: 40px 20px;
+	}
+	.share {
+		padding-right: 0;
+	}
+   /* =================single blog section css end================== */
 }
 @media (max-width: 479.98px) {
    /* title css*/
@@ -359,6 +401,7 @@
 		margin-left: 0px !important;
 	}
   /* =================single product section end==================  */
+  
 }
 @media (max-width: 383.98px) {
    /* =================Banner section css start================== */

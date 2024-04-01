@@ -1211,11 +1211,16 @@ max-width: 657px;
 
 /* =================blog section end==================  */
 /* =================single blog section start==================  */
+
 .comment-author-img {
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
 }
-a.share svg {
+.share{
+  padding-right: 30px;
+}
+
+.share svg {
   height: 30px;
   width: 30px;
   display: inline-block;
@@ -1223,13 +1228,15 @@ a.share svg {
 .comment-author-wrapper {
   max-width: 557px;
 }
-.reaply-box > .comment-inner-wrapper{
-  padding: 0;
-}
-.reaply-box .comment-inner-wrapper {
-  padding-left: 40px;
+.comment-wrapper > .reaply-box{
+  padding-left: 0;
+  margin-top: 0;
 }
 
+.reaply-box{
+  padding-left: 40px;
+  margin-top: 10px;
+}
 
 
 /* =================single blog section end==================  */
