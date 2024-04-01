@@ -1054,7 +1054,7 @@ max-width: 657px;
 
 /* =================Most Popular item section end==================  */
 /* =================FAT section start==================  */
-.counter,
+.counter, .count-down,
 .counter-wrapper .counter-info .icon , .year-title {
   font-size: 80px;
   color: transparent;
@@ -1082,6 +1082,7 @@ max-width: 657px;
   top: auto;
   margin: 0;
   background: var(--color-ebony2);
+  cursor: pointer;
 }
 .customer-testimonial-slider .swiper-button-next {
   bottom: auto;
@@ -1467,4 +1468,19 @@ max-width: 657px;
 #map {
   height: 400px; /* The height is 400 pixels */
   width: 100%; /* The width is the width of the web page */
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

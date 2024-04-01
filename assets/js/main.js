@@ -10,6 +10,8 @@
        $(".responsive-navbar .nav-item").click(function(){
            $(".pluse-icon").toggleClass("rotate-icon")
        });
+      // header js 
+          
       
        //   rotate pluse icon click on
    
@@ -121,6 +123,7 @@
        let customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
            slidesPerView: 1,
            spaceBetween: 0,
+           loop:true,
            navigation: {
                nextEl: ".swiper-button-next",
                prevEl: ".swiper-button-prev",
@@ -238,9 +241,19 @@
         margins : 5,
         captions: false    
       });
-      
       //   nice select
       $('select').niceSelect();
+      //responsive table  
+      $('.table-1').easyTableA11y({
+        label: 'data-easy-table',
+        selector: '.table-1',
+        view: '786px',
+        css: {
+          trBottomBorder: '1px solid #000',
+          tdMarginRight: '10px !important',
+          tdFontWeight: 'bold'
+        }
+      });
 
       // price filter
         let lowerSlider = $('#lower');
@@ -282,33 +295,67 @@
             $('.payment-according .form-check-input').prop('checked', false);
             $(this).find('.form-check-input').prop('checked', true);
         });
-        // Initialize and add the map
-let map;
+        let textContainer = $(".slider-text-wrapper span");
+        let words = textContainer.text().split(" ");
+        textContainer.empty();
+ 
+        $.each(words, function (index, word) {
+            let span = $("<span>").text(word + " ");
+            if (index % 2 === 0) {
+                span.addClass("stroked");
+            } else {
+                span.addClass("non-stroked");
+            }
+            textContainer.append(span);
+        });
+        $(".marquee").marquee({
+            //duration in milliseconds of the marquee
+            duration: 50000,
+            //gap in pixels between the tickers
+            gap: 100,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0,
+            //'left' or 'right'
+            direction: "left",
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            duplicated: true,
+            startVisible: true,
+        });
+        //    noUiSlider active
+         var slider = $('.price-filter');
+         $(slider).each(function(index, item){
+             noUiSlider.create(item, {
+                 start: [5, 35], // Initial values
+                 connect: true,   // Connect the handles with a line
+                 range: {
+                     'min': 0,
+                     'max': 300
+                 },
+                 tooltips: true, 
+                 format: {
+                     to: function (value) {
+                         return Math.round(value); // Round the value to the nearest integer
+                     },
+                     from: function (value) {
+                         return Math.round(value); // Round the value to the nearest integer
+                     }
+                 }
+             
+             });
+         });
 
-async function initMap() {
-  // The location of Uluru
-  const position = { lat: -25.344, lng: 131.031 };
-  // Request needed libraries.
-  //@ts-ignore
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        //  header scroll active
 
-  // The map, centered at Uluru
-  map = new Map(document.getElementById("map"), {
-    zoom: 4,
-    center: position,
-    mapId: "DEMO_MAP_ID",
-  });
+         $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if (scroll > 0) {
+              $('.header-area').addClass('scrolled');
+            } else {
+              $('.header-area').removeClass('scrolled');
+            }
+          });
 
-  // The marker, positioned at Uluru
-  const marker = new AdvancedMarkerElement({
-    map: map,
-    position: position,
-    title: "Uluru",
-  });
-}
-
-initMap();
+       
 
 
 
@@ -317,83 +364,7 @@ initMap();
        // Wow JS
        new WOW().init();
 
-       let textContainer = $(".slider-text-wrapper span");
-       let words = textContainer.text().split(" ");
-       textContainer.empty();
-
-       $.each(words, function (index, word) {
-           let span = $("<span>").text(word + " ");
-           if (index % 2 === 0) {
-               span.addClass("stroked");
-           } else {
-               span.addClass("non-stroked");
-           }
-           textContainer.append(span);
-       });
-       $(".marquee").marquee({
-           //duration in milliseconds of the marquee
-           duration: 50000,
-           //gap in pixels between the tickers
-           gap: 100,
-           //time in milliseconds before the marquee will start animating
-           delayBeforeStart: 0,
-           //'left' or 'right'
-           direction: "left",
-           //true or false - should the marquee be duplicated to show an effect of continues flow
-           duplicated: true,
-           startVisible: true,
-       });
-       //    noUiSlider active
-        var slider = $('.price-filter');
-        $(slider).each(function(index, item){
-            noUiSlider.create(item, {
-                start: [5, 35], // Initial values
-                connect: true,   // Connect the handles with a line
-                range: {
-                    'min': 0,
-                    'max': 300
-                },
-                tooltips: true, 
-                format: {
-                    to: function (value) {
-                        return Math.round(value); // Round the value to the nearest integer
-                    },
-                    from: function (value) {
-                        return Math.round(value); // Round the value to the nearest integer
-                    }
-                }
-            
-            });
-        });
-        
-        // Link slider to input elements
-        var inputMin = $('#inputMin');
-        var inputMax = $('#inputMax');
-    
-        slider[0].noUiSlider.on('update', function (values, handle) {
-            var value = values[handle];
-            if (handle) {
-                inputMax.val(value);
-            } else {
-                inputMin.val(value);
-            }
-        });
-    
-        // Update slider when input values change
-        inputMin.on('change', function () {
-            slider[0].noUiSlider.set([this.value, null]);
-        });
-    
-        inputMax.on('change', function () {
-            slider[0].noUiSlider.set([null, this.value]);
-        });
-
-
- 
-   
-       
-       
-       
+          
        
    });
 })(jQuery);
