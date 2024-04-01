@@ -37,7 +37,8 @@
 21.charity-event-section
 ----main Menu page----
 20.our history section css
-21.charity-event-section
+21.charity event section
+22.checkbox section css
 20. footer section css
 */
 
@@ -181,7 +182,9 @@ a:hover {
 .b-left{
   border-left: 1px solid var(--color-bar);
 }
-
+.b-right-none{
+  border-right: 0 !important;
+}
 /* sub-title */
 .sub-title {
   display: inline-block;
@@ -339,6 +342,7 @@ input[type="text"],input[type="email"],input[type="tel"],input[type="number"],in
   display: inline-block;
   font-weight: 500;
   padding: 10px 15px;
+  outline: none;
 }
 input[type="text"],input[type="email"],input[type="tel"],input[type="number"], select , textarea:focus {
   background-color: transparent;
@@ -352,10 +356,9 @@ input:focus::placeholder {
   font-size: 18px;
   font-weight: 500;
   color: var(--color-dark);
+  padding-bottom: 5px;
 }
-.add-review-input-group .form-group input[type="text"],input[type="email"]{
-  width: 80%;
-}
+
 .submit-btn {
   margin: 0;
   border: 0;
@@ -1169,11 +1172,10 @@ max-width: 657px;
 .blog-quote-wrapper{
   padding: 40px;
 }
-.right-blog-slidebar-wrapper {
+.cf-right-card {
   padding: 60px 30px;
 }
-.side-content-wrapper{
-  border-bottom: 1px solid var(--color-bar);
+.side-content-wrapper , .cf-order-wrapper{
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -1368,6 +1370,42 @@ max-width: 657px;
 }
 /* =================single product section end==================  */
 
+/* =================checkbox section css start==================  */
+.payment-according{
+  padding: 0;
+  background-color: transparent;
+}
+.payment-according .accordion-item {
+  background-color:transparent;
+  border: 0px solid var(--color-bar) !important;
+}
+.payment-according  .accordion-body {
+  background-color:transparent;
+  padding: 0;
+}
+.payment-according .accordion-item .accordion-button{
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.payment-according .accordion-button:not(.collapsed)::after , .payment-according .accordion-button::after{
+  display: none;
+}
+.payment-according .form-check-label{
+  cursor: pointer;
+}
+.form-check-label a:hover {
+  text-decoration: none !important;
+}
+
+/* =================checkbox section css end==================  */
+/* =================contact section css start==================  */
+.cf-contact-form-wrapper .form-group button{
+  max-width: 138px;
+}
+/* =================contact section css end==================  */
+
 
 
 /* ================= footer section start==================  */
@@ -1425,3 +1463,8 @@ max-width: 657px;
   text-decoration: none !important;
 }
 /* ================= footer section end==================  */
+
+#map {
+  height: 400px; /* The height is 400 pixels */
+  width: 100%; /* The width is the width of the web page */
+}
