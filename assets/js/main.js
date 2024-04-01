@@ -230,18 +230,13 @@
 		}
 	   });
       // justified Gallery active
-      $("#blog-gallary").justifiedGallery({
+      $(".blog-gallary").justifiedGallery({
         rowHeight : 70,
         lastRow : 'justify',
         margins : 5,
         captions: false    
       });
-      $("#blog-gallary2").justifiedGallery({
-        rowHeight : 70,
-        lastRow : 'justify',
-        margins : 5,
-        captions: false    
-      });
+      
       //   nice select
       $('select').niceSelect();
 
