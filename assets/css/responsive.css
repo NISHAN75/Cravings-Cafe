@@ -277,6 +277,11 @@
 	}
 	
    /* =================single blog section css end================== */
+   /* =================view cart section css end================== */
+   .cf-right-card.view-card-right-wrapper{
+	padding: 40px 30px;
+    }
+   /* =================view cart section css end================== */
     
    /* ================= footer section start================== */
 	.copy-right-info {

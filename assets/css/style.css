@@ -39,6 +39,8 @@
 20.our history section css
 21.charity event section
 22.checkbox section css
+23.view card section css
+23.thank you section css
 20. footer section css
 */
 
@@ -1405,7 +1407,50 @@ max-width: 657px;
 .cf-contact-form-wrapper .form-group button{
   max-width: 138px;
 }
+#map {
+  height: 500px; 
+  width: 100%;
+}
 /* =================contact section css end==================  */
+
+
+/* view cart section css start */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--color-dark);
+}
+
+
+td, th {
+  border-bottom: 1px solid var(--color-bar);
+  text-align: left;
+  padding: 15px 8px;
+}
+.view-cart-table .cart-delete-btn svg path {
+  stroke: var(--color-dark);
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.product-quantity input {
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+}
+
+.minus svg , .plus svg {
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* view cart section css end */
+
+/*=================  thank you section start ================= */
+/*=================  thank you section end ================= */
+
 
 
 
@@ -1465,22 +1510,3 @@ max-width: 657px;
 }
 /* ================= footer section end==================  */
 
-#map {
-  height: 400px; /* The height is 400 pixels */
-  width: 100%; /* The width is the width of the web page */
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
