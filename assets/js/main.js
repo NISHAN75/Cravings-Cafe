@@ -1,6 +1,6 @@
 (function ($) {
    $(document).ready(function () {
-    gsap.registerPlugin(ScrollSmoother);
+    gsap.registerPlugin(ScrollSmoother , ScrollTrigger);
     let smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
@@ -9,6 +9,27 @@
         smoothTouch: false,
         normalizeScroll: false,
         ignoreMobileResize: true,
+    });
+    gsap.to(".header-overlay", {
+        y: "0%", // TranslateY 0%
+        duration: 1, // Adjust the duration as needed
+        scrollTrigger: {
+            trigger: ".header-area",
+            start: "top top", // When the top of the trigger element hits the top of the viewport
+            end: "bottom top", // When the top of the trigger element hits the bottom of the viewport
+            scrub: 1, // Smoothly animates between scroll positions
+            onToggle: self => {
+                const isTriggered = self.isActive;
+                console.log(isTriggered);
+                if (isTriggered) {
+                    // Add your class when trigger is activated
+                    document.querySelector('.navbar-nav').classList.add('your-class');
+                } else {
+                    // Remove your class when trigger is deactivated
+                    document.querySelector('.navbar-nav').classList.remove('your-class');
+                }
+            }
+        }
     });
 
        // cart dropdown  up slide
@@ -354,16 +375,7 @@
              });
          });
 
-        //  header scroll active
-         $(window).scroll(function() {
-            var scroll = $(window).scrollTop();
-            if (scroll > 0) {
-              $('.header-area').addClass('scrolled');
-            } else {
-              $('.header-area').removeClass('scrolled');
-            }
-          });
-
+     
         //  counter up   base on minus and pluse
         $('.minus').click(function(){
             let inputElement = $(this).closest('.product-quantity').find("input");
@@ -382,68 +394,58 @@
         });
 
         // map js
-        async function initMap() {
-            // Request needed libraries.
-            const { Map } = await google.maps.importLibrary("maps");
-            const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-                "marker",
-            );
+        // async function initMap() {
+        //     // Request needed libraries.
+        //     const { Map } = await google.maps.importLibrary("maps");
+        //     const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+        //         "marker",
+        //     );
         
-            map = new Map(document.getElementById("map"), {
-                center: { lat: 47.65196191658531, lng: -122.30716770065949 },
-                zoom: 19,
-                tilt: 67.5,
-                heading: 45,
-                mapId: "6ff586e93e18149f",
-            });
+        //     map = new Map(document.getElementById("map"), {
+        //         center: { lat: 47.65196191658531, lng: -122.30716770065949 },
+        //         zoom: 19,
+        //         tilt: 67.5,
+        //         heading: 45,
+        //         mapId: "6ff586e93e18149f",
+        //     });
         
-            // Define custom map styles
-            const customMapStyles = [
-                { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
-                { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
-                { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
-                { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c9b2a6" }] },
-                // Add more custom styles here for different features
-                // Example:
-                // { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
-                // { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
-            ];
+        //     // Define custom map styles
+        //     const customMapStyles = [
+        //         { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
+        //         { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
+        //         { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
+        //         { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c9b2a6" }] },
+        //         // Add more custom styles here for different features
+        //         // Example:
+        //         // { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
+        //         // { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
+        //     ];
         
-            // Create a StyledMapType object
-            const styledMapType = new google.maps.StyledMapType(customMapStyles, { name: "Styled Map" });
+        //     // Create a StyledMapType object
+        //     const styledMapType = new google.maps.StyledMapType(customMapStyles, { name: "Styled Map" });
         
-            // Set the styled map to the map instance
-            map.mapTypes.set("styled_map", styledMapType);
-            map.setMapTypeId("styled_map");
+        //     // Set the styled map to the map instance
+        //     map.mapTypes.set("styled_map", styledMapType);
+        //     map.setMapTypeId("styled_map");
         
-            // Add marker
-            const pin = new PinElement({
-                background: "#090b19",
-                borderColor: "#090b19",
-                glyphColor: "#eeede8",
-                scale: 2.0,
-            });
+        //     // Add marker
+        //     const pin = new PinElement({
+        //         background: "#090b19",
+        //         borderColor: "#090b19",
+        //         glyphColor: "#eeede8",
+        //         scale: 2.0,
+        //     });
         
-            const markerView = new AdvancedMarkerElement({
-                map,
-                content: pin.element,
-                // Set altitude to 20 meters above the ground.
-                position: { lat: 47.65170843460547, lng: -122.30754, altitude: 20 },
-            });
-        }
+        //     const markerView = new AdvancedMarkerElement({
+        //         map,
+        //         content: pin.element,
+        //         // Set altitude to 20 meters above the ground.
+        //         position: { lat: 47.65170843460547, lng: -122.30754, altitude: 20 },
+        //     });
+        // }
         
-        initMap();
+        // initMap();
         
-        
-
-       
-
-
-
-
-
-       // Wow JS
-       new WOW().init();
 
           
        

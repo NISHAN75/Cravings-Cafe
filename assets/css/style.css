@@ -603,6 +603,15 @@ input:focus::placeholder {
   width: 100%;
   z-index: 999;
 }
+.header-overlay {
+  height: 100%;
+  width: calc( 100% - 24px);
+  left: 12px;
+  background: var(--color-deep-white);
+  z-index: -1;
+  transform: translateY(-100%);
+  transition:all 0.3s linear;
+}
 .left-navbar {
   flex-basis: 75%;
 }
@@ -669,6 +678,7 @@ input:focus::placeholder {
   visibility: hidden;
   transition: all 0.3s linear;
 }
+
 .header-area .navbar-nav .nav-item > .sub-menu {
   left: 0;
   top: 50px;
@@ -1449,6 +1459,9 @@ td, th {
 /* view cart section css end */
 
 /*=================  thank you section start ================= */
+.thank-you .main-caption-wrapper{
+  max-width: 100%;
+}
 /*=================  thank you section end ================= */
 
 

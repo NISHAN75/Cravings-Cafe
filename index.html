@@ -7,16 +7,10 @@
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<!-- swiper bundle min css -->
 		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-		<!-- owl theme default min css -->
-		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 		<!-- nice select css -->
 		<link rel="stylesheet" href="assets/css/nice-select.css">
-		<!-- animate min css -->
-		<link rel="stylesheet" href="assets/css/animate.min.css">
 		<!-- magnific popup css -->
 		<link rel="stylesheet" href="assets/css/magnific-popup.css">
-		<!-- horizontal-timeline css -->
-		<link rel="stylesheet" href="assets/css/horizontal-timeline.css">
 		<!-- style css -->
 		<link rel="stylesheet" href="assets/css/style.css">
 		<!-- responsive css -->
@@ -618,8 +612,8 @@
 		</div>
 		<!-- vertical-bars area end -->
 		<!-- header area start -->
-		<header class="header-area romance-bg">
-			<div class="container">
+		<header class="header-area">
+			<div class="container position-relative z-3">
 				<nav class="navbar navbar-expand-lg p-0">
 					<div class="left-navbar d-flex flex-wrap align-items-center justify-content-between">
 						<a class="navbar-brand roboto-slab title-sm fw-medium p-0 m-0 deep-white-color" href="#">Cravings Cafe.</a>
@@ -751,8 +745,12 @@
 						<span class="bar bar-3"></span>
 						</button>
 					</div>
+					
 				</nav>
+				<div class="header-overlay position-absolute top-0"></div>
+				
 			</div>
+			
 		</header>
 		<!-- header area end -->
 		
@@ -4364,43 +4362,46 @@
 		
 		<!-- jquery min js -->
 		<script src="assets/js/jquery.min.js"></script>
-		<!-- swiper js -->
-		<script src="assets/js/swiper-bundle.min.js"></script>
-		<!-- bootstrap pooper js -->
-		<script src="assets/js/popper.min.js"></script>
 		<!-- bootstrap min pooper js -->
 		<script src="assets/js/bootstrap.min.js"></script>
-		<!-- wow min js -->
-		<script src="assets/js/wow.min.js"></script>
-		<!-- jquery cursor change js -->
-		<script src="assets/js/change-cursor.js"></script>
-		<!-- marquee min js -->
-		<script src="assets/js/marquee.min.js"></script>
-		<!-- magnific-popup min js -->
-		<script src="assets/js/magnific-popup.min.js"></script>
-		<!-- nice Select js -->
-		<script src="assets/js/nice-select.js"></script>
-		<!-- jarallax min js -->
-		<script src="assets/js/jarallax.min.js"></script>
-		<!-- jarallax element min js -->
-		<script src="assets/js/jarallax-element.min.js"></script>
+		<!-- bootstrap pooper js -->
+		<script src="assets/js/popper.min.js"></script>
+		<!-- swiper js -->
+		<script src="assets/js/swiper-bundle.min.js"></script>
 		<!-- waypoints min js -->
 		<script src="assets/js/waypoints.min.js"></script>
 		<!-- countup min js -->
 		<script src="assets/js/countup.min.js"></script>
-		<!-- gsap min js -->
+		<!-- countdown min js -->
+		<script src="assets/js/counter-down.js"></script>
+		<!-- easy table js -->
+		<script src="assets/js/easy-table.min.js"></script>
+		<!-- gsap  js -->
 		<script src="assets/js/gsap.js"></script>
-		<!-- split type min js -->
+		<!-- split type  js -->
 		<script src="assets/js/gsap-split-text.js"></script>
-		<!--  gsap scroll trigger min js -->
+		<!--  gsap scroll trigger  js -->
 		<script src="assets/js/gsap-scroll-trigger.js"></script>
 		<!-- gsap scroll smoother js -->
 		<script src="assets/js/gsap-scroll-smoother.js"></script>
 		<!-- justified Gallery min js -->
 		<script src="assets/js/justifiedGallery.min.js"></script>
-		<!-- counter down js -->
-		<script src="assets/js/counter-down.js"></script>
-
+		<!-- marquee min js -->
+		<script src="assets/js/marquee.min.js"></script>
+		<!-- magnific popup min js -->
+		<script src="assets/js/magnific-popup.min.js"></script>
+		<!-- nice Select js -->
+		<script src="assets/js/nice-select.js"></script>
+		<!-- nouislider min js -->
+		<script src="assets/js/nouislider.min.js"></script>	
+		 <!-- google map js -->
+		 <script>
+			(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+			  key: "AIzaSyAINFvGlrKp8y8XI4gBdUXKNke0cm8k8SY",
+			  v: "weekly",
+			});
+		  </script>
+		
 		<!-- main js -->
 		<script src="assets/js/main.js"></script>
 	</body>
