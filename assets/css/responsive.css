@@ -63,6 +63,9 @@
 	.right-navbar {
 		flex-basis: 50%;
    }
+   .navbar::before{
+	width: 50%;
+   }
 	.main-menu-wrapper{
 		display: none;
    }

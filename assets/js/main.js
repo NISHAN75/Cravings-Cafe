@@ -1,6 +1,9 @@
 (function ($) {
    $(document).ready(function () {
-    gsap.registerPlugin(ScrollSmoother , ScrollTrigger);
+
+
+   
+    gsap.registerPlugin(ScrollSmoother , ScrollTrigger , SplitText);
     let smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
@@ -18,19 +21,47 @@
             start: "top top", // When the top of the trigger element hits the top of the viewport
             end: "bottom top", // When the top of the trigger element hits the bottom of the viewport
             scrub: 1, // Smoothly animates between scroll positions
-            onToggle: self => {
-                const isTriggered = self.isActive;
-                console.log(isTriggered);
-                if (isTriggered) {
-                    // Add your class when trigger is activated
-                    document.querySelector('.navbar-nav').classList.add('your-class');
-                } else {
-                    // Remove your class when trigger is deactivated
-                    document.querySelector('.navbar-nav').classList.remove('your-class');
-                }
+            onEnter: () => {
+                // Add your class when trigger is activated
+                document.querySelector('.header-area').classList.add('change-color');
+            },
+            onLeaveBack: () => {
+                // Remove your class when trigger is deactivated
+                document.querySelector('.header-area').classList.remove('change-color');
             }
         }
     });
+  
+
+
+    function createScrollTriggerForSidebars() {
+        const sidebars = gsap.utils.toArray(".sidebar");
+        
+    
+        sidebars.forEach((sidebar, index) => {
+            const trigger = sidebar;
+            const start = "top +50%";
+            const end = 'bottom bottom';
+            const endTrigger = document.querySelector(".end-sidebar");
+            const pin = true;
+            const invalidateOnRefresh = true;
+    
+            ScrollTrigger.create({
+                trigger: trigger,
+                start: start,
+                end: end,
+                endTrigger: endTrigger,
+                pin: pin,
+                invalidateOnRefresh: invalidateOnRefresh,
+                markers: true // Add markers for visualization
+            });
+        });
+    }
+    
+    createScrollTriggerForSidebars();
+    
+          
+
 
        // cart dropdown  up slide
        $(".cart-dropdown-btn").click(function(){
@@ -41,10 +72,12 @@
        $(".responsive-navbar .nav-item").click(function(){
            $(".pluse-icon").toggleClass("rotate-icon")
        });
-      // header js 
+
+        
+        
           
       
-       //   rotate pluse icon click on
+       //rotate pluse icon click on
    
        //btn mouse hover base on mouse pointer
        $(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
@@ -451,4 +484,7 @@
        
    });
 })(jQuery);
+
+
+
 
