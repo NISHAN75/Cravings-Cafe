@@ -31,34 +31,67 @@
             }
         }
     });
+
+    let globaltitles = new SplitText(".text-animation", {
+        type: "lines",
+        linesClass: "split-line",
+        tag: "span",
+    });
+    let spans = $(".split-line");
+
+    spans.each((index, span) => {
+        let delay = parseFloat($(span).closest(".text-animation").data("delay"));
+        gsap.from(span, {
+            scrollTrigger: {
+                trigger: span,
+                start: "top 100%",
+                end: "bottom 20%",
+                toggleActions: "play pause resume reset",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.out",
+            delay: delay,
+        });
+    });
   
 
 
+    // sticky-sidebar
     function createScrollTriggerForSidebars() {
-        const sidebars = gsap.utils.toArray(".sidebar");
+        // Get all time-line-wrapper elements
+        const wrappers = gsap.utils.toArray(".sticky-sidebar-div");
+        const windowWidth = $(window).width();
+           if(windowWidth > 991){
+            wrappers.forEach((wrapper) => {
+                const sidebar = wrapper.querySelector(".sidebar");
+                const endTrigger = wrapper.querySelector(".end-sidebar");
+    
+                if (sidebar && endTrigger) {
+                    const trigger = sidebar;
+                    const start = "top +70%";
+                    const pin = true;
+                    const invalidateOnRefresh = true;
         
-    
-        sidebars.forEach((sidebar, index) => {
-            const trigger = sidebar;
-            const start = "top +50%";
-            const end = 'bottom bottom';
-            const endTrigger = document.querySelector(".end-sidebar");
-            const pin = true;
-            const invalidateOnRefresh = true;
-    
-            ScrollTrigger.create({
-                trigger: trigger,
-                start: start,
-                end: end,
-                endTrigger: endTrigger,
-                pin: pin,
-                invalidateOnRefresh: invalidateOnRefresh,
-                markers: true // Add markers for visualization
+                    ScrollTrigger.create({
+                        trigger: trigger,
+                        start: start,
+                        end: () => `bottom bottom`,
+                        endTrigger: endTrigger,
+                        pin: pin,
+                        invalidateOnRefresh: invalidateOnRefresh,
+                    });
+                } else {
+                    console.warn("Sidebar or end trigger element not found within wrapper:", wrapper);
+                }
             });
-        });
+           }
+
     }
     
     createScrollTriggerForSidebars();
+
     
           
 
@@ -69,14 +102,12 @@
          });
 
        //   rotate pluse icon click on
-       $(".responsive-navbar .nav-item").click(function(){
-           $(".pluse-icon").toggleClass("rotate-icon")
-       });
-
-        
-        
-          
-      
+       $(".cf-submenu").click(function(event){
+            event.preventDefault();
+            console.log('hi')
+            $(this).find(".pluse-icon").toggleClass("rotate-icon");
+            $(this).next('.sub-menu').slideToggle();
+        });
        //rotate pluse icon click on
    
        //btn mouse hover base on mouse pointer
@@ -164,7 +195,6 @@
        let most_popular_item_slider = new Swiper(".most-popular-item-slider", {
            slidesPerView: "auto",
            spaceBetween: 0,
-           freeMode: true,
            loop: true,
            allowTouchMove: false,
            speed: 10000,
@@ -175,6 +205,7 @@
        // our-sponsor-slider
        let our_sponsor_slider = new Swiper(".our-sponsor-slider", {
            slidesPerView: 6,
+           spaceBetween: 20,
            freeMode: true,
            loop: true,
            allowTouchMove: false,
@@ -182,10 +213,20 @@
            autoplay: {
                delay: 0,
            },
+           breakpoints: {
+            320: {
+              slidesPerView: 3
+            },
+            // when window width is >= 480px
+            992: {
+              slidesPerView: 6
+            }
+          }
        });
        // customer-testimonial-slider
        let customer_testimonial_slider = new Swiper(".customer-testimonial-slider", {
            slidesPerView: 1,
+           autoHeight: true,
            spaceBetween: 0,
            loop:true,
            navigation: {
@@ -197,9 +238,21 @@
        let header_offcanvas = new Swiper(".header-offcanvas-inner-slider", {
            slidesPerView: 3,
            spaceBetween: 15,
+           loop:true,
            autoplay: {
                delay: 1000,
            },
+           breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            }
+          }
        });
        let blog_img_slider = new Swiper(".blog-img-slider", {
            slidesPerView: 1,

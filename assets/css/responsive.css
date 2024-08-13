@@ -66,6 +66,9 @@
    .navbar::before{
 	width: 50%;
    }
+   .responsive-navbar .navbar::before {
+		display: none;
+	}
 	.main-menu-wrapper{
 		display: none;
    }
@@ -179,7 +182,7 @@
    /* =================about section css start================== */
 	.popup-video {
 		top: 50%;
-		left: 50%;
+		left: 50% !important;
    }
 	.section-title {
 		flex-basis: 100%;
@@ -209,7 +212,7 @@
 	}
 	/* =================special section css end================== */
    /* =================FAT section css start================== */
-	.counter, .counter-wrapper .counter-info .icon {
+	.counter,  .count-down , .counter-wrapper .counter-info .icon {
 		font-size: 40px;
    }
    /* =================FAT section css end================== */
@@ -249,9 +252,12 @@
    /* ================= How to find us section end================== */
 
    /* ================= our history section end================== */
-   .our-history-slider {
-    height: 1000px;
-}
+	.our-history-slider {
+		height: 1000px;
+	}
+	.year-title {
+		font-size: 140px;
+	}
    /* ================= our history section end================== */
    /* =================single  product section start==================  */
 	.additional-tabs .nav-item{
@@ -355,6 +361,10 @@
    /* =================Faq section end================== */
 }
 @media (max-width: 575.98px) {
+	/* section-padding */
+	.section-padding{
+	 padding: 40px 0;
+   }
    /* =================Header area start================== */
    /* cart menu */
 	.cart-dropdown-menu {
@@ -412,6 +422,12 @@
   
 }
 @media (max-width: 383.98px) {
+
+   /* =================header section css start================== */
+	.navbar-brand svg {
+		max-width: 100px;
+	}
+   /* =================header section css end================== */
    /* =================Banner section css start================== */
 	.hot-deal-slider{
 		height: 96px;

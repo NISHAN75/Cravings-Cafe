@@ -358,6 +358,9 @@ input:focus::placeholder {
   color: var(--color-dark);
   padding-bottom: 5px;
 }
+.category-list-wrapper label {
+  cursor: pointer;
+}
 
 .submit-btn {
   margin: 0;
@@ -794,6 +797,9 @@ input:focus::placeholder {
 .blog-bg{
   background-image: url('../images/blog/blog-bg.jpg');
 }
+.chef-bg{
+  background-image: url('../images/chefs/chef-working-together-professional-kitchen.jpg');
+}
 .menu-bg{
   background-image: url('../images/menu/menu-bg.jpg');
 }
@@ -1119,6 +1125,10 @@ max-width: 657px;
   -webkit-text-stroke-color: var(--color-dark);
   -webkit-text-stroke-width: 2px;
 }
+.year-title {
+  font-size: 200px;
+  line-height: 1;
+}
 .dark-stroke {
   -webkit-text-stroke-color: var(--color-deep-white);
   -webkit-text-stroke-width: 2px;
@@ -1175,6 +1185,9 @@ max-width: 657px;
 /* =================Why people choose us section end==================  */
 
 /* =================our sponsors section start==================  */
+.our-sponsor-section {
+  margin-top: -1px;
+}
 
 /* =================our sponsors section end==================  */
 /* =================blog section start==================  */
@@ -1190,6 +1203,7 @@ max-width: 657px;
 }
 .blog-content-info {
   min-height: 215px;
+  padding-right: 20px;
 }
 .blog-info-wrapper .hover-overlay,
 .offer-btn .hover-overlay {
@@ -1482,7 +1496,7 @@ table {
 td, th {
   border-bottom: 1px solid var(--color-bar);
   text-align: left;
-  padding: 15px 8px;
+  padding: 15px 0px;
 }
 .view-cart-table .cart-delete-btn svg path {
   stroke: var(--color-dark);
@@ -1514,8 +1528,8 @@ td, th {
 
 
 /* ================= footer section start==================  */
-.footer-section{
-  z-index: 99;
+.footer-section {
+  z-index: 9999999;
 }
 .footer-section a {
   color: var(--color-storm-grey);
