@@ -151,6 +151,9 @@
 	.hot-deal {
 		width: 75%;
    }
+	.hot-food-info {
+		padding: 0 10px;
+	}
 	.hot-food-info .title-sm{
 		font-size: 18px;
    }
@@ -364,7 +367,8 @@
 	/* section-padding */
 	.section-padding{
 	 padding: 40px 0;
-   }
+    }
+
    /* =================Header area start================== */
    /* cart menu */
 	.cart-dropdown-menu {
@@ -428,11 +432,6 @@
 		max-width: 100px;
 	}
    /* =================header section css end================== */
-   /* =================Banner section css start================== */
-	.hot-deal-slider{
-		height: 96px;
-   }
-   /* =================Banner section css end================== */
    /* =================about section css start================== */
 	.about-us-video {
 		min-height: 200px;
