@@ -70,16 +70,17 @@
     
                 if (sidebar && endTrigger) {
                     const trigger = sidebar;
-                    const start = "top +70%";
+                    const start = "top +120px";
                     const pin = true;
                     const invalidateOnRefresh = true;
         
                     ScrollTrigger.create({
                         trigger: trigger,
                         start: start,
-                        end: () => `bottom bottom`,
+                        end: () => `bottom center`,
                         endTrigger: endTrigger,
                         pin: pin,
+                        pinSpacing: false,
                         invalidateOnRefresh: invalidateOnRefresh,
                     });
                 } else {
@@ -183,8 +184,8 @@
            spaceBetween: 30,
            loop: true,
            autoplay: {
-               delay: 3000, // Autoplay delay in milliseconds
-               disableOnInteraction: false, // Prevent autoplay from stopping on user interaction
+               delay: 3000, 
+               disableOnInteraction: false, 
            },
            // And if we need scrollbar
            scrollbar: {
@@ -480,58 +481,62 @@
         });
 
         // map js
-        // async function initMap() {
-        //     // Request needed libraries.
-        //     const { Map } = await google.maps.importLibrary("maps");
-        //     const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-        //         "marker",
-        //     );
-        
-        //     map = new Map(document.getElementById("map"), {
-        //         center: { lat: 47.65196191658531, lng: -122.30716770065949 },
-        //         zoom: 19,
-        //         tilt: 67.5,
-        //         heading: 45,
-        //         mapId: "6ff586e93e18149f",
-        //     });
-        
-        //     // Define custom map styles
-        //     const customMapStyles = [
-        //         { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
-        //         { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
-        //         { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
-        //         { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c9b2a6" }] },
-        //         // Add more custom styles here for different features
-        //         // Example:
-        //         // { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
-        //         // { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
-        //     ];
-        
-        //     // Create a StyledMapType object
-        //     const styledMapType = new google.maps.StyledMapType(customMapStyles, { name: "Styled Map" });
-        
-        //     // Set the styled map to the map instance
-        //     map.mapTypes.set("styled_map", styledMapType);
-        //     map.setMapTypeId("styled_map");
-        
-        //     // Add marker
-        //     const pin = new PinElement({
-        //         background: "#090b19",
-        //         borderColor: "#090b19",
-        //         glyphColor: "#eeede8",
-        //         scale: 2.0,
-        //     });
-        
-        //     const markerView = new AdvancedMarkerElement({
-        //         map,
-        //         content: pin.element,
-        //         // Set altitude to 20 meters above the ground.
-        //         position: { lat: 47.65170843460547, lng: -122.30754, altitude: 20 },
-        //     });
-        // }
-        
-        // initMap();
-        
+        if ($('body').hasClass('contact-page')) {
+            async function initMap() {
+                // Request needed libraries.
+                const { Map } = await google.maps.importLibrary("maps");
+                const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+                    "marker",
+                );
+            
+                map = new Map(document.getElementById("map"), {
+                    center: { lat: 47.65196191658531, lng: -122.30716770065949 },
+                    zoom: 19,
+                    tilt: 67.5,
+                    heading: 45,
+                    mapId: "6ff586e93e18149f",
+                    mapTypeControl: false,
+                });
+            
+                // Define custom map styles
+                const customMapStyles = [
+                    { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
+                    { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
+                    { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
+                    { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c9b2a6" }] },
+                    // Add more custom styles here for different features
+                    // Example:
+                    // { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
+                    // { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
+                ];
+            
+                // Create a StyledMapType object
+                const styledMapType = new google.maps.StyledMapType(customMapStyles, { name: "Styled Map" });
+            
+                // Set the styled map to the map instance
+                map.mapTypes.set("styled_map", styledMapType);
+                map.setMapTypeId("styled_map");
+            
+                // Add marker
+                const pin = new PinElement({
+                    background: "#090b19",
+                    borderColor: "#090b19",
+                    glyphColor: "#eeede8",
+                    scale: 2.0,
+                });
+            
+                const markerView = new AdvancedMarkerElement({
+                    map,
+                    content: pin.element,
+                    // Set altitude to 20 meters above the ground.
+                    position: { lat: 47.65170843460547, lng: -122.30754, altitude: 20 },
+                });
+            }
+            
+            initMap();
+            
+        }
+
 
           
        

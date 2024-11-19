@@ -273,9 +273,11 @@ button{
 .dark-color {
   color: var(--color-dark);
 }
+.get-in-touch  a,
 .deep-white-color {
   color: var(--color-deep-white);
 }
+
 /* section padding */
 .section-padding {
   padding: 120px 0;
@@ -732,7 +734,7 @@ input:focus::placeholder {
 }
 
 .navbar-brand svg {
-  max-width: 180px;
+  max-width: 130px;
   height: 60px;
 }
 .navbar-brand svg g{
@@ -1363,6 +1365,46 @@ max-width: 657px;
 }
 .map-bg {
   background-image: url(../images/find-us/map.jpg);
+}
+.map-area{
+  height: 500px;
+  width: 100%;
+}
+.gm-style > div > div > a ,
+.gm-style .gm-style-cc a,
+  .gm-style .gm-style-cc button ,
+  .gm-style .gm-style-cc span {
+    display: none !important;
+}
+
+.gm-style .gm-style-iw-c {
+    margin: 0;
+    padding: 0;
+}
+.gm-style-iw-ch {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    padding-top: 17px;
+    overflow: hidden;
+    display: none;
+}
+.gm-ui-hover-effect{
+    height: 25px !important;
+    width: 25px !important;
+    margin-right: 15px !important;
+    margin-bottom: 10px !important;
+}
+.gm-style-iw-chr {
+    justify-content: end;
+}
+.gm-style-iw-d{
+    overflow: inherit !important;
+    max-height: 100% !important;
+    height: 100% !important;
+    padding-bottom: 50px !important;
 }
 
 .location-wrapper {
