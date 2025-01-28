@@ -246,6 +246,7 @@ button{
   font-size: 10px;
   padding: 6px 12px;
 }
+
 /* button-2 */
 .btn-1.button-2 {
   background: var(--color-dark);
@@ -419,6 +420,7 @@ input:focus::placeholder {
 .nice-select:active, .nice-select.open, .nice-select:focus {
   border-color: var(--color-bar);
 }
+.date-picker-wrapper input ,
 .nice-select , .nice-select .list {
   -webkit-tap-highlight-color: transparent;
   background-color: var(--color-romance);
@@ -916,6 +918,7 @@ max-width: 657px;
 .hover-overlay.bg-different {
   background-color: var(--color-ebony);
 }
+.resrvation-table-btn:hover .hover-overlay,
 .short-service-wrapper:hover .hover-overlay,
 .nav-link:hover .hover-overlay,
 .product-list-wrapper:hover .hover-overlay,
@@ -1366,10 +1369,6 @@ max-width: 657px;
 .map-bg {
   background-image: url(../images/find-us/map.jpg);
 }
-.map-area{
-  height: 500px;
-  width: 100%;
-}
 .gm-style > div > div > a ,
 .gm-style .gm-style-cc a,
   .gm-style .gm-style-cc button ,
@@ -1413,6 +1412,9 @@ max-width: 657px;
 .location-title {
   font-size: 20px;
   line-height: 1;
+}
+.location-icon {
+  max-width: 16px;
 }
 .call-info svg , .address-wrapper svg , .open-hours-icon svg , .email-info svg {
   height: 16px;
@@ -1625,5 +1627,185 @@ td, th {
 }
 /* ================= footer section end==================  */
 
-    
-  
+/* ================= resrvation section start==================  */
+.resrvation-location-card address svg{
+  max-width: 24px;
+}
+.resrvation-location-card address a{
+  gap: 12px;
+}
+.resrvation-menu-area ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.resrvation-menu-area ul li{
+  flex-basis: 100%;
+}
+.resrvation-menu-area  .nice-select .list ,
+.resrvation-menu-area  .nice-select{
+  width: 100%;
+}
+.resrvation-menu-area  .nice-select .list{
+  max-height: 350px;
+  overflow-y: scroll;
+}
+   
+.date-picker-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+/* date picker */
+.date-picker-wrapper input {
+  cursor: pointer;
+  padding: 8px 30px 8px 18px;
+  width: 100%;
+}
+.date-picker-wrapper ::placeholder {
+  color: var(--color-dark);
+}
+.date-picker-wrapper label {
+  display: block;
+}
+.ui-datepicker {
+  width: 400px;
+}
+.ui-widget-header{
+  color: var(--color-dark);
+}
+.ui-widget-header{
+  background: var(--color-romance);
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  border: 1px solid var(--color-bar);
+  background: var(--color-romance);
+  color: var(--color-dark);
+  text-align: center;
+  transition: all 0.3s linear;
+}
+.ui-state-default, .ui-widget-content .ui-state-default:hover,
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  border: 1px solid var(--color-bar);
+  background: var(--color-dark);
+  color: var(--color-romance);
+}
+/* date picker */
+.resrvation-table-area h6{
+  font-family: "Poppins", sans-serif;
+}
+.resrvation-table-btn {
+  display: block;
+  background-color: var(--color-romance);
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--color-dark);
+  font-weight: 500;
+  transition: all 0.3s linear;
+}
+.resrvation-table-btn:hover{
+  color: var(--color-deep-white);
+}
+.resrvation-table-btn span {
+  display: block;
+}
+.resrvation-table-wrapper .row{
+  --bs-gutter-x:0px;
+  --bs-gutter-y:20px;
+}
+.resrvation-table-info{
+  margin-bottom: 48px;
+}
+.resrvation-table-info:last-child{
+  margin-bottom: 0;
+}
+.resrvation-table-btn .hover-overlay{
+  background-color: var(--color-dark);
+}
+.resrvation-table-btn.disabled{
+  pointer-events: none;
+  opacity: 0.7;
+  background-color: var(--color-dark);
+  color: var(--color-deep-white);
+}
+.reservation-information {
+  padding: 32px 0;
+}
+.common-bg-info{
+  position: relative;
+  z-index: 1;
+}
+.common-bg-info::before{
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 0;
+  height: 100%;
+  width: calc(100% + 80px);
+  background-color: var(--color-romance);
+  z-index: -1;
+  border-top: 1px solid var(--color-bar);
+  border-bottom: 1px solid var(--color-bar);
+}
+.reservation-information span {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reservation-information span:last-child{
+  margin-bottom: 0;
+}
+.reservation-inner-information {
+  padding: 32px 0;
+}
+.reservation-inner-title{
+  font-family: "Poppins", sans-serif;
+}
+.reservation-inner-information-item{
+  margin-bottom: 30px;
+}
+.reservation-inner-information-item:last-child{
+  margin-bottom: 0;
+}
+.transmission-info p{
+  color: var(--color-dark);
+}
+.transmission-info p a{
+  font-weight: 700;
+  text-decoration: underline;
+  transition: all 0.3s linear;
+}
+.transmission-info p a:hover{
+  text-decoration: none;
+}
+.transmission-info p svg {
+  max-width: 150px;
+  max-height: 80px;
+}
+.powered-title{
+  gap: 12px;
+}
+/* ================= resrvation section end==================  */
+
+
+
+ 
+
+/* modal */
+.modal {
+  --bs-modal-width: 1132px;
+}
+.modal-body {
+  padding: 20px 40px;
+}
+.modal-header {
+  border: 0;
+  padding: 20px 40px;
+  padding-top: 40px;
+}
+.modal .btn-close svg path{
+  stroke: #000;
+}
+/* modal */

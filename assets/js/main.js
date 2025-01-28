@@ -55,7 +55,6 @@
             delay: delay,
         });
     });
-  
 
 
     // sticky-sidebar
@@ -171,6 +170,17 @@
            }
        }
        playMove();
+
+    $("#datepicker").datepicker({
+        dateFormat: "DD, MM d, yy",
+        showAnim: "fadeIn",
+        onSelect: function (dateText) {
+            $(this).val(dateText);
+        },
+        }).on("focus", function () {
+        $(this).blur();
+    });
+
        // $(window).on("resize", function(){
        //     playMove();
        // });
@@ -536,9 +546,14 @@
             initMap();
             
         }
+        const $myModal = $('#myModal');
+        const $myInput = $('#myInput');
+        
+        $myModal.on('shown.bs.modal', function () {
+            $myInput.focus();
+        });
 
 
-          
        
    });
 })(jQuery);
