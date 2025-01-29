@@ -92,7 +92,33 @@
     
     createScrollTriggerForSidebars();
 
-    
+    const $reservationMenu = $('.sticky-menu-wrapper');
+
+    function initStickyMenu() {
+        if (window.innerWidth > 991) {
+            ScrollTrigger.create({
+            trigger: '.resrvation-table-area',
+            start: '-220px top',
+            end: 'bottom 200px',
+            pin: $reservationMenu[0],
+            pinSpacing: false,
+            onUpdate: function (self) {
+                if (self.isActive) {
+                $reservationMenu.addClass('active').css('position', 'sticky');
+                } else {
+                $reservationMenu.removeClass('active').css('position', 'static');
+                }
+            },
+            });
+        }
+    }
+    initStickyMenu();
+  
+    $(window).on('resize', function () {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        initStickyMenu();
+    });
+
           
 
 
@@ -213,6 +239,20 @@
                delay: 0,
            },
        });
+       let resrvation_table_slider = new Swiper(".resrvation-table-slider", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+          delay: 3000, 
+          disableOnInteraction: false, // Keeps autoplay running after user interaction
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+        },
+      });
        // our-sponsor-slider
        let our_sponsor_slider = new Swiper(".our-sponsor-slider", {
            slidesPerView: 6,
@@ -491,61 +531,62 @@
         });
 
         // map js
-        if ($('body').hasClass('contact-page')) {
-            async function initMap() {
-                // Request needed libraries.
-                const { Map } = await google.maps.importLibrary("maps");
-                const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-                    "marker",
-                );
-            
-                map = new Map(document.getElementById("map"), {
-                    center: { lat: 47.65196191658531, lng: -122.30716770065949 },
-                    zoom: 19,
-                    tilt: 67.5,
-                    heading: 45,
-                    mapId: "6ff586e93e18149f",
-                    mapTypeControl: false,
-                });
-            
-                // Define custom map styles
-                const customMapStyles = [
-                    { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
-                    { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
-                    { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
-                    { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c9b2a6" }] },
-                    // Add more custom styles here for different features
-                    // Example:
-                    // { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
-                    // { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
-                ];
-            
-                // Create a StyledMapType object
-                const styledMapType = new google.maps.StyledMapType(customMapStyles, { name: "Styled Map" });
-            
-                // Set the styled map to the map instance
-                map.mapTypes.set("styled_map", styledMapType);
-                map.setMapTypeId("styled_map");
-            
-                // Add marker
-                const pin = new PinElement({
-                    background: "#090b19",
-                    borderColor: "#090b19",
-                    glyphColor: "#eeede8",
-                    scale: 2.0,
-                });
-            
-                const markerView = new AdvancedMarkerElement({
-                    map,
-                    content: pin.element,
-                    // Set altitude to 20 meters above the ground.
-                    position: { lat: 47.65170843460547, lng: -122.30754, altitude: 20 },
-                });
+        let mapDiv = document.getElementById("map");
+            if(mapDiv){
+                async function initMap() {
+                    // Request needed libraries.
+                    const { Map } = await google.maps.importLibrary("maps");
+                    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+                        "marker",
+                    );
+                
+                    map = new Map(mapDiv, {
+                        center: { lat: 47.65196191658531, lng: -122.30716770065949 },
+                        zoom: 19,
+                        tilt: 67.5,
+                        heading: 45,
+                        mapId: "6ff586e93e18149f",
+                        mapTypeControl: false,
+                    });
+                
+                    // Define custom map styles
+                    const customMapStyles = [
+                        { elementType: "geometry", stylers: [{ color: "#ebe3cd" }] },
+                        { elementType: "labels.text.fill", stylers: [{ color: "#523735" }] },
+                        { elementType: "labels.text.stroke", stylers: [{ color: "#f5f1e6" }] },
+                        { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c9b2a6" }] },
+                        // Add more custom styles here for different features
+                        // Example:
+                        // { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
+                        // { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
+                    ];
+                
+                    // Create a StyledMapType object
+                    const styledMapType = new google.maps.StyledMapType(customMapStyles, { name: "Styled Map" });
+                
+                    // Set the styled map to the map instance
+                    map.mapTypes.set("styled_map", styledMapType);
+                    map.setMapTypeId("styled_map");
+                
+                    // Add marker
+                    const pin = new PinElement({
+                        background: "#090b19",
+                        borderColor: "#090b19",
+                        glyphColor: "#eeede8",
+                        scale: 2.0,
+                    });
+                
+                    const markerView = new AdvancedMarkerElement({
+                        map,
+                        content: pin.element,
+                        // Set altitude to 20 meters above the ground.
+                        position: { lat: 47.65170843460547, lng: -122.30754, altitude: 20 },
+                    });
+                }
+                
+                initMap();
+                
             }
-            
-            initMap();
-            
-        }
         const $myModal = $('#myModal');
         const $myInput = $('#myInput');
         

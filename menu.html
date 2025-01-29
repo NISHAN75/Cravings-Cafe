@@ -855,7 +855,7 @@
 			<div id="smooth-content">
 				<main >
 					<!-- banner section start -->
-					<section class="banner-section version-2 menu-bg bg-fix  position-relative z-3">
+					<section class="banner-section version-2 menu-bg bg-fix  position-relative z-3 d-flex align-items-end">
 						<div class="vertical-bars position-absolute w-100 h-100 top-0 z-1">
 							<div class="container d-flex flex-wrap justify-content-between h-100">
 								<span></span>
@@ -870,7 +870,7 @@
 								<div class="col-lg-12">
 									<div class="banner-wrapper">
 										<div class="main-caption-wrapper mb-p deep-white-color">
-											<h1  class="main-title deep-white-color  mb-4 pb-2 text-animation overflow-hidden">Menu</h1>
+											<h1  class="main-title deep-white-color mb-0 text-animation overflow-hidden">Menu</h1>
 										</div>
 									</div>
 								</div>
@@ -1391,8 +1391,8 @@
 									</div>
 								</div>
 								<div class="col-lg-6">
-									<div class="other-link-info">
-										<ul class="list-unstyled  d-flex flex-wrap align-items-center justify-content-end">
+									<div class="other-link-info mt-2 mt-lg-0">
+										<ul class="list-unstyled  d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
 											<li>
 												<a href="#" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
 											</li>
@@ -1446,13 +1446,8 @@
 		<script src="assets/js/nice-select.js"></script>
 		<!-- nouislider min js -->
 		<script src="assets/js/nouislider.min.js"></script>	
-		 <!-- google map js -->
-		 <script>
-			(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-			  key: "AIzaSyAINFvGlrKp8y8XI4gBdUXKNke0cm8k8SY",
-			  v: "weekly",
-			});
-		  </script>
+		<!-- google map js -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzPjZ8AW3p7Vs_ZFUbH87Bc2VEgPyYScM&amp;callback=Function.prototype&amp;libraries=geometry&amp;ver=0.1.0" id="google-map-js"></script>
 		<!-- main js -->
 		<script src="assets/js/main.js"></script>
 	</body>

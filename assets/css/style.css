@@ -196,7 +196,11 @@ a:hover {
   letter-spacing: 2px;
   font-family: "Roboto Slab", serif !important;
 }
-
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .mb-p p:last-child {
   margin: 0;
 }
@@ -417,6 +421,7 @@ input:focus::placeholder {
 }
 
 /* nice select css */
+.nice-select:hover,
 .nice-select:active, .nice-select.open, .nice-select:focus {
   border-color: var(--color-bar);
 }
@@ -441,6 +446,7 @@ input:focus::placeholder {
   height: 10px;
   right: 17px;
   width: 10px;
+  margin-top: -6px;
 }
 
 
@@ -617,7 +623,7 @@ input:focus::placeholder {
   z-index: -1;
   transform: translateY(-100%);
   transition: all 0.3s linear;
-  box-shadow: 0px 5px 5px -5px var(--color-dark);
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
 .left-navbar {
   flex-basis: 75%;
@@ -789,24 +795,48 @@ input:focus::placeholder {
 .banner-section {
   min-height: 100vh;
   padding-top: 160px;
+  padding-bottom: 50px;
 }
 .banner-section.version-2 {
   min-height: 420px;
-  
-  background-position: top center;
 }
+.banner-section.bg-top{
+  background-position: top center;
+} 
 .about-bg{
   background-image: url('../images/about/about-bg.jpg');
 }
 .blog-bg{
   background-image: url('../images/blog/blog-bg.jpg');
 }
+.contact-bg{
+  background-image: url('../images/contact/contact-bg.jpg');
+}
 .chef-bg{
-  background-image: url('../images/chefs/chef-working-together-professional-kitchen.jpg');
+  background-image: url('../images/chefs/chef-banner-bg.jpg');
+}
+.checkout-bg{
+  background-image: url('../images/checkout/checkout-bg.jpg');
 }
 .menu-bg{
   background-image: url('../images/menu/menu-bg.jpg');
 }
+.resrvation-bg{
+  background-image: url('../images/reservation/reservation-bg.jpg');
+}
+.event-bg{
+  background-image: url('../images/events/event-bg.jpg');
+}
+.faq-banner-bg{
+  background-image: url('../images/faq/faq-banner-bg.jpg');
+}
+.payment-bg{
+  background-image: url('../images/payment/payment-banner-bg.jpg');
+}
+.single-banner-bg{
+  background-image: url('../images/blog/single-banner-bg.jpg');
+}
+
 /* .banner-wrapper {
 max-width: 657px;
 } */
@@ -1628,10 +1658,10 @@ td, th {
 /* ================= footer section end==================  */
 
 /* ================= resrvation section start==================  */
-.resrvation-location-card address svg{
+.location-inner-info address svg{
   max-width: 24px;
 }
-.resrvation-location-card address a{
+.location-inner-info address a{
   gap: 12px;
 }
 .resrvation-menu-area ul{
@@ -1639,6 +1669,7 @@ td, th {
   margin: 0;
   padding: 0;
 }
+
 .resrvation-menu-area ul li{
   flex-basis: 100%;
 }
@@ -1661,6 +1692,9 @@ td, th {
   cursor: pointer;
   padding: 8px 30px 8px 18px;
   width: 100%;
+}
+.date-picker-wrapper input:hover{
+  border: 1px solid var(--color-bar);
 }
 .date-picker-wrapper ::placeholder {
   color: var(--color-dark);
@@ -1690,10 +1724,42 @@ td, th {
   background: var(--color-dark);
   color: var(--color-romance);
 }
-/* date picker */
-.resrvation-table-area h6{
-  font-family: "Poppins", sans-serif;
+.ui-widget-header .ui-icon{
+  background-image: none;
+
 }
+.ui-widget-header .ui-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 10px;
+  width: 10px;
+  z-index: 1;
+  border-top: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+  margin-top: -2px;
+  transform: rotate(45deg);
+}
+.ui-datepicker .ui-datepicker-prev span {
+  margin-top: -10px;
+  transform: rotate(-135deg);
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	border: 1px solid var(--color-bar);
+	background: transparent;
+	color: var(--color-dark);
+}
+/* date picker */
 .resrvation-table-btn {
   display: block;
   background-color: var(--color-romance);
@@ -1760,6 +1826,7 @@ td, th {
 .reservation-inner-information {
   padding: 32px 0;
 }
+.reservation-cafe-name ,
 .reservation-inner-title{
   font-family: "Poppins", sans-serif;
 }
@@ -1787,6 +1854,93 @@ td, th {
 .powered-title{
   gap: 12px;
 }
+.safety-card-wrapper .hover-overlay{
+  background-color: var(--color-dark);
+}
+.safety-card-wrapper  .short-service-wrapper:hover .icon-btn{
+  background-color: var(--color-deep-white) !important;
+}
+.safety-card-wrapper .short-service-wrapper:hover svg path, 
+.safety-card-wrapper .short-service-wrapper:hover svg path, 
+.safety-card-wrapper .short-service-wrapper:hover svg g path{
+  stroke:var(--color-dark) !important;
+  fill:var(--color-dark) !important;
+}
+.safety-card-wrapper  .short-service-wrapper p,
+.safety-card-wrapper  .short-service-wrapper .title-sm{
+  transition: all 0.3s linear;
+}
+.safety-card-wrapper  .short-service-wrapper:hover .title-sm {
+  color: var(--color-deep-white);
+} 
+.safety-card-wrapper  .short-service-wrapper:hover p{
+  color: var(--color-deep-white);
+}
+.resrvation-menu-area .nice-select:after{
+  margin-top: -8px;
+}
+
+.resrvation-table-item::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  opacity: 0.5;
+}
+.resrvation-table-item img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+.resrvation-area #map .GMAMP-maps-pin-view svg {
+  max-width: 35px;
+}
+.resrvation-area #map{
+  height: 350px;
+}
+.resrvation-directions-link{
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: all 0.3s linear;
+}
+.resrvation-directions-link:last-child{
+  margin-bottom: 0;
+}
+.resrvation-directions-link svg {
+  max-width: 24px;
+  margin-bottom: 2px;
+}
+.social-page-wrapper .footer-link:hover ,
+.resrvation-directions-link:hover{
+  opacity: 0.7;
+}
+
+.next-location-wrapper .location-inner-info::before{
+  content: "";
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  height: 10px;
+  width: 10px;
+  border-top: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
+  z-index: 1;
+  transform: translateY(-50%) rotate(45deg);
+  transition: all 0.3s linear;
+}
+.next-location-wrapper .location-inner-info:hover::before{
+  right: 30px;
+}
+.next-location-wrapper h5{
+  border-bottom: 1px solid var(--color-bar);
+  padding-bottom: 8px;
+}
+
 /* ================= resrvation section end==================  */
 
 
@@ -1809,3 +1963,16 @@ td, th {
   stroke: #000;
 }
 /* modal */
+
+/* sticky menu */
+.sticky-menu-wrapper{
+  z-index: 9;
+  background: transparent;
+  padding: 48px 0 !important;
+}
+.sticky-menu-wrapper.active{
+  background: var(--color-deep-white);
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+}
+
+/* sticky menu */

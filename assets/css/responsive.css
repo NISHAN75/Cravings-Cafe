@@ -299,6 +299,9 @@
 	.copy-right-info {
 		text-align: center;
    }
+   .about-footer-info {
+		max-width: 100%;
+	}
    /* ================= footer section end================== */
 }
 @media (max-width: 767.98px) {
@@ -362,6 +365,13 @@
 		padding: 30px;
    }
    /* =================Faq section end================== */
+
+   /* =================resrvation section start================== */
+   .resrvation-menu-area ul{
+	flex-wrap: wrap;
+	gap: 15px;
+   }
+   /* =================resrvation section end================== */
 }
 @media (max-width: 575.98px) {
 	/* section-padding */
