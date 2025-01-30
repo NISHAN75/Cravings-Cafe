@@ -1,8 +1,44 @@
 (function ($) {
    $(document).ready(function () {
+    var windowOn=$(window);
+    // data bg img
+    $("[data-background]").each(function(){
+        $(this).css("background-image", "url(" + $(this).attr("data-background") + ")");
+    });
+    // offer-btn-wrapper position
+    function updateOfferButtonPosition() {
+        const containerOffsetLeft = $(".vertical-bars .container").offset()?.left || 0;    
+        $(".offer-btn-wrapper").css({
+            "left": containerOffsetLeft + 12 + "px",
+            "opacity" : "1",
+            "visibility":"visible",
+        });
+        }
+        updateOfferButtonPosition();
+        windowOn.resize(function () {
+        updateOfferButtonPosition();
+        });
+    const offerButton = $(".offer-btn-wrapper");
+    const footer = $("footer");
+    if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            offerButton.addClass("active");
+            } else {
+            offerButton.removeClass("active");
+            }
+        });
+        },
+        {
+        root: null, 
+        threshold: 0.1
+        }
+    );
 
-
-   
+    observer.observe(footer[0]);
+    }
     gsap.registerPlugin(ScrollSmoother , ScrollTrigger , SplitText);
     let smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
@@ -31,37 +67,39 @@
             }
         }
     });
-
-    let globaltitles = new SplitText(".text-animation", {
-        type: "lines",
-        linesClass: "split-line",
-        tag: "span",
-    });
-    let spans = $(".split-line");
-
-    spans.each((index, span) => {
-        let delay = parseFloat($(span).closest(".text-animation").data("delay"));
-        gsap.from(span, {
-            scrollTrigger: {
-                trigger: span,
-                start: "top 100%",
-                end: "bottom 20%",
-                toggleActions: "play pause resume reset",
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power2.out",
-            delay: delay,
+    if (window.innerWidth > 991) {
+        let globaltitles = new SplitText(".text-animation", {
+            type: "lines",
+            linesClass: "split-line",
+            tag: "span",
         });
-    });
+        let spans = $(".split-line");
+    
+        spans.each((index, span) => {
+            let delay = parseFloat($(span).closest(".text-animation").data("delay"));
+            gsap.from(span, {
+                scrollTrigger: {
+                    trigger: span,
+                    start: "top 100%",
+                    end: "bottom 20%",
+                    toggleActions: "play pause resume reset",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power2.out",
+                delay: delay,
+            });
+        });    
+    }
+
 
 
     // sticky-sidebar
     function createScrollTriggerForSidebars() {
         // Get all time-line-wrapper elements
         const wrappers = gsap.utils.toArray(".sticky-sidebar-div");
-        const windowWidth = $(window).width();
+        const windowWidth =  windowOn.width();
            if(windowWidth > 991){
             wrappers.forEach((wrapper) => {
                 const sidebar = wrapper.querySelector(".sidebar");
@@ -114,7 +152,7 @@
     }
     initStickyMenu();
   
-    $(window).on('resize', function () {
+    windowOn.on('resize', function () {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         initStickyMenu();
     });
@@ -181,7 +219,7 @@
            });
        }
        function playMove(){
-           const windowWidth = $(window).width();
+           const windowWidth =  windowOn.width();
            if(windowWidth > 991){
                $(".about-us-video").mousemove(function (event) {
                    setInterval(moveBtn(this, event), 100);
@@ -207,7 +245,7 @@
         $(this).blur();
     });
 
-       // $(window).on("resize", function(){
+       //  windowOn.on("resize", function(){
        //     playMove();
        // });
        
@@ -338,11 +376,11 @@
 
        //
        function setCaptionWidth() {
-           let windowWidth = $(window).width();
+           let windowWidth =  windowOn.width();
            let bannerContainer = $(".banner-section .container");
            let containerWidth = bannerContainer.outerWidth();
 
-           let rightOffsetWidth = $(window).width() - bannerContainer.offset().left - containerWidth;
+           let rightOffsetWidth =  windowOn.width() - bannerContainer.offset().left - containerWidth;
            let additionalWidth = 12; // Additional fixed width
            let captionWidth = windowWidth - containerWidth - rightOffsetWidth + additionalWidth;
 
@@ -353,7 +391,7 @@
        setCaptionWidth();
 
        // Call the function when the window is resized
-       $(window).resize(function () {
+       windowOn.resize(function () {
            setCaptionWidth();
        });
 

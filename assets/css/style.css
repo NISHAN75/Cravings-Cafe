@@ -550,15 +550,26 @@ input:focus::placeholder {
   transition: all 0.3s linear;
   padding: 20px 30px;
 }
+.offer-btn{
+  padding: 20px 88px;
+}
 .offer-btn:hover {
   color: var(--color-dark);
 }
 .offer-btn-wrapper {
   position: fixed;
-  width: 100%;
+  width: auto;
   z-index: 99;
   bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear , visibility 0.3s linear;
 }
+.offer-btn-wrapper.active{
+  z-index: -1;
+}
+
 .off-canvas-offer .hot-food-info h5 {
   font-size: 20px;
 }
@@ -651,10 +662,10 @@ input:focus::placeholder {
 .nav-link:focus , .nav-link:hover {
   color: var(--color-deep-white);
 }
-.navbar .nav-link:hover {
+.main-menu-wrapper .navbar-nav > .nav-item:hover >  .nav-link {
   opacity: 0.7;
 }
-.nav-link::before {
+.main-menu-wrapper .navbar-nav > .nav-item >  .nav-link::before {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -665,7 +676,7 @@ input:focus::placeholder {
   height: 1px;
   transition: all 0.3s linear;
 }
-.nav-link:hover::before {
+.main-menu-wrapper .navbar-nav > .nav-item:hover > .nav-link::before {
  width: 100%;
  background: var(--color-deep-white);
 }
@@ -718,9 +729,10 @@ input:focus::placeholder {
   position: absolute;
   top: 0;
   left: 100%;
-  min-width: 160px;
+  min-width: 180px;
   opacity: 0;
   visibility: hidden;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
   transition: all 0.3s linear;
 }
 
@@ -735,9 +747,34 @@ input:focus::placeholder {
 .header-area .navbar-nav  .sub-menu li > .nav-link{
   font-size: 16px;
   color: var(--color-dark);
+  padding: 12px 18px;
+  position: relative;
+  z-index: 3;
 } 
-.header-area .navbar-nav  .sub-menu li:hover > .nav-link{
+.header-area .navbar-nav  .sub-menu li a {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.header-area .navbar-nav  .sub-menu li > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 200px;
+  width: 200px;
   background-color: var(--color-dark);
+  transform: translate(-200px, -200px);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.3s linear;
+}
+.header-area .navbar-nav  .sub-menu > li.active > a::before ,
+.header-area .navbar-nav  .sub-menu > li:hover > a::before {
+  height: 500px;
+  width: 500px;
+}
+.header-area .navbar-nav  .sub-menu li:hover > .nav-link{
   color: var(--color-deep-white);
 }
 
@@ -776,9 +813,7 @@ input:focus::placeholder {
   left: 0;
   width: 100%;
   display: none;
-
 }
-
 .cart-product-info .price-info .current-price {
   font-size: 14px;
   color: var(--color-deep-white);
@@ -786,60 +821,20 @@ input:focus::placeholder {
 .cart-dropdown-menu{
   padding: 16px;
 }
-
-
-
-
 /* =================Header area end==================  */
+
 /* =================Banner section end==================  */
 .banner-section {
   min-height: 100vh;
   padding-top: 160px;
-  padding-bottom: 50px;
 }
 .banner-section.version-2 {
   min-height: 420px;
+  padding-bottom: 50px;
 }
 .banner-section.bg-top{
   background-position: top center;
 } 
-.about-bg{
-  background-image: url('../images/about/about-bg.jpg');
-}
-.blog-bg{
-  background-image: url('../images/blog/blog-bg.jpg');
-}
-.contact-bg{
-  background-image: url('../images/contact/contact-bg.jpg');
-}
-.chef-bg{
-  background-image: url('../images/chefs/chef-banner-bg.jpg');
-}
-.checkout-bg{
-  background-image: url('../images/checkout/checkout-bg.jpg');
-}
-.menu-bg{
-  background-image: url('../images/menu/menu-bg.jpg');
-}
-.resrvation-bg{
-  background-image: url('../images/reservation/reservation-bg.jpg');
-}
-.event-bg{
-  background-image: url('../images/events/event-bg.jpg');
-}
-.faq-banner-bg{
-  background-image: url('../images/faq/faq-banner-bg.jpg');
-}
-.payment-bg{
-  background-image: url('../images/payment/payment-banner-bg.jpg');
-}
-.single-banner-bg{
-  background-image: url('../images/blog/single-banner-bg.jpg');
-}
-
-/* .banner-wrapper {
-max-width: 657px;
-} */
 .video-overlay {
   position: absolute;
   left: 0;
@@ -881,8 +876,6 @@ max-width: 657px;
   width: 2px;
   background: var(--color-ebony) !important;
 }
-
-
 .price-info del {
   font-size: 14px;
 }
@@ -904,11 +897,9 @@ max-width: 657px;
 .rotate {
   transform: rotate(-90deg);
 }
-
 /* =================Banner section end==================  */
 
 /* =================Short-service section start==================  */
-
 .short-service-wrapper {
   border-left: 1px solid rgb(195 195 195 / 15%);
   padding: 30px 0;
@@ -959,7 +950,6 @@ max-width: 657px;
 .short-service-wrapper:hover .icon-btn {
   background-color: var(--color-dark) !important;
 }
-
 /* =================Short-service section end==================  */
 
 /* =================About us section start==================  */
@@ -1002,7 +992,6 @@ max-width: 657px;
 .about-us-video {
   background-image: url("../images/about/about-us.jpg");
 }
-
 /* =================Special section start==================  */
 .nav-tabs {
   border-bottom: 0;
@@ -1051,7 +1040,6 @@ max-width: 657px;
   visibility: visible;
   opacity: 1;
 }
-
 .product-img-wrapper {
   transition: all 0.3s linear;
 }

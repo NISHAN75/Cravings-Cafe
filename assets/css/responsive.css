@@ -273,6 +273,11 @@
 		padding: 0;
 	}
    /* ================= blog  section end================== */
+      /* =================application section start================== */
+	.application-section, .cta-section {
+		min-height: 500px;
+   }
+   /* =================application section start================== */
     /* =================single blog section css start================== */
 	.author-card{
 		padding: 40px;
@@ -469,4 +474,12 @@
 		font-size: 12px;
    }
    /* ================= footer section end================== */
+	.offer-btn{
+		width: 100%;
+		margin-left: -12px;
+	}
+	.offer-btn-wrapper {
+		width: 100%;
+	}
 }
+
