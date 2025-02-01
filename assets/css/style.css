@@ -281,6 +281,10 @@ button{
 .get-in-touch  a,
 .deep-white-color {
   color: var(--color-deep-white);
+  transition: all 0.3s linear;
+}
+.get-in-touch  a:hover{
+  opacity: 0.7;
 }
 
 /* section padding */
@@ -509,6 +513,7 @@ input:focus::placeholder {
 .btn-close {
   --bs-btn-close-color: var(--color-deep-white);
   --bs-btn-close-bg: none;
+  transition: all 0.3s linear;
 }
 
 .btn-close:focus {
@@ -832,6 +837,9 @@ input:focus::placeholder {
   min-height: 420px;
   padding-bottom: 50px;
 }
+.banner-section.version-2 .main-caption-wrapper {
+  max-width: 100%;
+}
 .banner-section.bg-top{
   background-position: top center;
 } 
@@ -855,6 +863,7 @@ input:focus::placeholder {
 .main-caption-wrapper {
   max-width: 657px;
 }
+
 /* slider css */
 .hot-deal {
   margin-top: 120px;
@@ -1437,6 +1446,9 @@ input:focus::placeholder {
 .call-info svg , .address-wrapper svg , .open-hours-icon svg , .email-info svg {
   height: 16px;
   width: 16px;
+}
+.address-wrapper address{
+  margin-bottom: 0;
 }
 /* ================= How to find us section end==================  */
 
