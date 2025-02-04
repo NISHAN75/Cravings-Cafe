@@ -685,7 +685,7 @@ input:focus::placeholder {
  width: 100%;
  background: var(--color-deep-white);
 }
-.change-color .nav-link:hover::before {
+.change-color .navbar-nav > .nav-item:hover > .nav-link::before {
  background: var(--color-dark);
 }
 .right-navbar {
@@ -1081,6 +1081,9 @@ input:focus::placeholder {
 .cw-card-content-info {
   min-height: 80px;
 }
+.product-list-info h5 {
+  text-transform: capitalize;
+}
 /* =================Special section end==================  */
 
 /* =================slide-text section start==================  */
@@ -1287,8 +1290,9 @@ input:focus::placeholder {
 .side-content-wrapper:first-child{
   padding-top: 0;
 }
-.side-content-wrapper:last-child{
+.side-content-wrapper:last-child {
   border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .post-img {
@@ -1447,8 +1451,17 @@ input:focus::placeholder {
   height: 16px;
   width: 16px;
 }
+
 .address-wrapper address{
   margin-bottom: 0;
+}
+.call-info ,
+.address-wrapper{
+  transition: all 0.3s linear;
+}
+.call-info:hover,
+.address-wrapper:hover{
+  opacity: 0.7;
 }
 /* ================= How to find us section end==================  */
 
@@ -1923,7 +1936,7 @@ td, th {
 .next-location-wrapper .location-inner-info::before{
   content: "";
   position: absolute;
-  right: 50px;
+  right: 30px;
   top: 50%;
   height: 10px;
   width: 10px;
@@ -1934,7 +1947,7 @@ td, th {
   transition: all 0.3s linear;
 }
 .next-location-wrapper .location-inner-info:hover::before{
-  right: 30px;
+  right: 15px;
 }
 .next-location-wrapper h5{
   border-bottom: 1px solid var(--color-bar);
