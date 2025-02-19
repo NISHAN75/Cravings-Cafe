@@ -632,25 +632,22 @@
             $myInput.focus();
         });
 
-        let tl = gsap.timeline();
+        $(window).on("load", function () {
+        
+            let tl = gsap.timeline();
 
-        tl.to(".preloader svg", {
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out",
-            delay: 0.5
-        })
-        .to(".preloader", {
-            y: "-100%",
-            duration: 1,
-            ease: "power2.inOut",
-            onComplete: function () {
-                $(".preloader").hide();
-            }
+            tl.to(".preloader svg", {
+                autoAlpha: 0, // Handles both opacity and visibility
+                duration: 1,
+                ease: "power2.out",
+                delay: 0.5
+            })
+            .to(".preloader", {
+                y: "-100%",
+                duration: 1,
+                ease: "power2.inOut"
+            })
         });
-
-
-       
    });
 })(jQuery);
 
