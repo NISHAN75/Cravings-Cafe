@@ -1066,46 +1066,28 @@
 										</div>
 										<div class="cf-order-wrapper">
 											<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Payment Method</h5>
-											<div class="accordion payment-according" id="accordionExample">
-												<div class="accordion-item">
-													<div class="accordion-button" role="button" data-bs-toggle="collapse" data-bs-target="#bankTransfer" aria-expanded="false" aria-controls="bankTransfer">
-														<div class="form-check text-animation overflow-hidden">
-															<input type="checkbox" class="form-check-input" id="exampleCheck11">
-															<label class="form-check-label text-capitalize" for="exampleCheck11">Direct Bank Transfer</label>
-														</div>
+											<div class="payment-method-wrapper">
+												<div class="form-check payment-method-item">
+													<input type="radio" class="form-check-input" name="payment-method" id="bankTransfer">
+													<label class="form-check-label" for="bankTransfer">Direct Bank Transfer</label>
+													<div class="payment-method-caption">
+														<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
 													</div>
-													<div id="bankTransfer" class="accordion-collapse collapse" aria-labelledby="bankTransfer" data-bs-parent="#accordionExample">
-														<div class="accordion-body mb-p">
-															<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-														</div>
+												</div>		
+												<div class="form-check payment-method-item">
+													<input type="radio" class="form-check-input" name="payment-method" id="CashonDelivery">
+													<label class="form-check-label" for="CashonDelivery">Cash on Delivery</label>
+													<div class="payment-method-caption">
+														<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
 													</div>
-												</div>
-												<div class="accordion-item">
-													<div class="accordion-button" role="button" data-bs-toggle="collapse" data-bs-target="#cashOnDelivery" aria-expanded="false" aria-controls="cashOnDelivery">
-														<div class="form-check text-animation overflow-hidden">
-															<input type="checkbox" class="form-check-input" id="exampleCheck12">
-															<label class="form-check-label text-capitalize" for="exampleCheck12">Cash on Delivery</label>
-														</div>
+												</div>		
+												<div class="form-check payment-method-item">
+													<input type="radio" class="form-check-input" name="payment-method" id="paypal">
+													<label class="form-check-label" for="paypal">Paypal</label>
+													<div class="payment-method-caption">
+														<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
 													</div>
-													<div id="cashOnDelivery" class="accordion-collapse collapse" aria-labelledby="cashOnDelivery" data-bs-parent="#accordionExample">
-														<div class="accordion-body mb-p">
-															<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-item">
-													<div class="accordion-button" role="button" data-bs-toggle="collapse" data-bs-target="#paypal" aria-expanded="false" aria-controls="paypal">
-														<div class="form-check text-animation overflow-hidden">
-															<input type="checkbox" class="form-check-input" id="exampleCheck13">
-															<label class="form-check-label text-capitalize" for="exampleCheck13">Paypal</label>
-														</div>
-													</div>
-													<div id="paypal" class="accordion-collapse collapse" aria-labelledby="paypal" data-bs-parent="#accordionExample">
-														<div class="accordion-body mb-p">
-															<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-														</div>
-													</div>
-												</div>
+												</div>		
 											</div>
 											<div class="form-check text-animation overflow-hidden">
 												<input type="checkbox" class="form-check-input" id="exampleCheck17">

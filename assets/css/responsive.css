@@ -1,6 +1,12 @@
 /*
 -------------Breakpoints--------------
-1400, 1199, 991, 767, 575, 480, 360, 320
+1.max width 1399px
+2.max width 1199.98px
+3.max width 991.98px
+4.max width 767.98px
+5.max width 575.98px
+6.max width 479.98px
+7.max width 383.98px
 -------------Breakpoints--------------
 */
 
@@ -75,10 +81,13 @@
 	--color-ebony2: rgba(9, 11, 25, 0.8);
 }
 
-@media (min-width: 1430px) {}
+@media (min-width: 1400px) {}
 
-@media (max-width: 1199.98px) and (min-width: 992px) {}
+@media (max-width: 1199.98px) and (min-width: 992px) {
 
+}
+
+/* max width 1399.98px */
 @media (max-width: 1399.98px) {
 
 	/* =================5.banner area section start================== */
@@ -93,6 +102,7 @@
 	/* =================5.banner area section end================= */
 }
 
+/* max width 1199.98px */
 @media (max-width: 1199.98px) {
 
 	/* =================header area section start================== */
@@ -213,7 +223,7 @@
 
 	/* =================29.footer section end================== */
 }
-
+/* max width 991.98px*/
 @media (max-width: 991.98px) {
 
 	/* title css*/
@@ -385,6 +395,7 @@
 	.how-to-find-us-wrapper {
 		padding: 44px 0;
 	}
+
 	/* ================= 19.how to find us section end================== */
 
 	/* =================21.our history section start================== */
@@ -457,7 +468,7 @@
 	/* =================29.footer section end================== */
 
 }
-
+/* max width 767.98px*/
 @media (max-width: 767.98px) {
 
 	/* =================4.header area section start================== */
@@ -514,6 +525,7 @@
 	.blog-content-info {
 		min-height: auto;
 	}
+
 	/* =================15.blog section end================== */
 
 	/* =================16.single blog section start================== */
@@ -545,6 +557,7 @@
 	/* =================28.resrvation section end================== */
 }
 
+/* max width 575.98px*/
 @media (max-width: 575.98px) {
 
 	/* section-padding */
@@ -589,6 +602,8 @@
 	/* =================16.single blog section end================== */
 }
 
+
+/* max width 479.98px*/
 @media (max-width: 479.98px) {
 
 	/* title css*/
@@ -623,6 +638,7 @@
 
 }
 
+/* max width 383.98px*/
 @media (max-width: 383.98px) {
 
 	/* =================4.header area section start================== */
