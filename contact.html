@@ -988,22 +988,22 @@
 									</div>
 									<div class="cf-contact-form-wrapper">
 										<div class="cf-input-group">
-											<form action="#">
+											<form id="contact-form" action="assets/php/mail.php" method="post">
 												<div class="form-group">
 													<div class="row g-0">
 														<div class="col-lg-6">
 															<div class="contact-info mb-3">
 																<label for="name" class="text-animation overflow-hidden">First Name</label><br>
-																<input class="b-right-none w-100" type="text" id="name" aria-describedby="name" placeholder="Enter  Name">
+																<input name="name" class="b-right-none w-100" type="text" id="name" aria-describedby="name" placeholder="Enter  Name">
 															</div>
 														</div>
 														<div class="col-lg-6">
 															<label for="emailAddress" class="text-animation overflow-hidden">Email address</label><br>
-															<input class="w-100" type="email" id="emailAddress" aria-describedby="emailAddress" placeholder="Enter email">
+															<input name="email" class="w-100" type="email" id="emailAddress" aria-describedby="emailAddress" placeholder="Enter email">
 														</div>
 														<div class="col-lg-12">
 															<label class="mt-4 text-animation overflow-hidden" for="notes">Messages</label><br>
-															<textarea class="w-100" name="notes" id="notes" cols="30" rows="10"></textarea>
+															<textarea class="w-100" name="message" id="notes" cols="30" rows="10"></textarea>
 														</div>
 														<div class="form-check text-animation overflow-hidden mt-2">
 															<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -1014,6 +1014,7 @@
 														</button>
 													</div>
 												</div>
+												<p class="ajax-response"></p>
 											</form>
 										</div>
 									</div>
@@ -1446,6 +1447,8 @@
 		<script src="assets/js/nice-select.js"></script>
 		<!-- nouislider min js -->
 		<script src="assets/js/nouislider.min.js"></script>	
+		<!-- ajax form js -->
+		<script src="assets/js/ajax-form.js"></script>	
 		<!-- google map js -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzPjZ8AW3p7Vs_ZFUbH87Bc2VEgPyYScM&amp;callback=Function.prototype&amp;libraries=geometry&amp;ver=0.1.0" id="google-map-js"></script>
 		<!-- main js -->
