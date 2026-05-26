@@ -12,6 +12,8 @@
   *------> Variables
   *------> google fonts
   *------> font family
+  *------> lenis
+  *------> scroll bar
   *------> using sub heading
   *------> using heading
   *------> preloader
@@ -96,6 +98,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
+	overflow: hidden;
 }
 
 /* --- */
@@ -110,6 +113,39 @@ body {
 /* font family */
 .poppins-font {
 	font-family: "Poppins", sans-serif !important;
+}
+
+/* lenis */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+/* lenis */
+
+/* scroll bar */
+.offcanvas.blog-canvas .os-scrollbar-handle ,
+.os-scrollbar-handle {
+	background: #000000;
+}
+.offcanvas .os-scrollbar-handle{
+	background: #ffffff;
+}
+
+body>.os-scrollbar {
+	z-index: 99999999;
 }
 
 /* using sub heading */
@@ -184,7 +220,7 @@ img {
 	height: 100%;
 	width: 100%;
 	background: #000;
-	z-index: 99999;
+	z-index: 999999999;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -543,7 +579,16 @@ html .ui-button.ui-state-disabled:active {
 
 /* modal style start*/
 .modal {
-	--bs-modal-width: 1132px;
+    --bs-modal-width: 1132px;
+    position: fixed;
+    z-index: 99999999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s linear, visibility 0.3s linear;
+}
+.modal.show{
+	opacity: 1;
+	visibility: visible;
 }
 
 .modal-body {
@@ -816,7 +861,8 @@ label {
 	--bs-offcanvas-width: 600px;
 	--bs-btn-close-color: var(--color-deep-white);
 	background-color: var(--color-dark);
-	z-index: 9999;
+	z-index: 999999999;
+	position: fixed;
 }
 
 .blog-canvas {
@@ -1050,16 +1096,18 @@ label {
 
 /* header offcanvas start */
 .header-area .sub-menu {
-	position: absolute;
-	top: 0;
-	left: 100%;
-	min-width: 180px;
-	opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 180px;
+    opacity: 0;
 	visibility: hidden;
-	box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-	transition: all 0.3s linear;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    transition: all 0.3s linear;
+    overflow-y: auto;
+    max-height: 232px;
+    scrollbar-width: none;
 }
-
 .header-area .navbar-nav .nav-item>.sub-menu {
 	left: 0;
 	top: 50px;
@@ -1147,14 +1195,16 @@ label {
 }
 
 .cart-dropdown-menu {
-	position: absolute;
-	top: calc(100% + 12px);
-	background: var(--color-dark);
-	left: 0;
-	width: 100%;
-	display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    background: var(--color-dark);
+    left: 0;
+    width: 100%;
+    display: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto !important;
+	scrollbar-width: none;
 }
-
 .cart-product-info .price-info .current-price {
 	font-size: 14px;
 	color: var(--color-deep-white);
@@ -2443,3 +2493,8 @@ th {
 }
 
 /* =================29.footer section end==================  */
+
+
+.offcanvas-body {
+    overflow-y: auto !important;
+}

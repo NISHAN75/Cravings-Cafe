@@ -1,25 +1,23 @@
 (function ($) {
+	// preloader
+	$(window).on("load", function () {
+
+		let tl = gsap.timeline();
+
+		tl.to(".preloader svg", {
+				autoAlpha: 0,
+				duration: 1,
+				ease: "power2.out",
+				delay: 0.5
+			})
+			.to(".preloader", {
+				y: "-100%",
+				duration: 1,
+				ease: "power2.inOut"
+			});
+	});
 	$(document).ready(function () {
-		var windowOn = $(window);
-
-
-		// preloader
-		$(window).on("load", function () {
-
-			let tl = gsap.timeline();
-
-			tl.to(".preloader svg", {
-					autoAlpha: 0,
-					duration: 1,
-					ease: "power2.out",
-					delay: 0.5
-				})
-				.to(".preloader", {
-					y: "-100%",
-					duration: 1,
-					ease: "power2.inOut"
-				})
-		});
+		let windowOn = $(window);
 		// payment method
 		$(".payment-method-item input[type='radio']").on("change", function () {
 			$(".payment-method-caption").slideUp();
@@ -64,101 +62,121 @@
 
 			observer.observe(footer[0]);
 		}
-		gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
-		let smoother = ScrollSmoother.create({
-			wrapper: "#smooth-wrapper",
-			content: "#smooth-content",
-			smooth: 1.35,
-			effects: true,
-			smoothTouch: false,
-			normalizeScroll: false,
-			ignoreMobileResize: true,
-		});
+		gsap.registerPlugin(ScrollTrigger, SplitText);
+		// header overlay animation
 		gsap.to(".header-overlay", {
-			y: "0%", // TranslateY 0%
-			duration: 1, // Adjust the duration as needed
+			y: "0%",
+			duration: 1,
 			scrollTrigger: {
 				trigger: ".header-area",
-				start: "top top", // When the top of the trigger element hits the top of the viewport
-				end: "bottom top", // When the top of the trigger element hits the bottom of the viewport
-				scrub: 1, // Smoothly animates between scroll positions
+				start: "top top",
+				end: "bottom top",
+				scrub: 1, 
 				onEnter: () => {
-					// Add your class when trigger is activated
-					document.querySelector('.header-area').classList.add('change-color');
+					$('.header-area').addClass('change-color');
 				},
 				onLeaveBack: () => {
-					// Remove your class when trigger is deactivated
-					document.querySelector('.header-area').classList.remove('change-color');
+					$('.header-area').removeClass('change-color');
 				}
 			}
 		});
-		if (window.innerWidth > 991) {
-			let globaltitles = new SplitText(".text-animation", {
+
+
+
+
+		function initTextAnimation() {
+			if ($(window).width() > 991) {
+				if (window.splitTextInstance) window.splitTextInstance.revert();
+					ScrollTrigger.getAll().forEach(st => {
+						if ($(st.trigger).hasClass("text-animation") || $(st.trigger).hasClass("split-line")) {
+							st.kill();
+						}
+					});
+
+				window.splitTextInstance = new SplitText(".text-animation", {
 				type: "lines",
 				linesClass: "split-line",
 				tag: "span",
-			});
-			let spans = $(".split-line");
+				});
 
-			spans.each((index, span) => {
-				let delay = parseFloat($(span).closest(".text-animation").data("delay"));
-				gsap.from(span, {
+				$(".split-line").each(function () {
+				let $span = $(this);
+				let delay = parseFloat($span.closest(".text-animation").data("delay")) || 0;
+
+				gsap.from($span, {
 					scrollTrigger: {
-						trigger: span,
-						start: "top 100%",
-						end: "bottom 20%",
-						toggleActions: "play pause resume reset",
+					trigger: $span[0],
+					start: "top 100%",
+					end: "bottom 20%",
+					toggleActions: "play none none reverse",
 					},
 					y: 50,
 					opacity: 0,
-					duration: 1.5,
+					duration: 1.2,
 					ease: "power2.out",
 					delay: delay,
+					force3D: true,
 				});
-			});
+				});
+			}
 		}
 
+		initTextAnimation();
+
+		let resizeTimer;
+		windowOn.on("resize", function () {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+				ScrollTrigger.refresh();
+				initTextAnimation();
+			}, 300);	
+		});
 
 		// sticky-sidebar
 		function createScrollTriggerForSidebars() {
-			// Get all time-line-wrapper elements
 			const wrappers = gsap.utils.toArray(".sticky-sidebar-div");
-			const windowWidth = windowOn.width();
-			if (windowWidth > 991) {
+			const windowWidth = $(window).width();
+			ScrollTrigger.getAll().forEach(st => {
+				if ($(st.trigger).hasClass("sidebar")) st.kill();
+			});
+
+			if (windowWidth > 991) {				
 				wrappers.forEach((wrapper) => {
-					const sidebar = wrapper.querySelector(".sidebar");
-					const endTrigger = wrapper.querySelector(".end-sidebar");
+				const sidebar = wrapper.querySelector(".sidebar");
+				const endTrigger = wrapper.querySelector(".end-sidebar");
 
-					if (sidebar && endTrigger) {
-						const trigger = sidebar;
-						const start = "top +120px";
-						const pin = true;
-						const invalidateOnRefresh = true;
-
-						ScrollTrigger.create({
-							trigger: trigger,
-							start: start,
-							end: () => `bottom center`,
-							endTrigger: endTrigger,
-							pin: pin,
-							pinSpacing: false,
-							invalidateOnRefresh: invalidateOnRefresh,
-						});
-					} else {
-						console.warn("Sidebar or end trigger element not found within wrapper:", wrapper);
-					}
+				if (sidebar && endTrigger) {
+					ScrollTrigger.create({
+					trigger: sidebar,
+					start: "top +120px",
+					end: () => `bottom center`,
+					endTrigger: endTrigger,
+					pin: true,
+					pinSpacing: false,
+					invalidateOnRefresh: true,
+					});
+				}
 				});
 			}
+			}
 
-		}
+			createScrollTriggerForSidebars();
 
-		createScrollTriggerForSidebars();
+			let resizeTimer2;
+			windowOn.on("resize", function () {
+				clearTimeout(resizeTimer2);
+				resizeTimer2 = setTimeout(() => {
+					ScrollTrigger.refresh(); 
+					createScrollTriggerForSidebars(); 
+				}, 300);
+			});
 
 		const $reservationMenu = $('.sticky-menu-wrapper');
 
 		function initStickyMenu() {
 			if (window.innerWidth > 991) {
-				ScrollTrigger.create({
+				if($('.resrvation-table-area').length > 0){
+					ScrollTrigger.create({
 					trigger: '.resrvation-table-area',
 					start: '-220px top',
 					end: 'bottom 200px',
@@ -172,14 +190,10 @@
 						}
 					},
 				});
+				}
 			}
 		}
 		initStickyMenu();
-
-		windowOn.on('resize', function () {
-			ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-			initStickyMenu();
-		});
 
 
 		// cart dropdown  up slide
@@ -190,7 +204,6 @@
 		//   rotate pluse icon click on
 		$(".cf-submenu").click(function (event) {
 			event.preventDefault();
-			console.log('hi')
 			$(this).find(".pluse-icon").toggleClass("rotate-icon");
 			$(this).next('.sub-menu').slideToggle();
 		});
@@ -689,6 +702,104 @@
 		$myModal.on('shown.bs.modal', function () {
 			$myInput.focus();
 		});
+		
+		// // Load OverlayScrollbars + Plugin
+		// const { OverlayScrollbars, ClickScrollPlugin } = OverlayScrollbarsGlobal;
+		// OverlayScrollbars.plugin(ClickScrollPlugin);
+
+		// // A reusable function for initializing scrollbars
+		// function initScrollbar(selector, options = {}) {
+		// 	document.querySelectorAll(selector).forEach(el => {
+		// 		OverlayScrollbars(el, {
+		// 			scrollbars: {
+		// 				autoHide: "leave",
+		// 				clickScroll: true,
+		// 				dragScrolling: true,
+		// 				clickScrolling: true,
+		// 				...options.scrollbars,
+		// 			},
+		// 			scrollBehavior: "smooth",
+		// 			...options,
+		// 		});
+		// 	});
+		// }
+
+		// // Initialize on body
+		// initScrollbar("body");
+
+		// // Initialize on off-canvas
+		// initScrollbar(".offcanvas", {
+		// 	scrollbars: {
+		// 		dragScrolling: false
+		// 	}
+		// });
+  
+
+		// Load OverlayScrollbars + Plugin
+const { OverlayScrollbars, ClickScrollPlugin } = OverlayScrollbarsGlobal;
+OverlayScrollbars.plugin(ClickScrollPlugin);
+
+// Reusable function
+function initScrollbar(selectors, options = {}) {
+
+    // Convert single selector → array
+    const items = Array.isArray(selectors) ? selectors : [selectors];
+
+    items.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            OverlayScrollbars(el, {
+                scrollbars: {
+                    autoHide: "leave",
+                    clickScroll: true,
+                    dragScrolling: true,
+                    clickScrolling: true,
+                    ...(options.scrollbars || {})
+                },
+                scrollBehavior: "smooth",
+                ...options
+            });
+        });
+    });
+}
+
+// ------------------------------------------------
+// USE ANYWHERE
+// ------------------------------------------------
+
+// 1. Body
+initScrollbar("body");
+
+// 2. Multiple elements (offcanvas + modal + submenu)
+initScrollbar(
+    [".offcanvas", ".modal", ".cart-dropdown-menu"],
+    {
+        scrollbars: { dragScrolling: false } // custom option
+    }
+);
+
+
+		
+        // lenis
+        // Initialize a new Lenis instance for smooth scrolling
+        const lenis = new Lenis();
+
+        // Listen for the 'scroll' event and log the event data to the console
+        // lenis.on('scroll', (e) => {
+        //     console.log(e);
+        // });
+
+        // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+        lenis.on('scroll', ScrollTrigger.update);
+
+        // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+        // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+        });
+
+        // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+        gsap.ticker.lagSmoothing(0);
+        // lenis
 
 
 	});
