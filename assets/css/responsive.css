@@ -99,6 +99,7 @@
 		display: block !important;
 	}
 
+
 	/* =================5.banner area section end================= */
 }
 
@@ -632,7 +633,9 @@
 	.add-to-card.btn-1.button-2 {
 		margin-left: 0px !important;
 	}
-
+	.price-value-input-item {
+		flex-direction: column;
+	}
 	/* =================23.single  product section end==================  */
 
 }

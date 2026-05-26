@@ -201,13 +201,18 @@
 			$(".cart-dropdown-menu").slideToggle();
 		});
 
-		//   rotate pluse icon click on
 		$(".cf-submenu").click(function (event) {
 			event.preventDefault();
-			$(this).find(".pluse-icon").toggleClass("rotate-icon");
-			$(this).next('.sub-menu').slideToggle();
+			let $thisMenu = $(this).next('.sub-menu');
+			let $thisIcon = $(this).find(".pluse-icon");
+			let isOpen = $thisMenu.is(':visible');
+			$(this).closest('ul').find('.sub-menu').stop(true, true).slideUp(300);
+			$(this).closest('ul').find('.pluse-icon').removeClass('rotate-icon');
+			if (!isOpen) {
+				$thisMenu.stop(true, true).slideDown(300);
+				$thisIcon.addClass('rotate-icon');
+			}
 		});
-		//rotate pluse icon click on
 
 		//btn mouse hover base on mouse pointer
 		$(".btn-1 , .icon-btn , .rotate-text-inner").mousemove(function (event) {
@@ -564,28 +569,57 @@
 			duplicated: true,
 			startVisible: true,
 		});
-		//    noUiSlider active
-		var slider = $('.price-filter');
-		$(slider).each(function (index, item) {
-			noUiSlider.create(item, {
-				start: [5, 35], // Initial values
-				connect: true, // Connect the handles with a line
-				range: {
-					'min': 0,
-					'max': 300
-				},
-				tooltips: true,
-				format: {
-					to: function (value) {
-						return Math.round(value); // Round the value to the nearest integer
-					},
-					from: function (value) {
-						return Math.round(value); // Round the value to the nearest integer
-					}
-				}
+		
 
-			});
-		});
+
+
+// noUiSlider active
+let slider = $('.price-filter');
+
+// ইনপুট বক্স দুটি সিলেক্ট করা
+let inputMin = $('.min-value');
+let inputMax = $('.max-value');
+
+$(slider).each(function (index, item) {
+    // স্লাইডার তৈরি করা
+    noUiSlider.create(item, {
+        start: [5, 35], // Initial values
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 300
+        },
+        tooltips: true,
+        format: {
+            to: function (value) {
+                return Math.round(value); 
+            },
+            from: function (value) {
+                return Math.round(value); 
+            }
+        }
+    });
+
+    // ১. স্লাইডার নাড়ালে ইনপুট বক্স আপডেট হবে
+    item.noUiSlider.on('update', function (values, handle) {
+        var value = Math.round(values[handle]);
+
+        if (handle === 0) {
+            inputMin.val(value);
+        } else {
+            inputMax.val(value);
+        }
+    });
+
+    // ২. ইনপুট বক্সে ভ্যালু চেঞ্জ করলে স্লাইডার আপডেট হবে (Two-way binding)
+    inputMin.on('change', function () {
+        item.noUiSlider.set([this.value, null]);
+    });
+
+    inputMax.on('change', function () {
+        item.noUiSlider.set([null, this.value]);
+    });
+});
 
 
 		//  counter up   base on minus and pluse
@@ -766,16 +800,16 @@ function initScrollbar(selectors, options = {}) {
 // USE ANYWHERE
 // ------------------------------------------------
 
-// 1. Body
-initScrollbar("body");
+		// 1. Body
+		initScrollbar("body");
 
-// 2. Multiple elements (offcanvas + modal + submenu)
-initScrollbar(
-    [".offcanvas", ".modal", ".cart-dropdown-menu"],
-    {
-        scrollbars: { dragScrolling: false } // custom option
-    }
-);
+		// 2. Multiple elements (offcanvas + modal + submenu)
+		initScrollbar(
+			[".offcanvas", ".modal", ".cart-dropdown-menu"],
+			{
+				scrollbars: { dragScrolling: false } // custom option
+			}
+		);
 
 
 		
