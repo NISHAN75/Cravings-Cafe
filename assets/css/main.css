@@ -107,7 +107,7 @@ body {
 	font-size: 18px;
 	text-transform: capitalize;
 	transition: all 0.3s linear;
-	padding: 10px 5px 10px 5px;
+	padding: 10px 15px;
 }
 
 /* font family */
@@ -143,7 +143,9 @@ html.lenis body {
 .offcanvas .os-scrollbar-handle{
 	background: #ffffff;
 }
-
+.offcanvas-body {
+    overflow-y: auto !important;
+}
 body>.os-scrollbar {
 	z-index: 99999999;
 }
@@ -318,17 +320,18 @@ button {
 
 /* ===== all button style start ===== */
 /* button 1 */
-.btn-1 {
+.btn-1,
+.table-status-btn {
 	color: var(--color-deep-white);
-	font-size: 18px;
-	font-weight: 500;
-	border: 1px solid var(--color-deep-white);
-	padding: 14px 40px;
-	border-radius: 100px;
-	background: transparent;
-	text-align: center;
-	display: inline-block;
-	transition: all 0.3s linear;
+    font-size: clamp(14px, 1.6vw, 18px);
+    font-weight: 500;
+    border: 1px solid var(--color-deep-white);
+    padding: clamp(10px, 1.5vw, 14px) clamp(20px, 4vw, 30px);
+    border-radius: 999px;
+    background: transparent;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s linear;
 }
 
 .btn-1:hover {
@@ -487,8 +490,9 @@ button {
 	width: 100%;
 }
 
-.date-picker-wrapper input:hover {
-	border: 1px solid var(--color-bar);
+.date-picker-wrapper input[type="text"] {
+	border-left: 0;
+	border-right: 0;
 }
 
 .date-picker-wrapper ::placeholder {
@@ -610,13 +614,8 @@ html .ui-button.ui-state-disabled:active {
 /* sticky menu */
 .sticky-menu-wrapper {
 	z-index: 9;
-	background: transparent;
-	padding: 48px 0 !important;
-}
-
-.sticky-menu-wrapper.active {
 	background: var(--color-deep-white);
-	box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+	padding: 20px 0;
 }
 
 /* sticky menu */
@@ -726,44 +725,8 @@ label {
 	fill: var(--color-dark) !important;
 }
 
-/* nice select start */
-.nice-select:hover,
-.nice-select:active,
-.nice-select.open,
-.nice-select:focus {
-	border-color: var(--color-bar);
-}
 
-.date-picker-wrapper input,
-.nice-select,
-.nice-select .list {
-	-webkit-tap-highlight-color: transparent;
-	background-color: var(--color-romance);
-	border-radius: 0px;
-	border: solid 1px var(--color-bar);
-	font-size: 16px;
-	font-weight: 500;
-	color: var(--color-dark);
-	margin: 0;
-	text-transform: capitalize;
-}
 
-.nice-select .option:hover,
-.nice-select .option.focus,
-.nice-select .option.selected.focus {
-	background-color: var(--color-deep-white);
-}
-
-.nice-select:after {
-	border-bottom: 2px solid var(--color-dark);
-	border-right: 2px solid var(--color-dark);
-	height: 10px;
-	right: 17px;
-	width: 10px;
-	margin-top: -6px;
-}
-
-/* nice select end *
 
 /* noUiSlider start */
 .noUi-horizontal {
@@ -974,9 +937,9 @@ label {
 
 /* =================4.header area section start==================  */
 .header-area {
-	position: fixed;
-	width: 100%;
-	z-index: 999;
+    position: fixed;
+    width: 100%;
+    z-index: 99999999;
 }
 
 .header-overlay {
@@ -1433,7 +1396,7 @@ label {
 	background-color: var(--color-ebony);
 }
 
-.resrvation-table-btn:hover .hover-overlay,
+
 .short-service-wrapper:hover .hover-overlay,
 .nav-link:hover .hover-overlay,
 .product-list-wrapper:hover .hover-overlay,
@@ -1476,6 +1439,9 @@ label {
 	will-change: transform;
 	top: 50%;
 	left: 0;
+}
+.popup-video svg{
+	margin-right: -5px;
 }
 
 .play-icon .inner-text {
@@ -2200,10 +2166,9 @@ label {
 .cf-contact-form-wrapper .form-group button {
 	max-width: 138px;
 }
-
-#map {
-	height: 500px;
-	width: 100%;
+.map{
+	width:100%;
+	height:500px;
 }
 
 .contact-info {
@@ -2255,7 +2220,26 @@ th {
 	display: inline-block;
 	cursor: pointer;
 }
-
+.order-verify-modal .modal-dialog {
+    max-width: 400px;
+}
+.coupon-area .btn-1.v2 {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    border-radius: 0;
+	border: none;
+	border-left: 1px solid var(--color-dark);
+    height: 100%;
+    z-index: 1;
+    height: 100%;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+}
+.coupon-input-wrapper input {
+    flex: 1 0 100%;
+	border-radius:999px;
+}
 /* =================26.view cart section  end==================  */
 
 /*=================  thank you section start ================= */
@@ -2297,29 +2281,12 @@ th {
 	overflow-y: scroll;
 }
 
-.resrvation-table-btn {
-	display: block;
-	background-color: var(--color-romance);
-	padding: 12px 24px;
-	text-align: center;
-	font-size: 18px;
-	color: var(--color-dark);
-	font-weight: 500;
-	transition: all 0.3s linear;
+.resrvation-table-img .btn-1 {
+    position: absolute;
+    right: 16px;
+    top: 16px;
 }
 
-.resrvation-table-btn:hover {
-	color: var(--color-deep-white);
-}
-
-.resrvation-table-btn span {
-	display: block;
-}
-
-.resrvation-table-wrapper .row {
-	--bs-gutter-x: 0px;
-	--bs-gutter-y: 20px;
-}
 
 .resrvation-table-info {
 	margin-bottom: 48px;
@@ -2328,22 +2295,33 @@ th {
 .resrvation-table-info:last-child {
 	margin-bottom: 0;
 }
-
-.resrvation-table-btn .hover-overlay {
-	background-color: var(--color-dark);
+.resrvation-table-content {
+    padding: clamp(18px, 3vw, 30px)
+             clamp(14px, 2.5vw, 20px);
+    min-height: clamp(260px, 35vw, 380px);
 }
-
-.resrvation-table-btn.disabled {
-	pointer-events: none;
-	opacity: 0.7;
-	background-color: var(--color-dark);
-	color: var(--color-deep-white);
+.resrvation-menu-area label{
+	margin-bottom: 8px;
 }
-
+.table-status-btn {
+    font-size: clamp(12px, 1.2vw, 14px);
+    background: var(--color-deep-white);
+    color: var(--color-dark);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: clamp(4px, 0.6vw, 5px)
+             clamp(14px, 2.5vw, 22px);
+    border-radius: 999px;
+}
 .reservation-information {
 	padding: 32px 0;
 }
-
+.disabled-link {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 .common-bg-info {
 	position: relative;
 	z-index: 1;
@@ -2444,7 +2422,7 @@ th {
 .resrvation-menu-area .nice-select:after {
 	margin-top: -8px;
 }
-
+.resrvation-table-img::before,
 .resrvation-table-item::before {
 	content: "";
 	position: absolute;
@@ -2455,7 +2433,9 @@ th {
 	background: #000000;
 	opacity: 0.5;
 }
-
+.resrvation-table-img::before{
+	opacity: 0.3;
+}
 .resrvation-table-item img {
 	width: 100%;
 	height: 350px;
@@ -2466,10 +2446,10 @@ th {
 .resrvation-area #map .GMAMP-maps-pin-view svg {
 	max-width: 35px;
 }
-
-.resrvation-area #map {
+.resrvation-area .map {
 	height: 350px;
 }
+
 
 .resrvation-directions-link {
 	margin-bottom: 16px;
@@ -2514,7 +2494,12 @@ th {
 	border-bottom: 1px solid var(--color-bar);
 	padding-bottom: 8px;
 }
-
+.resrvation-table-img img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
 /* =================28.resrvation section end==================  */
 
 
@@ -2590,6 +2575,64 @@ th {
 /* =================29.footer section end==================  */
 
 
-.offcanvas-body {
-    overflow-y: auto !important;
+
+
+
+/* select 2  */
+.select2-container {
+    display: block;
+    width: 100% !important;
 }
+.select2-container--default .select2-selection--single {
+    background-color:transparent;
+    border: 1px solid var(--color-dark);
+    border-radius: 0px;
+}
+.select2-container .select2-selection--single {
+    height: 49px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--color-storm-grey);
+    line-height: 49px;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: var(--color-dark);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border: none;
+    height: 0;
+    width: 0;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 40px ;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow::after {
+    content: '';
+	border-bottom: 2px solid var(--color-dark);
+	border-right: 2px solid var(--color-dark);
+	height: 10px;
+	right: 17px;
+	width: 10px;
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    margin-top: -8px;
+    transform: rotate(45deg); 
+    transition: all 0.15s ease-in-out;
+}
+
+.select2-container--open .select2-selection__arrow::after {
+    transform: rotate(-135deg) !important;
+    margin-top: -2px !important;
+}
+.select2-container--default .select2-results__option--selected {
+    background-color: var(--color-romance);
+}
+/* select 2  */
+
+

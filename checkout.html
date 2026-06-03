@@ -9,8 +9,6 @@
 		<link rel="stylesheet" href="assets/css/jquery-ui.css">
 		<!-- swiper bundle min css -->
 		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-		<!-- nice select css -->
-		<link rel="stylesheet" href="assets/css/nice-select.css">
 		<!-- magnific popup css -->
 		<link rel="stylesheet" href="assets/css/magnific-popup.css">
 		<!-- justifiedGallery css -->
@@ -19,6 +17,8 @@
 		<link rel="stylesheet" href="assets/css/nouislider.min.css">
 		<!-- overlay scrollbars css -->
 		<link rel="stylesheet" href="assets/css/overlayscrollbars.min.css">
+		<!-- select2 css -->
+		<link rel="stylesheet" href="assets/css/select2.min.css">
 		<!-- style css -->
 		<link rel="stylesheet" href="assets/css/main.css">
 		<!-- responsive css -->
@@ -1427,11 +1427,61 @@
 												<div class="col-lg-12">
 													<div class="form-info mb-3">
 														<label for="cars" class="text-animation overflow-hidden">Country / Region</label>
-														<select class="wide" name="cars" id="cars">
-															<option value="volvo">Volvo</option>
-															<option value="saab">Saab</option>
-															<option value="opel">Opel</option>
-															<option value="audi">Audi</option>
+														<select class="js-country-selector w-100" name="country" >
+															<option value="">Select A Country</option>
+															<option value="AF">Afghanistan</option>
+															<option value="AR">Argentina</option>
+															<option value="AU">Australia</option>
+															<option value="AT">Austria</option>
+															<option value="BD">Bangladesh</option>
+															<option value="BE">Belgium</option>
+															<option value="BR">Brazil</option>
+															<option value="CA">Canada</option>
+															<option value="CL">Chile</option>
+															<option value="CN">China</option>
+															<option value="CO">Colombia</option>
+															<option value="DK">Denmark</option>
+															<option value="EG">Egypt</option>
+															<option value="FI">Finland</option>
+															<option value="FR">France</option>
+															<option value="DE">Germany</option>
+															<option value="GR">Greece</option>
+															<option value="HK">Hong Kong</option>
+															<option value="HU">Hungary</option>
+															<option value="IN">India</option>
+															<option value="ID">Indonesia</option>
+															<option value="IR">Iran</option>
+															<option value="IQ">Iraq</option>
+															<option value="IE">Ireland</option>
+															<option value="IT">Italy</option>
+															<option value="JP">Japan</option>
+															<option value="KR">Korea, South</option>
+															<option value="KW">Kuwait</option>
+															<option value="MY">Malaysia</option>
+															<option value="MX">Mexico</option>
+															<option value="NL">Netherlands</option>
+															<option value="NZ">New Zealand</option>
+															<option value="NO">Norway</option>
+															<option value="OM">Oman</option>
+															<option value="PK">Pakistan</option>
+															<option value="PH">Philippines</option>
+															<option value="PL">Poland</option>
+															<option value="PT">Portugal</option>
+															<option value="QA">Qatar</option>
+															<option value="RU">Russia</option>
+															<option value="SA">Saudi Arabia</option>
+															<option value="SG">Singapore</option>
+															<option value="ZA">South Africa</option>
+															<option value="ES">Spain</option>
+															<option value="LK">Sri Lanka</option>
+															<option value="SE">Sweden</option>
+															<option value="CH">Switzerland</option>
+															<option value="TH">Thailand</option>
+															<option value="TR">Turkey</option>
+															<option value="AE">United Arab Emirates</option>
+															<option value="GB">United Kingdom</option>
+															<option value="US">United States</option>
+															<option value="VN">Vietnam</option>
 														</select>
 													</div>
 												</div>
@@ -1476,50 +1526,73 @@
 							<div class="cf-right-card pt-0 romance-bg">
 								<div class="cf-order-wrapper b-bottom">
 									<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Your Order</h5>
-									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
+									<div class="cart-total-item b-bottom py-3 d-flex aling-items-center justify-content-between">
 										<span class="text-animation overflow-hidden">Product item</span>
 										<span class="text-animation overflow-hidden">50</span>
 									</div>
 									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
 										<span class="text-animation overflow-hidden">Service charge</span>
-										<span class="text-animation overflow-hidden">$50</span>
+										<span class="text-animation overflow-hidden">$20</span>
+									</div>
+									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
+										<span class="text-animation overflow-hidden">Delivery charge</span>
+										<span class="text-animation overflow-hidden">$20</span>
 									</div>
 									<div class="cart-total-item dark-color title-xs fw-medium  py-3 d-flex aling-items-center justify-content-between">
 										<span class="text-animation overflow-hidden">Total</span>
-										<span class="text-animation overflow-hidden">$50</span>
+										<span class="text-animation overflow-hidden">$90</span>
+									</div>
+									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
+										<span class="text-animation overflow-hidden">Discount</span>
+										<span class="text-animation overflow-hidden">$5.00</span>
+									</div>
+									<div class="cart-total-item dark-color title-xs fw-medium  py-3 d-flex aling-items-center justify-content-between">
+										<span class="text-animation overflow-hidden">Total</span>
+										<span class="text-animation overflow-hidden">$85.00</span>
 									</div>
 								</div>
 								<div class="cf-order-wrapper">
 									<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Payment Method</h5>
 									<div class="payment-method-wrapper">
 										<div class="form-check payment-method-item">
-											<input type="radio" class="form-check-input" name="payment-method" id="bankTransfer">
-											<label class="form-check-label" for="bankTransfer">Direct Bank Transfer</label>
+											<input type="radio" class="form-check-input" name="payment-method" id="mobileBanking" checked>
+											<label class="form-check-label" for="mobileBanking">Mobile Banking</label>
 											<div class="payment-method-caption">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+												<p>Pay instantly using your bKash, Nagad, or Rocket account. You will be redirected to the secure payment gateway to complete your transaction seamlessly.</p>
 											</div>
-										</div>		
+										</div>      
+
 										<div class="form-check payment-method-item">
 											<input type="radio" class="form-check-input" name="payment-method" id="CashonDelivery">
 											<label class="form-check-label" for="CashonDelivery">Cash on Delivery</label>
 											<div class="payment-method-caption">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+												<p>Pay for your order in cash when it is delivered to your doorstep. Please ensure someone is available to receive the parcel and make the payment upon delivery.</p>
 											</div>
-										</div>		
+										</div>      
+  
+
+										<div class="form-check payment-method-item">
+											<input type="radio" class="form-check-input" name="payment-method" id="cardPayment">
+											<label class="form-check-label" for="cardPayment">Credit / Debit Card</label>
+											<div class="payment-method-caption">
+												<p>Pay securely using your international or local credit and debit cards. We support Visa, Mastercard, American Express, and Discover cards worldwide.</p>
+											</div>
+										</div>      
+
 										<div class="form-check payment-method-item">
 											<input type="radio" class="form-check-input" name="payment-method" id="paypal">
-											<label class="form-check-label" for="paypal">Paypal</label>
+											<label class="form-check-label" for="paypal">PayPal</label>
 											<div class="payment-method-caption">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+												<p>Pay via PayPal using your PayPal balance or linked bank account. A fast, smart, and safe way to make global transactions without sharing your financial details.</p>
 											</div>
-										</div>		
+										</div>      
 									</div>
 									<div class="form-check text-animation overflow-hidden">
 										<input type="checkbox" class="form-check-input" id="exampleCheck17">
-										<label class="form-check-label" for="exampleCheck17">I agree to these <a href="terms-conditions.html" class="text-decoration-underline">Terms and Conditions.</a></label>
+										<label class="form-check-label" for="exampleCheck17">I agree to these <a href="terms.html" class="text-decoration-underline">Terms and Conditions.</a></label>
 									</div>
 									<a href="order-complete.html" class="btn-1 text-animation overflow-hidden w-100 button-2 mt-2 position-relative">
-									<span class="inner-text d-inline-block">Place Order</span>
+										<span class="inner-text d-inline-block">Place Order</span>
 									</a>
 								</div>
 							</div>
@@ -1683,10 +1756,10 @@
 							<div class="other-link-info mt-2 mt-lg-0">
 								<ul class="list-unstyled  d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
 									<li>
-										<a href="#" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
+										<a href="privacy.html" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
 									</li>
 									<li>
-										<a href="#" class="other-link d-inline-block ms-4 text-decoration-underline">Terms and Conditions</a>
+										<a href="terms.html" class="other-link d-inline-block ms-4 text-decoration-underline">Terms and Conditions</a>
 									</li>
 								</ul>
 							</div>
@@ -1728,8 +1801,8 @@
 		<script src="assets/js/marquee.min.js"></script>
 		<!-- magnific popup min js -->
 		<script src="assets/js/magnific-popup.min.js"></script>
-		<!-- nice Select js -->
-		<script src="assets/js/nice-select.js"></script>
+		<!-- select2 js -->
+		<script src="assets/js/select2.min.js"></script>
 		<!-- nouislider min js -->
 		<script src="assets/js/nouislider.min.js"></script>	
 		<!-- lenis min js -->

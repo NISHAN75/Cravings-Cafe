@@ -9,8 +9,6 @@
 		<link rel="stylesheet" href="assets/css/jquery-ui.css">
 		<!-- swiper bundle min css -->
 		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-		<!-- nice select css -->
-		<link rel="stylesheet" href="assets/css/nice-select.css">
 		<!-- magnific popup css -->
 		<link rel="stylesheet" href="assets/css/magnific-popup.css">
 		<!-- justifiedGallery css -->
@@ -19,6 +17,8 @@
 		<link rel="stylesheet" href="assets/css/nouislider.min.css">
 		<!-- overlay scrollbars css -->
 		<link rel="stylesheet" href="assets/css/overlayscrollbars.min.css">
+		<!-- select2 css -->
+		<link rel="stylesheet" href="assets/css/select2.min.css">
 		<!-- style css -->
 		<link rel="stylesheet" href="assets/css/main.css">
 		<!-- responsive css -->
@@ -1539,49 +1539,43 @@
 									</div>
 									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
 										<span class="text-animation overflow-hidden">Service charge</span>
-										<span class="text-animation overflow-hidden">$50</span>
+										<span class="text-animation overflow-hidden">$20</span>
+									</div>
+									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
+										<span class="text-animation overflow-hidden">Delivery charge</span>
+										<span class="text-animation overflow-hidden">$20</span>
 									</div>
 									<div class="cart-total-item dark-color title-xs fw-medium  py-3 d-flex aling-items-center justify-content-between">
 										<span class="text-animation overflow-hidden">Total</span>
-										<span class="text-animation overflow-hidden">$50</span>
+										<span class="text-animation overflow-hidden">$90</span>
+									</div>
+									<div class="cart-total-item  b-bottom py-3 d-flex aling-items-center justify-content-between">
+										<span class="text-animation overflow-hidden">Discount</span>
+										<span class="text-animation overflow-hidden">$5.00</span>
+									</div>
+									<div class="cart-total-item dark-color title-xs fw-medium  py-3 d-flex aling-items-center justify-content-between">
+										<span class="text-animation overflow-hidden">Total</span>
+										<span class="text-animation overflow-hidden">$85.00</span>
+									</div>
+									<div class="coupon-area py-4 border-b">
+										<label class="mb-2"  for="order-coupon">Have a Promo Code?</label>
+										<div class="coupon-input-wrapper d-flex align-items-center gap-2 position-relative z-2">
+											<input 
+												id="order-coupon"
+												type="text" 
+												placeholder="Enter coupon" 
+											/>
+											<button class="btn-1 v2 text-animation overflow-hidden">
+												<span class="inner-text d-inline-block">Apply</span>
+											</button>
+										</div>
+										<p class="text-center pt-3 mb-0">Coupon "SAVE10" applied! -$5.00</p>
 									</div>
 								</div>
-								<div class="cf-order-wrapper">
-									<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Payment Method</h5>
+								<a href="checkout.html" id="placeOrderBtn" class="btn-1 text-animation overflow-hidden w-100 button-2 position-relative">
+									<span class="inner-text d-inline-block">Checkout</span>
+								</a>
 
-									<div class="payment-method-wrapper">
-										<div class="form-check payment-method-item">
-											<input type="radio" class="form-check-input" name="payment-method" id="bankTransfer">
-											<label class="form-check-label" for="bankTransfer">Direct Bank Transfer</label>
-											<div class="payment-method-caption">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>		
-										<div class="form-check payment-method-item">
-											<input type="radio" class="form-check-input" name="payment-method" id="CashonDelivery">
-											<label class="form-check-label" for="CashonDelivery">Cash on Delivery</label>
-											<div class="payment-method-caption">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>		
-										<div class="form-check payment-method-item">
-											<input type="radio" class="form-check-input" name="payment-method" id="paypal">
-											<label class="form-check-label" for="paypal">Paypal</label>
-											<div class="payment-method-caption">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>		
-									</div>
-									
-
-									<div class="form-check text-animation overflow-hidden">
-										<input type="checkbox" class="form-check-input" id="exampleCheck17">
-										<label class="form-check-label" for="exampleCheck17">I agree to these <a href="terms-conditions.html" class="text-decoration-underline">Terms and Conditions.</a></label>
-									</div>
-									<a href="order-complete.html" class="btn-1 text-animation overflow-hidden w-100 button-2 mt-2 position-relative">
-									<span class="inner-text d-inline-block">place order</span>
-									</a>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -1743,10 +1737,10 @@
 							<div class="other-link-info mt-2 mt-lg-0">
 								<ul class="list-unstyled  d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
 									<li>
-										<a href="#" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
+										<a href="privacy.html" class="other-link d-inline-block text-decoration-underline">Privacy Policy</a>
 									</li>
 									<li>
-										<a href="#" class="other-link d-inline-block ms-4 text-decoration-underline">Terms and Conditions</a>
+										<a href="terms.html" class="other-link d-inline-block ms-4 text-decoration-underline">Terms and Conditions</a>
 									</li>
 								</ul>
 							</div>
@@ -1789,8 +1783,8 @@
 		<script src="assets/js/marquee.min.js"></script>
 		<!-- magnific popup min js -->
 		<script src="assets/js/magnific-popup.min.js"></script>
-		<!-- nice Select js -->
-		<script src="assets/js/nice-select.js"></script>
+		<!-- select2 js -->
+		<script src="assets/js/select2.min.js"></script>
 		<!-- nouislider min js -->
 		<script src="assets/js/nouislider.min.js"></script>	
 		<!-- lenis min js -->

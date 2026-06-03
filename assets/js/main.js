@@ -71,7 +71,7 @@
 				trigger: ".header-area",
 				start: "top top",
 				end: "bottom top",
-				scrub: 1, 
+				scrub: 1,
 				onEnter: () => {
 					$('.header-area').addClass('change-color');
 				},
@@ -82,41 +82,39 @@
 		});
 
 
-
-
 		function initTextAnimation() {
 			if ($(window).width() > 991) {
 				if (window.splitTextInstance) window.splitTextInstance.revert();
-					ScrollTrigger.getAll().forEach(st => {
-						if ($(st.trigger).hasClass("text-animation") || $(st.trigger).hasClass("split-line")) {
-							st.kill();
-						}
-					});
+				ScrollTrigger.getAll().forEach(st => {
+					if ($(st.trigger).hasClass("text-animation") || $(st.trigger).hasClass("split-line")) {
+						st.kill();
+					}
+				});
 
 				window.splitTextInstance = new SplitText(".text-animation", {
-				type: "lines",
-				linesClass: "split-line",
-				tag: "span",
+					type: "lines",
+					linesClass: "split-line",
+					tag: "span",
 				});
 
 				$(".split-line").each(function () {
-				let $span = $(this);
-				let delay = parseFloat($span.closest(".text-animation").data("delay")) || 0;
+					let $span = $(this);
+					let delay = parseFloat($span.closest(".text-animation").data("delay")) || 0;
 
-				gsap.from($span, {
-					scrollTrigger: {
-					trigger: $span[0],
-					start: "top 100%",
-					end: "bottom 20%",
-					toggleActions: "play none none reverse",
-					},
-					y: 50,
-					opacity: 0,
-					duration: 1.2,
-					ease: "power2.out",
-					delay: delay,
-					force3D: true,
-				});
+					gsap.from($span, {
+						scrollTrigger: {
+							trigger: $span[0],
+							start: "top 100%",
+							end: "bottom 20%",
+							toggleActions: "play none none reverse",
+						},
+						y: 50,
+						opacity: 0,
+						duration: 1.2,
+						ease: "power2.out",
+						delay: delay,
+						force3D: true,
+					});
 				});
 			}
 		}
@@ -129,7 +127,7 @@
 			resizeTimer = setTimeout(function () {
 				ScrollTrigger.refresh();
 				initTextAnimation();
-			}, 300);	
+			}, 300);
 		});
 
 		// sticky-sidebar
@@ -140,60 +138,55 @@
 				if ($(st.trigger).hasClass("sidebar")) st.kill();
 			});
 
-			if (windowWidth > 991) {				
+			if (windowWidth > 991) {
 				wrappers.forEach((wrapper) => {
-				const sidebar = wrapper.querySelector(".sidebar");
-				const endTrigger = wrapper.querySelector(".end-sidebar");
+					const sidebar = wrapper.querySelector(".sidebar");
+					const endTrigger = wrapper.querySelector(".end-sidebar");
 
-				if (sidebar && endTrigger) {
-					ScrollTrigger.create({
-					trigger: sidebar,
-					start: "top +120px",
-					end: () => `bottom center`,
-					endTrigger: endTrigger,
-					pin: true,
-					pinSpacing: false,
-					invalidateOnRefresh: true,
-					});
-				}
+					if (sidebar && endTrigger) {
+						ScrollTrigger.create({
+							trigger: sidebar,
+							start: "top +120px",
+							end: () => `bottom center`,
+							endTrigger: endTrigger,
+							pin: true,
+							pinSpacing: false,
+							invalidateOnRefresh: true,
+						});
+					}
 				});
 			}
-			}
+		}
 
-			createScrollTriggerForSidebars();
+		createScrollTriggerForSidebars();
 
-			let resizeTimer2;
-			windowOn.on("resize", function () {
-				clearTimeout(resizeTimer2);
-				resizeTimer2 = setTimeout(() => {
-					ScrollTrigger.refresh(); 
-					createScrollTriggerForSidebars(); 
-				}, 300);
-			});
+		let resizeTimer2;
+		windowOn.on("resize", function () {
+			clearTimeout(resizeTimer2);
+			resizeTimer2 = setTimeout(() => {
+				ScrollTrigger.refresh();
+				createScrollTriggerForSidebars();
+			}, 300);
+		});
 
-		const $reservationMenu = $('.sticky-menu-wrapper');
+		
+		ScrollTrigger.matchMedia({
 
-		function initStickyMenu() {
-			if (window.innerWidth > 991) {
-				if($('.resrvation-table-area').length > 0){
-					ScrollTrigger.create({
+			"(min-width: 992px)": function () {
+
+				const $reservationMenu = $('.sticky-menu-wrapper');
+
+				ScrollTrigger.create({
 					trigger: '.resrvation-table-area',
-					start: '-220px top',
+					start: '-190px top',
 					end: 'bottom 200px',
 					pin: $reservationMenu[0],
 					pinSpacing: false,
-					onUpdate: function (self) {
-						if (self.isActive) {
-							$reservationMenu.addClass('active').css('position', 'sticky');
-						} else {
-							$reservationMenu.removeClass('active').css('position', 'static');
-						}
-					},
 				});
-				}
+
 			}
-		}
-		initStickyMenu();
+
+		});
 
 
 		// cart dropdown  up slide
@@ -277,6 +270,7 @@
 		}
 		playMove();
 
+
 		$("#datepicker").datepicker({
 			dateFormat: "DD, MM d, yy",
 			showAnim: "fadeIn",
@@ -286,6 +280,22 @@
 		}).on("focus", function () {
 			$(this).blur();
 		});
+
+		$('.js-country-selector').select2({
+			placeholder: "Select a country",
+			allowClear: false,
+		}).on('select2:open', function() {
+			$('.select2-dropdown').attr('data-lenis-prevent', '');
+		});
+
+		$('.js-sort-selector').select2({
+			minimumResultsForSearch: -1
+		}).on('select2:open', function() {
+			$('.select2-dropdown').attr('data-lenis-prevent', '');
+		});
+
+
+
 
 		//  windowOn.on("resize", function(){
 		//     playMove();
@@ -451,6 +461,36 @@
 				},
 			},
 		});
+		// Image Popup
+		$(".trigger-img-popup").magnificPopup({
+			type: "image",
+			gallery: {
+				enabled: true
+			},
+			image: {
+				titleSrc: "title"
+			},
+			callbacks: {
+				open: function () {
+					$("body").css("overflow", "hidden");
+				},
+				close: function () {
+					$("body").css("overflow", "");
+				}
+			}
+		});
+		// Gallery (একাধিক image) হলে এইভাবে:
+		$(".trigger-gallery-img-popup").magnificPopup({
+			type: "image",
+			gallery: {
+				enabled: true,       
+				navigateByImgClick: true,
+				preload: [0, 1]
+			},
+			image: {
+				tError: "Image load হয়নি!"
+			}
+		});
 		$(".blog-video-popup").magnificPopup({
 			type: "iframe",
 			iframe: {
@@ -490,7 +530,6 @@
 			captions: false
 		});
 		//   nice select
-		$('select').niceSelect();
 		//responsive table  
 		$('.table-1').easyTableA11y({
 			label: 'data-easy-table',
@@ -569,57 +608,51 @@
 			duplicated: true,
 			startVisible: true,
 		});
-		
 
 
+		// noUiSlider active
+		let slider = $('.price-filter');
 
-// noUiSlider active
-let slider = $('.price-filter');
+		let inputMin = $('.min-value');
+		let inputMax = $('.max-value');
 
-// ইনপুট বক্স দুটি সিলেক্ট করা
-let inputMin = $('.min-value');
-let inputMax = $('.max-value');
+		$(slider).each(function (index, item) {
+			noUiSlider.create(item, {
+				start: [5, 35], // Initial values
+				connect: true,
+				range: {
+					'min': 0,
+					'max': 300
+				},
+				tooltips: true,
+				format: {
+					to: function (value) {
+						return Math.round(value);
+					},
+					from: function (value) {
+						return Math.round(value);
+					}
+				}
+			});
 
-$(slider).each(function (index, item) {
-    // স্লাইডার তৈরি করা
-    noUiSlider.create(item, {
-        start: [5, 35], // Initial values
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 300
-        },
-        tooltips: true,
-        format: {
-            to: function (value) {
-                return Math.round(value); 
-            },
-            from: function (value) {
-                return Math.round(value); 
-            }
-        }
-    });
+			item.noUiSlider.on('update', function (values, handle) {
+				var value = Math.round(values[handle]);
 
-    // ১. স্লাইডার নাড়ালে ইনপুট বক্স আপডেট হবে
-    item.noUiSlider.on('update', function (values, handle) {
-        var value = Math.round(values[handle]);
+				if (handle === 0) {
+					inputMin.val(value);
+				} else {
+					inputMax.val(value);
+				}
+			});
 
-        if (handle === 0) {
-            inputMin.val(value);
-        } else {
-            inputMax.val(value);
-        }
-    });
+			inputMin.on('change', function () {
+				item.noUiSlider.set([this.value, null]);
+			});
 
-    // ২. ইনপুট বক্সে ভ্যালু চেঞ্জ করলে স্লাইডার আপডেট হবে (Two-way binding)
-    inputMin.on('change', function () {
-        item.noUiSlider.set([this.value, null]);
-    });
-
-    inputMax.on('change', function () {
-        item.noUiSlider.set([null, this.value]);
-    });
-});
+			inputMax.on('change', function () {
+				item.noUiSlider.set([null, this.value]);
+			});
+		});
 
 
 		//  counter up   base on minus and pluse
@@ -639,96 +672,93 @@ $(slider).each(function (index, item) {
 			inputElement.val(newValue);
 		});
 
+
 		// map js
-		let mapDiv = document.getElementById("map");
-		if (mapDiv) {
+		const mapDivs = document.querySelectorAll(".map");
+
+		if (mapDivs.length > 0) {
+
 			async function initMap() {
-				// Request needed libraries.
-				const {
-					Map
-				} = await google.maps.importLibrary("maps");
+
+				// Request needed libraries
+				const { Map } = await google.maps.importLibrary("maps");
+
 				const {
 					AdvancedMarkerElement,
 					PinElement
-				} = await google.maps.importLibrary(
-					"marker",
-				);
-
-				map = new Map(mapDiv, {
-					center: {
-						lat: 47.65196191658531,
-						lng: -122.30716770065949
-					},
-					zoom: 19,
-					tilt: 67.5,
-					heading: 45,
-					mapId: "6ff586e93e18149f",
-					mapTypeControl: false,
-				});
+				} = await google.maps.importLibrary("marker");
 
 				// Define custom map styles
-				const customMapStyles = [{
+				const customMapStyles = [
+					{
 						elementType: "geometry",
-						stylers: [{
-							color: "#ebe3cd"
-						}]
+						stylers: [{ color: "#ebe3cd" }]
 					},
 					{
 						elementType: "labels.text.fill",
-						stylers: [{
-							color: "#523735"
-						}]
+						stylers: [{ color: "#523735" }]
 					},
 					{
 						elementType: "labels.text.stroke",
-						stylers: [{
-							color: "#f5f1e6"
-						}]
+						stylers: [{ color: "#f5f1e6" }]
 					},
 					{
 						featureType: "administrative",
 						elementType: "geometry.stroke",
-						stylers: [{
-							color: "#c9b2a6"
-						}]
+						stylers: [{ color: "#c9b2a6" }]
 					},
-					// Add more custom styles here for different features
-					// Example:
-					// { featureType: "road", elementType: "geometry", stylers: [{ color: "#f5f1e6" }] },
-					// { featureType: "water", elementType: "geometry.fill", stylers: [{ color: "#b9d3c2" }] },
 				];
 
-				// Create a StyledMapType object
-				const styledMapType = new google.maps.StyledMapType(customMapStyles, {
-					name: "Styled Map"
-				});
+				// Loop through each .map
+				mapDivs.forEach((mapItem) => {
 
-				// Set the styled map to the map instance
-				map.mapTypes.set("styled_map", styledMapType);
-				map.setMapTypeId("styled_map");
+					// Create map
+					const map = new Map(mapItem, {
+						center: {
+							lat: 47.65196191658531,
+							lng: -122.30716770065949
+						},
+						zoom: 19,
+						tilt: 67.5,
+						heading: 45,
+						mapId: "6ff586e93e18149f",
+						mapTypeControl: false,
+					});
 
-				// Add marker
-				const pin = new PinElement({
-					background: "#090b19",
-					borderColor: "#090b19",
-					glyphColor: "#eeede8",
-					scale: 2.0,
-				});
+					// Styled map
+					const styledMapType = new google.maps.StyledMapType(
+						customMapStyles,
+						{
+							name: "Styled Map"
+						}
+					);
 
-				const markerView = new AdvancedMarkerElement({
-					map,
-					content: pin.element,
-					// Set altitude to 20 meters above the ground.
-					position: {
-						lat: 47.65170843460547,
-						lng: -122.30754,
-						altitude: 20
-					},
+					map.mapTypes.set("styled_map", styledMapType);
+					map.setMapTypeId("styled_map");
+
+					// Marker pin
+					const pin = new PinElement({
+						background: "#090b19",
+						borderColor: "#090b19",
+						glyphColor: "#eeede8",
+						scale: 2.0,
+					});
+
+					// Add marker
+					new AdvancedMarkerElement({
+						map,
+						content: pin.element,
+						position: {
+							lat: 47.65170843460547,
+							lng: -122.30754,
+							altitude: 20
+						},
+					});
+
 				});
 			}
 
 			initMap();
-
 		}
 		const $myModal = $('#myModal');
 		const $myInput = $('#myInput');
@@ -736,7 +766,7 @@ $(slider).each(function (index, item) {
 		$myModal.on('shown.bs.modal', function () {
 			$myInput.focus();
 		});
-		
+
 		// // Load OverlayScrollbars + Plugin
 		// const { OverlayScrollbars, ClickScrollPlugin } = OverlayScrollbarsGlobal;
 		// OverlayScrollbars.plugin(ClickScrollPlugin);
@@ -767,73 +797,76 @@ $(slider).each(function (index, item) {
 		// 		dragScrolling: false
 		// 	}
 		// });
-  
+
 
 		// Load OverlayScrollbars + Plugin
-const { OverlayScrollbars, ClickScrollPlugin } = OverlayScrollbarsGlobal;
-OverlayScrollbars.plugin(ClickScrollPlugin);
+		const {
+			OverlayScrollbars,
+			ClickScrollPlugin
+		} = OverlayScrollbarsGlobal;
+		OverlayScrollbars.plugin(ClickScrollPlugin);
 
-// Reusable function
-function initScrollbar(selectors, options = {}) {
+		// Reusable function
+		function initScrollbar(selectors, options = {}) {
 
-    // Convert single selector → array
-    const items = Array.isArray(selectors) ? selectors : [selectors];
+			// Convert single selector → array
+			const items = Array.isArray(selectors) ? selectors : [selectors];
 
-    items.forEach(selector => {
-        document.querySelectorAll(selector).forEach(el => {
-            OverlayScrollbars(el, {
-                scrollbars: {
-                    autoHide: "leave",
-                    clickScroll: true,
-                    dragScrolling: true,
-                    clickScrolling: true,
-                    ...(options.scrollbars || {})
-                },
-                scrollBehavior: "smooth",
-                ...options
-            });
-        });
-    });
-}
+			items.forEach(selector => {
+				document.querySelectorAll(selector).forEach(el => {
+					OverlayScrollbars(el, {
+						scrollbars: {
+							autoHide: "leave",
+							clickScroll: true,
+							dragScrolling: true,
+							clickScrolling: true,
+							...(options.scrollbars || {})
+						},
+						scrollBehavior: "smooth",
+						...options
+					});
+				});
+			});
+		}
 
-// ------------------------------------------------
-// USE ANYWHERE
-// ------------------------------------------------
+		// ------------------------------------------------
+		// USE ANYWHERE
+		// ------------------------------------------------
 
 		// 1. Body
 		initScrollbar("body");
 
 		// 2. Multiple elements (offcanvas + modal + submenu)
 		initScrollbar(
-			[".offcanvas", ".modal", ".cart-dropdown-menu"],
-			{
-				scrollbars: { dragScrolling: false } // custom option
+			[".offcanvas", ".modal", ".cart-dropdown-menu",], {
+				scrollbars: {
+					dragScrolling: false
+				} // custom option
 			}
 		);
 
 
-		
-        // lenis
-        // Initialize a new Lenis instance for smooth scrolling
-        const lenis = new Lenis();
+		// lenis
+		// Initialize a new Lenis instance for smooth scrolling
+		const lenis = new Lenis();
 
-        // Listen for the 'scroll' event and log the event data to the console
-        // lenis.on('scroll', (e) => {
-        //     console.log(e);
-        // });
+		// Listen for the 'scroll' event and log the event data to the console
+		// lenis.on('scroll', (e) => {
+		//     console.log(e);
+		// });
 
-        // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-        lenis.on('scroll', ScrollTrigger.update);
+		// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+		lenis.on('scroll', ScrollTrigger.update);
 
-        // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-        // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-        });
+		// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+		// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+		gsap.ticker.add((time) => {
+			lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+		});
 
-        // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-        gsap.ticker.lagSmoothing(0);
-        // lenis
+		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+		gsap.ticker.lagSmoothing(0);
+		// lenis
 
 
 	});
