@@ -59,7 +59,7 @@
 		<!-- rotate text area end -->
 		<!-- offer section start -->
 		<!-- offer canvas menu -->
-		<div class="off-canvas-offer offcanvas offcanvas-start" tabindex="-1" id="canvas-offerExample" aria-labelledby="canvas-offer" data-lenis-prevent>
+		<div class="off-canvas-offer offcanvas offcanvas-start" tabindex="-1" id="canvas-offerExample" role="dialog" aria-modal="true" aria-labelledby="canvas-offer" data-lenis-prevent>
 			<div class="offcanvas-header">
 				<h5 class="offcanvas-title deep-white-color" id="canvas-offer">Exclusive Offers</h5>
 				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -400,8 +400,10 @@
 			</button>
 		</div>
 		<!-- offer section end -->
+
+		
 		<!-- header off canvas start -->
-		<div class="header-offcanvas offcanvas offcanvas-end" tabindex="-1" id="header-offcanvasExample" aria-labelledby="header-offcanvas" data-lenis-prevent data-overlayscrollbars-initialize>
+		<div class="header-offcanvas offcanvas offcanvas-end" tabindex="-1" id="header-offcanvasExample" role="dialog" aria-modal="true" aria-labelledby="header-offcanvas" data-lenis-prevent>
 			<div class="offcanvas-header">
 				<h5 class="offcanvas-title deep-white-color" id="header-offcanvas">Cravings Cafe.</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -710,6 +712,7 @@
 			</div>
 		</div>
 		<!-- vertical-bars area end -->
+
 		<!-- header area start -->
 		<header class="header-area">
 			<div class="container">
@@ -1405,7 +1408,7 @@
 									<form action="#">
 										<div class="form-group">
 											<div class="row g-0">
-												<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Billing Details</h5>
+												<h2 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Billing Details</h2>
 												<div class="col-lg-6">
 													<div class="form-info mb-3">
 														<label for="firstName" class="text-animation overflow-hidden">First Name</label><br>
@@ -1426,8 +1429,8 @@
 												</div>
 												<div class="col-lg-12">
 													<div class="form-info mb-3">
-														<label for="cars" class="text-animation overflow-hidden">Country / Region</label>
-														<select class="js-country-selector w-100" name="country" >
+														<label for="country" class="text-animation overflow-hidden">Country / Region</label>
+														<select class="js-country-selector w-100" name="country" id="country">
 															<option value="">Select A Country</option>
 															<option value="AF">Afghanistan</option>
 															<option value="AR">Argentina</option>
@@ -1525,7 +1528,7 @@
 						<div class="col-lg-3">
 							<div class="cf-right-card pt-0 romance-bg">
 								<div class="cf-order-wrapper b-bottom">
-									<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Your Order</h5>
+									<h2 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Your Order</h2>
 									<div class="cart-total-item b-bottom py-3 d-flex aling-items-center justify-content-between">
 										<span class="text-animation overflow-hidden">Product item</span>
 										<span class="text-animation overflow-hidden">50</span>
@@ -1552,7 +1555,7 @@
 									</div>
 								</div>
 								<div class="cf-order-wrapper">
-									<h5 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Payment Method</h5>
+									<h2 class="title-sm text-capitalize mb-3 text-animation overflow-hidden">Payment Method</h2>
 									<div class="payment-method-wrapper">
 										<div class="form-check payment-method-item">
 											<input type="radio" class="form-check-input" name="payment-method" id="mobileBanking" checked>
@@ -1655,7 +1658,7 @@
 					<div class="row g-0 gy-3">
 						<div class="col-lg-6">
 							<div class="about-footer-info mb-p">
-								<h5  class="title-sm deep-white-color mb-4 text-animation overflow-hidden">About Us</h5>
+								<h3  class="title-sm deep-white-color mb-4 text-animation overflow-hidden">About Us</h3>
 								<div class="text-animation overflow-hidden mb-p">
 									<p> Proudly serving New York for half a decade, our restaurant stands as a beacon of taste and compassion. We believe in nourishing not just appetites but also souls. With our health-conscious menu and complimentary meals for the less fortunate, we ensure everyone has access to nutritious food. Fifty percent of our earnings are dedicated to aiding the underprivileged, and through partnerships with 26 orphanages, we provide daily sustenance to those in need. At our heart, we're not just a restaurant; we're a community committed to making a difference, one meal at a time. </p>
 								</div>
@@ -1663,7 +1666,7 @@
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6 col-6">
 							<div class="quicky-link">
-								<h5  class="title-sm deep-white-color mb-4 text-animation overflow-hidden">Quickys Links</h5>
+								<h3  class="title-sm deep-white-color mb-4 text-animation overflow-hidden">Quickys Links</h3>
 								<ul class="list-unstyled ">
 									<li>
 										<a  href="blog.html" class="footer-link d-inline-block  fw-medium text-animation overflow-hidden">News</a>
@@ -1682,7 +1685,7 @@
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6 col-6">
 							<div class="socials-link-wrapper">
-								<h5  class="title-sm deep-white-color mb-4 text-animation overflow-hidden">Follow Us</h5>
+								<h3  class="title-sm deep-white-color mb-4 text-animation overflow-hidden">Follow Us</h3>
 								<ul class="list-unstyled ">
 									<li>
 										<a href="https://www.facebook.com/" class="footer-link d-flex flex-wrap align-items-center text-animation overflow-hidden">
