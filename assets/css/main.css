@@ -1281,7 +1281,7 @@ label {
 	width: 100%;
 	background: var(--color-dark);
 	content: "";
-	opacity: 60%;
+	opacity: 0.7;
 	z-index: 2;
 	mix-blend-mode: luminosity;
 }
@@ -2249,14 +2249,9 @@ th {
 }
 /* =================26.view cart section  end==================  */
 
-/*=================  thank you section start ================= */
 
-/* =================27.thank you section start==================  */
-.thank-you .main-caption-wrapper {
-	max-width: 100%;
-}
 
-/* =================27.thank you section end==================  */
+
 
 
 /* =================28.resrvation section start==================  */
